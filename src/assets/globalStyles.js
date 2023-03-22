@@ -22,10 +22,10 @@ export const theme = {
       xs: '1.1rem',
       sMobile: '1.4rem',
       s: '1.5rem',
-      mMobile: '2.2rem',
-      m: '3.2rem',
+      mMobile: '2rem',
+      m: '3rem',
       lMobile: '4rem',
-      l: '7.4rem',
+      l: '6.4rem',
     },
     weight: {
       s: 300,
