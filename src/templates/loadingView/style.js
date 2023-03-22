@@ -43,10 +43,12 @@ export const Bg = styled.div`
 export const Text = styled.h1`
   color: ${theme.colors.light1};
   text-transform: lowercase;
+  display: inline;
 `;
 
 export const Typewrite = styled.h1`
   position: relative;
+  display: inline;
 
   ::after {
     content: '';

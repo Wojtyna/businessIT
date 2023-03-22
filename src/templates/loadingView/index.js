@@ -115,8 +115,10 @@ export default function LoadingView() {
   return (
     <ViewWrap id="loading-view">
       <Bg id="loading-view-bg-1">
-        <Text id="loading-view-text"></Text>
-        <Typewrite id="loading-view-border"></Typewrite>
+        <span>
+          <Text id="loading-view-text"></Text>
+          <Typewrite id="loading-view-border"></Typewrite>
+        </span>
       </Bg>
       <Bg id="loading-view-bg-2" second />
       <Bg id="loading-view-bg-3" third />
