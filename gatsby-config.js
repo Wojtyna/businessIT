@@ -9,6 +9,7 @@ module.exports = {
     description:
       'Z doświadczenia wiemy, że najlepsze strony internetowe to strony przejrzyste, konkretne i łatwe w obsłudze ... i w ten sposób je tworzymy!',
     author: '@LEGIBLIFY',
+    keywords: ['strony', 'www'],
   },
   plugins: [
     'gatsby-plugin-styled-components',

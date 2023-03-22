@@ -9,11 +9,6 @@ export const ViewWrap = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: ${theme.space.xl}rem;
 `;
 
 export const Bg = styled.div`
@@ -22,17 +17,22 @@ export const Bg = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
+  padding: ${theme.space.xl}rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
   ${({ second, third }) =>
     third
       ? css`
           z-index: -3;
-          background-color: ${theme.colors.bgDarker};
+          background-color: ${theme.colors.primary};
         `
       : second
       ? css`
           z-index: -2;
-          background-color: ${theme.colors.primary};
+          background-color: ${theme.colors.dark2};
         `
       : css`
           z-index: -1;

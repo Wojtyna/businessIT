@@ -6,7 +6,7 @@
         "lang": "Polski"
       },
       "landingView": {
-        "text": "Cześć"
+        "text": "szybkie pytanie"
       },
       "navigation": {
         "buttons": {
@@ -27,7 +27,7 @@
         "landingView": {
           "bgAlt": "Tło pierwszej strony",
           "scrollDownTitle": "Przewiń w dół",
-          "title": "Czy zrobiłeś wszystko, aby Twój klient znalazł Twój biznes?",
+          "title": "Czy zrobiłeś wszystko, aby przyciągnąć klienta do biznesu?",
           "topLineAlt": "Linia w tle",
           "scrollDownAlt": "Strzałka w dół"
         },
@@ -88,18 +88,14 @@
           "products": [
             {
               "price": "350 zł",
-              "content": [
-                "wizytówka",
-                "prosta strona",
-                "zlecenie z dziedziny IT"
-              ]
+              "content": ["wizytówka", "prosta strona"]
             },
             {
               "price": "1 500 zł",
               "content": ["forum", "sklep internetowy", "projekt biznesowy"]
             },
             {
-              "price": "20 000 zł",
+              "price": "33 000 zł",
               "content": [
                 "aplikacja webowa",
                 "aplikacja mobilna na iOS i Android"
@@ -108,8 +104,8 @@
           ]
         },
         "footerView": {
-          "title": "Skontaktuj się z nami<br/>, w tym celu użyj nawigacji na dole strony",
-          "titleMobile": "Skontaktuj się z nami<br/>, w tym celu użyj nawigacji w prawym górnym rogu",
+          "title": "Przyciągaj klientów prostotą!<br />Skontaktuj się z nami używając nawigacji na dole strony",
+          "titleMobile": "Przyciągaj klientów prostotą!<br />Skontaktuj się z nami używając nawigacji w prawym górnym rogu",
           "bottomLineAlt": "Linia w tle"
         }
       }
@@ -200,19 +196,15 @@
           "priceSubtitle": "Już od",
           "products": [
             {
-              "price": "350 zł",
-              "content": [
-                "wizytówka",
-                "prosta strona",
-                "zlecenie z dziedziny IT"
-              ]
+              "price": "$100",
+              "content": ["wizytówka", "prosta strona"]
             },
             {
-              "price": "1 500 zł",
+              "price": "$500",
               "content": ["forum", "sklep internetowy", "projekt biznesowy"]
             },
             {
-              "price": "20 000 zł",
+              "price": "$9 000",
               "content": [
                 "aplikacja webowa",
                 "aplikacja mobilna na iOS i Android"
@@ -221,121 +213,8 @@
           ]
         },
         "footerView": {
-          "title": "Skontaktuj się z nami<br/>, w tym celu użyj nawigacji na dole strony",
-          "titleMobile": "Skontaktuj się z nami<br/>, w tym celu użyj nawigacji w prawym górnym rogu",
-          "bottomLineAlt": "Linia w tle"
-        }
-      }
-    },
-    "es": {
-      "props": {
-        "lang": "Español"
-      },
-      "landingView": {
-        "text": "Hola"
-      },
-      "navigation": {
-        "buttons": {
-          "products": "Usługi",
-          "contact": "Kontakt",
-          "translateImageAlt": "Obrazek"
-        },
-        "contactButtons": {
-          "chatTitle": "Otwórz czat",
-          "formTitle": "Formularz kontaktowy",
-          "imageAlt": "Obrazek"
-        },
-        "mobile": {
-          "backIconAlt": "Strzałka"
-        }
-      },
-      "indexPage": {
-        "landingView": {
-          "bgAlt": "Tło pierwszej strony",
-          "scrollDownTitle": "Przewiń w dół",
-          "title": "Czy zrobiłeś wszystko, aby Twój klient znalazł Twój biznes?",
-          "topLineAlt": "Linia w tle",
-          "scrollDownAlt": "Strzałka w dół"
-        },
-        "browserView": {
-          "firstTitle": "Z doświadczenia wiemy, że najlepsze strony internetowe to strony przejrzyste, konkretne i łatwe w obsłudze...",
-          "secondTitle": "...i w ten sposób je tworzymy!"
-        },
-        "quoteView": {
-          "quote": "\"Sukces to nie końcowy punkt, a proces nieustannego doskonalenia.\"",
-          "author": "Tony Robbins"
-        },
-        "aboutView": {
-          "topTitle": "W tym miejscu tak jak próbuje konkurencja, tak i my możemy Cię przekonać, że:",
-          "bottomTitle": "Ale po co, skoro tego i tak nikomu nie chce się czytać...",
-          "arrowAlt": "Strzałka",
-          "panelImageAlt": "Obrazek",
-          "panels": [
-            "Znamy psychologiczne triki, jak ciekawie budować treść na stronie",
-            "Nigdy nie mieliśmy niezadowolonego klienta",
-            "Specjalizujemy się w języku programowania React",
-            "Wprowadziliśmy na rynek nowe pojęcie “Perswazyjne budowanie strony”",
-            "Możesz próbować szukać innej firmy, ale i tak dojdziesz do wniosku, że nasza firma to najlepszy wybór",
-            "Dbamy o każdy aspekt budowania i promowania strony (np. SEO czy branding)",
-            "Wychodzimy z założenia, że nie ma nic lepszego, niż obsesyjne dbanie o klienta",
-            "Tworzymy od stron-wizytówek, aż po aplikacje na iOS i Android"
-          ]
-        },
-        "teamView": {
-          "smallText": "Nie od dziś wiadomo,<br/> że najważniejszy jest “MÓJ INTERES”.",
-          "bigText": "i DOBRZE!",
-          "teamText": "Nasz zespół jest gotowy do działania!",
-          "teamImgAlt": "Nasz zespół",
-          "midLineAlt": "Lina w tle"
-        },
-        "stepsView": {
-          "title": "Tak to wygląda w praktyce",
-          "steps": [
-            "Nawiązanie współpracy",
-            "Wspólne ustalenie celu",
-            "Szkic oczekiwanych rezultatów",
-            "Wybór najlepszych narzędzi",
-            "Dokładna wycena usługi",
-            "Chwila dla nas - produkcja",
-            "Konsultacja rezultatów"
-          ],
-          "tip": {
-            "tipTitle": "Ciekawostka",
-            "text": "ww. kroków jest 7, tak jak <i>“7 Nawyków Skutecznego Działania”</i> Stephena R. Covey - czyli książka, którą całym zespołem polecamy ❤️"
-          },
-          "panelImageAlt": "Obrazek"
-        },
-        "productsView": {
-          "titleView": "coś na czym się najlepiej znamy",
-          "showMore": "Pokaż więcej",
-          "imageAlt": "Obrazek",
-          "arrowAlt": "Strzałka",
-          "priceSubtitle": "Już od",
-          "products": [
-            {
-              "price": "350 zł",
-              "content": [
-                "wizytówka",
-                "prosta strona",
-                "zlecenie z dziedziny IT"
-              ]
-            },
-            {
-              "price": "1 500 zł",
-              "content": ["forum", "sklep internetowy", "projekt biznesowy"]
-            },
-            {
-              "price": "20 000 zł",
-              "content": [
-                "aplikacja webowa",
-                "aplikacja mobilna na iOS i Android"
-              ]
-            }
-          ]
-        },
-        "footerView": {
-          "title": "Skontaktuj się z nami<br/>, w tym celu użyj nawigacji na dole strony",
-          "titleMobile": "Skontaktuj się z nami<br/>, w tym celu użyj nawigacji w prawym górnym rogu",
+          "title": "Przyciągaj klientów prostotą!<br />Skontaktuj się z nami używając nawigacji na dole strony",
+          "titleMobile": "Przyciągaj klientów prostotą!<br />Skontaktuj się z nami używając nawigacji w prawym górnym rogu",
           "bottomLineAlt": "Linia w tle"
         }
       }

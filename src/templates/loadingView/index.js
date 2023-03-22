@@ -21,25 +21,21 @@ export default function LoadingView() {
   };
 
   const endAnimation = () => {
-    gsap.to('#loading-view-border', {
-      duration: 0,
-      opacity: 0,
-    });
     gsap.to('#loading-view-bg-1', {
       duration: 0.6,
-      ease: Power1.easeInOut,
+      ease: Power1.easeOut,
       transform: 'translateY(-100%)',
     });
     gsap.to('#loading-view-bg-2', {
       duration: 0.4,
       delay: 0.2,
-      ease: Power1.easeInOut,
+      ease: Power1.easeOut,
       transform: 'translateY(-100%)',
     });
     gsap.to('#loading-view-bg-3', {
-      duration: 0.2,
-      delay: 0.4,
-      ease: Power1.easeInOut,
+      duration: 0.25,
+      delay: 0.35,
+      ease: Power1.easeOut,
       transform: 'translateY(-100%)',
       onComplete: finishView,
     });
@@ -49,13 +45,13 @@ export default function LoadingView() {
     if (!state.disabledBodyScrolling) {
       dispatch({ type: 'TOGGLE_BODY_SCROLL' });
     }
-    const endText = '.';
-    const badEndText = ',.';
+    const endText = '...';
+    const badEndText = '//';
     const word = ContentData.translations[state.lang].landingView.text;
     const badWord = word + badEndText;
-    const correctWord = word + endText;
 
     const writingTime = 300;
+    const startDelay = 2500;
 
     let letterCount = 0;
     let currentText = '';
@@ -74,18 +70,6 @@ export default function LoadingView() {
       }
     };
 
-    const _deleteWord = () => {
-      currentText = correctWord.slice(0, --letterCount);
-
-      _changeText();
-
-      if (letterCount !== 0) {
-        setTimeout(_deleteWord, writingTime);
-      } else {
-        setTimeout(endAnimation, writingTime);
-      }
-    };
-
     const _correctWord = () => {
       if (correntCount === badEndText.length) {
         isDelete = false;
@@ -97,24 +81,18 @@ export default function LoadingView() {
         currentText = badWord.slice(0, --letterCount);
         correntCount++;
       } else {
-        currentText =
-          badWord.slice(0, badWord.length - badEndText.length) +
-          endText.slice(0, ++endLetterCount);
+        currentText = word + endText.slice(0, ++endLetterCount);
       }
 
       _changeText();
 
-      if (isDelete || currentText.length === badWord.length + endText.length) {
+      if (isDelete || endLetterCount !== endText.length) {
         setTimeout(
           _correctWord,
-          currentText.length ===
-            badWord.slice(0, badWord.length - badEndText.length).length
-            ? writingTime * 2
-            : writingTime
+          currentText.length === word.length ? writingTime * 2 : writingTime
         );
       } else {
-        letterCount = correctWord.length;
-        setTimeout(_deleteWord, writingTime * 5);
+        setTimeout(endAnimation, writingTime * 5);
       }
     };
 
@@ -130,17 +108,18 @@ export default function LoadingView() {
       }
     };
 
-    _typeWord();
+    setTimeout(_typeWord, startDelay);
   }, []);
 
   if (FinishedLoadingView) return <></>;
   return (
     <ViewWrap id="loading-view">
-      <Bg id="loading-view-bg-1" />
+      <Bg id="loading-view-bg-1">
+        <Text id="loading-view-text"></Text>
+        <Typewrite id="loading-view-border"></Typewrite>
+      </Bg>
       <Bg id="loading-view-bg-2" second />
       <Bg id="loading-view-bg-3" third />
-      <Text id="loading-view-text"></Text>
-      <Typewrite id="loading-view-border"></Typewrite>
     </ViewWrap>
   );
 }

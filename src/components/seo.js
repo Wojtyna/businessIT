@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import Package from '../../package.json';
+
 function Seo({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
     graphql`
@@ -12,6 +14,7 @@ function Seo({ description, lang, meta, title }) {
             title
             description
             author
+            keywords
           }
         }
       }
@@ -32,6 +35,10 @@ function Seo({ description, lang, meta, title }) {
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          name: `keywords`,
+          content: Package.keywords || site.siteMetadata.keywords,
         },
         {
           property: `og:title`,
