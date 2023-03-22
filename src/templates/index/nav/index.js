@@ -158,6 +158,7 @@ export default function Navigation({
       ...activeWindowProps[0],
       ...activeWindowProps[1],
       scrollTrigger: {
+        scroller: '#wrapper',
         trigger: '#landing-view',
         start: '10%',
         end: '33%',

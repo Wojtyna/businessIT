@@ -26,10 +26,10 @@ export default function LandingView({
   content: { title, topLineAlt, bgAlt, scrollDownTitle, scrollDownAlt },
 }) {
   const scrollDown = () => {
-    gsap.to(window, {
+    gsap.to('#wrapper', {
       duration: 0.5,
       ease: Power4.easeOut,
-      scrollTo: { y: '#landing-view-scroll-down', offsetY: '-70' },
+      scrollTo: { y: '#landing-view-scroll-down', offsetY: -70 },
     });
   };
   return (

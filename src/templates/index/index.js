@@ -36,11 +36,9 @@ export default function IndexView() {
   }, [WindowWidth]);
 
   useEffect(() => {
-    // const xd = document.getElementById('index-main');
-    // console.log(xd.children[1]);
-    // od i=2 do i=xd.length
+    const _footer = document.querySelector('footer');
     const _sections = document.querySelectorAll('section');
-    _sections.forEach((section) => {
+    [..._sections, _footer].forEach((section) => {
       gsap.fromTo(
         section,
         {
@@ -50,11 +48,12 @@ export default function IndexView() {
         {
           y: 0,
           opacity: 1,
-          duration: 1,
+          duration: 0.5,
           ease: 'easeInOut',
           scrollTrigger: {
+            scroller: '#wrapper',
             trigger: section,
-            start: 'top 80%',
+            start: 'top 75%',
           },
         }
       );
@@ -62,7 +61,7 @@ export default function IndexView() {
   }, []);
 
   return (
-    <main id="index-main">
+    <main>
       {WindowWidth > 767 ? (
         <Navigation
           content={Data.translations[state.lang].navigation}

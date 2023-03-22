@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 export const theme = {
   colors: {
@@ -85,23 +85,11 @@ const GlobalStyle = createGlobalStyle`
         min-width: ${CONSTANS.MIN_PAGE_WIDTH}rem;
         margin: 0;
         padding: 0; 
-         
-        ::-webkit-scrollbar {
-            width: ${CONSTANS.SCROLL_BAR_WIDTH}rem;  
-        }
-        ::-webkit-scrollbar-track {  
-            background-color: ${theme.colors.light1};
-        }
-        ::-webkit-scrollbar-thumb {  
-            background-color: ${theme.colors.light2};  
-            border-radius: ${CONSTANS.SCROLL_BAR_WIDTH}rem; 
-        } 
         
-        ${({ disabledBodyScrolling }) =>
-          disabledBodyScrolling &&
-          css`
-            overflow-y: hidden;
-          `}
+        height: 100%;
+        overscroll-behavior: contain;
+        overflow: hidden;
+        
 
         @media ${theme.windowSize.big} {
             font-size: ${theme.font.size.s};
@@ -195,9 +183,7 @@ const GlobalStyle = createGlobalStyle`
     .textBorder{
         font-weight: ${theme.font.weight.l};
         text-transform: uppercase; 
-        text-shadow: -1px 0 ${theme.colors.dark2}, 0 1px ${
-  theme.colors.dark2
-}, 1px 0 ${theme.colors.dark2}, 0 -1px ${theme.colors.dark2};
+        text-shadow: -1px 0 ${theme.colors.dark2}, 0 1px ${theme.colors.dark2}, 1px 0 ${theme.colors.dark2}, 0 -1px ${theme.colors.dark2};
     }
 
     .companyName{  

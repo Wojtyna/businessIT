@@ -1,15 +1,51 @@
 import React, { useContext, useEffect, useState } from 'react';
+import styled, { css } from 'styled-components';
 import Helmet from 'react-helmet';
 
 import State, { GlobalState } from '../assets/state/State';
-import GlobalStyle from '../assets/globalStyles';
+import GlobalStyle, { CONSTANS, theme } from '../assets/globalStyles';
 import IndexView from '../templates/index';
 import LoadingView from '../templates/loadingView';
 
-const GlobalStyleView = () => {
+export const WrapperStyle = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-width: ${CONSTANS.MIN_PAGE_WIDTH}rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  ::-webkit-scrollbar {
+    width: ${CONSTANS.SCROLL_BAR_WIDTH}rem;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: ${theme.colors.light1};
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: ${theme.colors.light2};
+    border-radius: ${CONSTANS.SCROLL_BAR_WIDTH}rem;
+  }
+
+  ${({ disabledBodyScrolling }) =>
+    disabledBodyScrolling &&
+    css`
+      overflow-y: hidden;
+    `}
+`;
+
+const Wrapper = ({ children }) => {
   const { state } = useContext(GlobalState);
 
-  return <GlobalStyle disabledBodyScrolling={state.disabledBodyScrolling} />;
+  return (
+    <WrapperStyle
+      id="wrapper"
+      disabledBodyScrolling={state.disabledBodyScrolling}
+    >
+      {children}
+    </WrapperStyle>
+  );
 };
 
 const Layout = ({ children }) => {
@@ -56,13 +92,13 @@ const Layout = ({ children }) => {
             />
           </Helmet>
 
-          <GlobalStyleView />
+          <GlobalStyle />
           {LoadingViewProps.localStroageLoaded && (
-            <>
+            <Wrapper>
               {LoadingViewProps.showLoadingView && <LoadingView />}
               <IndexView />
               {children}
-            </>
+            </Wrapper>
           )}
         </>
       }
