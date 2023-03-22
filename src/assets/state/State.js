@@ -6,7 +6,7 @@ export const GlobalState = createContext();
 
 export default function State({ children }) {
   const userBrowserLang =
-    navigator?.language && navigator.language.substring(0, 2);
+    typeof navigator !== 'undefined' && navigator.language.substring(0, 2);
   const storageBrowserLang =
     typeof window !== 'undefined' && localStorage.getItem('@BROWSER_LANG');
 
