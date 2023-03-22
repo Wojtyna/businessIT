@@ -49,7 +49,7 @@ export default function ProductsView({
         <StyledTitle>{titleView}</StyledTitle>
       </TitleWrap>
 
-      <ProductsPanel onClick={onProductsClick}>
+      <ProductsPanel>
         <ProductsWrap>
           {ProductsData.map(({ image, price, content }, productsIndex) => (
             <ProductWrap
@@ -75,7 +75,7 @@ export default function ProductsView({
           ))}
         </ProductsWrap>
 
-        <ShowMoreWrap>
+        <ShowMoreWrap onClick={onProductsClick}>
           <ShowMoreTitle>{showMore}</ShowMoreTitle>
           <ShowMoreImg src={ArrowImage} alt={arrowAlt} />
         </ShowMoreWrap>

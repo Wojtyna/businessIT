@@ -55,18 +55,8 @@ export const ProductsPanel = styled.div`
   box-shadow: 0 0 8rem -8rem black;
   border-radius: ${theme.space.l}rem;
   padding: ${theme.space.l}rem;
-  cursor: pointer;
+  padding-bottom: 0 !important;
   overflow: hidden;
-
-  :hover {
-    opacity: 0.8;
-  }
-
-  :active,
-  :target,
-  :focus {
-    opacity: 0.33;
-  }
 
   @media ${theme.windowSize.big} {
     padding: ${theme.space.xl}rem;
@@ -167,10 +157,29 @@ export const Price = styled.h2`
 export const ShowMoreWrap = styled.div`
   display: flex;
   align-items: center;
-  padding-top: ${theme.space.l}rem;
+  padding: ${theme.space.l}rem;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  user-drag: none;
+  -webkit-user-drag: none;
+
+  :hover {
+    opacity: 0.8;
+  }
+
+  :active,
+  :target,
+  :focus {
+    opacity: 0.33;
+  }
 
   @media ${theme.windowSize.big} {
-    padding-top: ${theme.space.xl}rem;
+    padding-block: ${theme.space.xl}rem;
   }
 `;
 export const ShowMoreTitle = styled.span`
