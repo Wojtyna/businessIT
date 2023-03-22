@@ -5,9 +5,11 @@ import { CONSTANS, theme } from '../../../assets/globalStyles';
 export const ViewWrap = styled.nav`
   z-index: 100;
   position: fixed;
-  width: fit-content;
+  width: max-content;
   bottom: ${theme.space.xl}rem;
   left: 50%;
+  align-self: center;
+  justify-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,7 +103,8 @@ export const TranslateImageStyle = styled.img`
 export const ContactWrap = styled.div`
   z-index: 100;
   position: absolute;
-  width: fit-content;
+  width: max-content;
+  max-width: 40rem;
   bottom: 6rem;
   left: 50%;
   display: flex;

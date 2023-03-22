@@ -5,7 +5,7 @@ import { CONSTANS, theme } from '../assets/globalStyles';
 
 const ButtonWrap = styled.div`
   flex: 1;
-  width: fit-content;
+  width: max-content;
   min-width: ${CONSTANS.BUTTON_MIN_WIDTH}rem;
   min-height: ${CONSTANS.BUTTON_MIN_HEIGHT_MOBILE}rem;
   display: flex;

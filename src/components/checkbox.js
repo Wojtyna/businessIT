@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { CONSTANS, theme } from '../assets/globalStyles';
 
 const CheckboxWrap = styled.div`
-  width: fit-content;
+  width: max-content;
   display: flex;
   align-items: center;
   min-height: ${CONSTANS.BUTTON_MIN_HEIGHT_MOBILE}rem;

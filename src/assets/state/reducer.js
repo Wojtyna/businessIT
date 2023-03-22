@@ -1,6 +1,10 @@
 export const reducer = (state, action) => {
   switch (action.type) {
     case 'CHANGE_LANG': {
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('@BROWSER_LANG', action.key);
+      }
+
       return {
         ...state,
         lang: action.key,
@@ -10,7 +14,7 @@ export const reducer = (state, action) => {
     case 'TOGGLE_BODY_SCROLL': {
       return {
         ...state,
-        navMobileVisible: !state.navMobileVisible,
+        disabledBodyScrolling: !state.disabledBodyScrolling,
       };
     }
 

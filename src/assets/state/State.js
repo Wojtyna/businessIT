@@ -5,10 +5,18 @@ import { reducer } from './reducer';
 export const GlobalState = createContext();
 
 export default function State({ children }) {
+  const userBrowserLang =
+    navigator?.language && navigator.language.substring(0, 2);
+  const storageBrowserLang =
+    typeof window !== 'undefined' && localStorage.getItem('@BROWSER_LANG');
+
   const initialState = {
-    // lang: 'en',
-    lang: 'pl',
-    navMobileVisible: false,
+    lang: storageBrowserLang
+      ? storageBrowserLang
+      : userBrowserLang
+      ? userBrowserLang
+      : 'en',
+    disabledBodyScrolling: false,
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);

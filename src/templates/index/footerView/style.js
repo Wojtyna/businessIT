@@ -1,10 +1,15 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { CONSTANS, theme } from '../../../assets/globalStyles';
 
 export const ViewWrap = styled.footer`
   position: relative;
-  padding-block: ${CONSTANS.SPACE_BETWEEN_SECTIONS}rem
-    ${CONSTANS.SPACE_BETWEEN_SECTIONS}rem;
+  padding-block: ${CONSTANS.SPACE_BETWEEN_SECTIONS}rem;
+
+  ${({ onlyTopPadding }) =>
+    onlyTopPadding &&
+    css`
+      padding-bottom: 0;
+    `}
 `;
 
 export const Title = styled.h2`

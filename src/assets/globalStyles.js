@@ -6,7 +6,7 @@ export const theme = {
     light2: '#D9D9D9',
     light3: '#C0C0C0',
     dark1: '#1A1A1A',
-    dark2: '#333333e0',
+    dark2: '#333333',
     mid: '#808080',
     primary: '#4AF7D8',
     red: '#ff4747',
@@ -97,8 +97,8 @@ const GlobalStyle = createGlobalStyle`
             border-radius: ${CONSTANS.SCROLL_BAR_WIDTH}rem; 
         } 
         
-        ${({ navMobileVisible }) =>
-          navMobileVisible &&
+        ${({ disabledBodyScrolling }) =>
+          disabledBodyScrolling &&
           css`
             overflow-y: hidden;
           `}

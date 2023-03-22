@@ -12,6 +12,7 @@ import {
   Main,
   LangButtonSpace,
   SeparateLine,
+  PADDING_VIEW_WRAP,
 } from './style';
 import { GlobalState } from '../../../../assets/state/State';
 import IconButton from '../../../../components/iconButton';
@@ -55,7 +56,7 @@ const LangWindow = ({
         iconSource={TranslateImage}
         alt={translateImageAlt}
         style={{
-          marginBottom: theme.space.m * 10,
+          marginBottom: theme.space.xl * 10,
         }}
       />
       <SeparateLine />
@@ -66,6 +67,8 @@ const LangWindow = ({
               onLangClick(value);
             }}
             key={`NAV_MOBILE_LANG_BUTTON_${index}`}
+            firstItem={index === 0}
+            lastItem={index === LangButtonsData.length - 1}
           >
             {title}
           </Button>
@@ -78,7 +81,7 @@ const LangWindow = ({
         iconSource={ArrowImage}
         alt={backIconAlt}
         style={{
-          marginTop: theme.space.m * 10,
+          marginTop: theme.space.xl * 10,
         }}
       />
     </LangView>
@@ -105,7 +108,11 @@ export default function NavigationMobile({
     gsap.to('#nav-mobile-lang-view', {
       duration: 0.2,
       transform: LangWindowIsVisible.current
-        ? `translateY(calc(100% - ${CONSTANS.BUTTON_MIN_HEIGHT_MOBILE}rem))`
+        ? `translateY(
+          calc(100% - ${PADDING_VIEW_WRAP * 2}rem - ${
+            CONSTANS.BUTTON_MIN_HEIGHT_MOBILE
+          }rem)
+        )`
         : 'translateY(0)',
       onComplete: () => {
         LangWindowIsVisible.current = !LangWindowIsVisible.current;
@@ -118,7 +125,9 @@ export default function NavigationMobile({
     dispatch({ type: 'TOGGLE_BODY_SCROLL' });
     gsap.to('#nav-mobile', {
       duration: 0.2,
-      transform: state.navMobileVisible ? `translateX(-100%)` : 'translateX(0)',
+      transform: state.disabledBodyScrolling
+        ? `translateX(-100%)`
+        : 'translateX(0)',
       onComplete: () => {
         if (LangWindowIsVisible.current) {
           toggleLangVisible();
@@ -131,7 +140,7 @@ export default function NavigationMobile({
     <>
       <IconButton
         onClick={toggleNav}
-        burger={{ isOpen: state.navMobileVisible, visible: true }}
+        burger={{ isOpen: state.disabledBodyScrolling, visible: true }}
         style={{
           zIndex: 101,
           position: 'fixed',

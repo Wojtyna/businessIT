@@ -128,7 +128,7 @@ export const TipText = styled.span`
     width: ${TIP_DOT_LENGTH}rem;
     height: ${TIP_DOT_LENGTH}rem;
     left: 0;
-    top: 0.9rem;
+    top: 0.8rem;
     background-color: ${theme.colors.dark2};
     border-radius: ${TIP_DOT_LENGTH}rem;
   }

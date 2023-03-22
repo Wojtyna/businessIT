@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { CONSTANS, theme } from '../../../../assets/globalStyles';
 
-const ABOUT_HEADER_HEIGHT = 15;
+export const ABOUT_HEADER_HEIGHT = 10;
+export const PADDING_VIEW_WRAP = theme.space.xl;
 
 // MAIN WRAP
 export const ViewWrap = styled.nav`
@@ -17,7 +18,7 @@ export const ViewWrap = styled.nav`
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  padding: ${theme.space.l}rem;
+  padding: ${PADDING_VIEW_WRAP}rem;
   text-align: center;
 `;
 
@@ -26,12 +27,13 @@ export const Header = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  height: ${ABOUT_HEADER_HEIGHT}rem;
 `;
 export const Logo = styled.img`
   height: ${CONSTANS.IMAGE_LENGTH_S}rem;
 `;
 export const CompanyTitle = styled.span`
-  margin-top: ${theme.space.s}rem;
   font-size: ${theme.font.size.mMobile};
 `;
 
@@ -41,9 +43,19 @@ export const Main = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-export const Button = styled.div`
-  padding: ${theme.space.l}rem;
+export const Button = styled.h2`
+  padding: ${theme.space.m}rem;
   font-weight: ${theme.font.weight.m};
+
+  ${({ firstItem, lastItem }) =>
+    firstItem
+      ? css`
+          padding-top: ${theme.space.xl}rem;
+        `
+      : lastItem &&
+        css`
+          padding-bottom: ${theme.space.xl}rem;
+        `};
 
   :active,
   :target,
@@ -52,21 +64,27 @@ export const Button = styled.div`
   }
 `;
 export const LangButtonSpace = styled.div`
-  height: ${CONSTANS.BUTTON_MIN_HEIGHT_MOBILE}rem;
+  height: ${ABOUT_HEADER_HEIGHT}rem;
 `;
 
 // LANG
 export const LangView = styled.div`
   position: absolute;
   width: 100%;
-  height: calc(100% - ${ABOUT_HEADER_HEIGHT}rem);
-  bottom: ${theme.space.l}rem;
+  height: calc(100% - ${ABOUT_HEADER_HEIGHT + PADDING_VIEW_WRAP}rem);
+  top: ${ABOUT_HEADER_HEIGHT + PADDING_VIEW_WRAP}rem;
   left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
-  transform: translateY(calc(100% - ${CONSTANS.BUTTON_MIN_HEIGHT_MOBILE}rem));
+  transform: translateY(
+    calc(
+      100% - ${PADDING_VIEW_WRAP * 2}rem -
+        ${CONSTANS.BUTTON_MIN_HEIGHT_MOBILE}rem
+    )
+  );
+  padding-block: ${PADDING_VIEW_WRAP}rem;
 `;
 export const LangButtonsWrap = styled.div`
   position: relative;

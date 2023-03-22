@@ -14,7 +14,7 @@ const InputWrap = styled.div`
           flex: 1;
         `
       : css`
-          width: fit-content;
+          width: max-content;
         `}
 
   input,

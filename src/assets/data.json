@@ -5,6 +5,9 @@
       "props": {
         "lang": "Polski"
       },
+      "landingView": {
+        "text": "Cześć"
+      },
       "navigation": {
         "buttons": {
           "products": "Usługi",
@@ -111,6 +114,9 @@
       "props": {
         "lang": "English"
       },
+      "landingView": {
+        "text": "Hello"
+      },
       "navigation": {
         "buttons": {
           "products": "Usługi",
@@ -216,6 +222,9 @@
     "es": {
       "props": {
         "lang": "Español"
+      },
+      "landingView": {
+        "text": "Hola"
       },
       "navigation": {
         "buttons": {

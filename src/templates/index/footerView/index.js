@@ -7,7 +7,7 @@ import BottomLineBgImage from '../../../assets/images/bg-lines/bottom.png';
 export default function FooterView({
   content: { title, bottomLineAlt, titleMobile },
 }) {
-  return (
+  return typeof window !== 'undefined' ? (
     <ViewWrap className="view-inline-space">
       <BottomBgLineWrap>
         <BottomBgLine src={BottomLineBgImage} alt={bottomLineAlt} />
@@ -15,11 +15,11 @@ export default function FooterView({
       <Title
         className="textBorder"
         dangerouslySetInnerHTML={{
-          __html:
-            typeof window !== 'undefined' &&
-            (window.innerWidth > 767 ? title : titleMobile),
+          __html: window.innerWidth > 767 ? title : titleMobile,
         }}
       />
     </ViewWrap>
+  ) : (
+    <ViewWrap onlyTopPadding></ViewWrap>
   );
 }
