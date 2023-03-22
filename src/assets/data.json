@@ -49,7 +49,7 @@
             "Nigdy nie mieliśmy niezadowolonego klienta",
             "Specjalizujemy się w języku programowania React",
             "Wprowadziliśmy na rynek nowe pojęcie “Perswazyjne budowanie strony”",
-            "Możesz próbować szukać innej firmy, ale i tak dojdziesz do wniosku, że Codeyeye to najlepszy wybór",
+            "Możesz próbować szukać innej firmy, ale i tak dojdziesz do wniosku, że nasza firma to najlepszy wybór",
             "Dbamy o każdy aspekt budowania i promowania strony (np. SEO czy branding)",
             "Wychodzimy z założenia, że nie ma nic lepszego, niż obsesyjne dbanie o klienta",
             "Tworzymy od stron-wizytówek, aż po aplikacje na iOS i Android"
@@ -88,14 +88,18 @@
           "products": [
             {
               "price": "350 zł",
-              "content": ["wizytówka", "prosta strona", "pomoc techniczna"]
+              "content": [
+                "wizytówka",
+                "prosta strona",
+                "zlecenie z dziedziny IT"
+              ]
             },
             {
               "price": "1 500 zł",
               "content": ["forum", "sklep internetowy", "projekt biznesowy"]
             },
             {
-              "price": "12 000 zł",
+              "price": "20 000 zł",
               "content": [
                 "aplikacja webowa",
                 "aplikacja mobilna na iOS i Android"
@@ -104,8 +108,8 @@
           ]
         },
         "footerView": {
-          "title": "Skontaktuj się z nami<br/>W tym celu użyj nawigacji na dole strony",
-          "titleMobile": "Skontaktuj się z nami<br/>W tym celu użyj nawigacji w prawym górnym rogu",
+          "title": "Skontaktuj się z nami<br/>, w tym celu użyj nawigacji na dole strony",
+          "titleMobile": "Skontaktuj się z nami<br/>, w tym celu użyj nawigacji w prawym górnym rogu",
           "bottomLineAlt": "Linia w tle"
         }
       }
@@ -158,7 +162,7 @@
             "Nigdy nie mieliśmy niezadowolonego klienta",
             "Specjalizujemy się w języku programowania React",
             "Wprowadziliśmy na rynek nowe pojęcie “Perswazyjne budowanie strony”",
-            "Możesz próbować szukać innej firmy, ale i tak dojdziesz do wniosku, że Codeyeye to najlepszy wybór",
+            "Możesz próbować szukać innej firmy, ale i tak dojdziesz do wniosku, że nasza firma to najlepszy wybór",
             "Dbamy o każdy aspekt budowania i promowania strony (np. SEO czy branding)",
             "Wychodzimy z założenia, że nie ma nic lepszego, niż obsesyjne dbanie o klienta",
             "Tworzymy od stron-wizytówek, aż po aplikacje na iOS i Android"
@@ -197,14 +201,18 @@
           "products": [
             {
               "price": "350 zł",
-              "content": ["wizytówka", "prosta strona", "pomoc techniczna"]
+              "content": [
+                "wizytówka",
+                "prosta strona",
+                "zlecenie z dziedziny IT"
+              ]
             },
             {
               "price": "1 500 zł",
               "content": ["forum", "sklep internetowy", "projekt biznesowy"]
             },
             {
-              "price": "12 000 zł",
+              "price": "20 000 zł",
               "content": [
                 "aplikacja webowa",
                 "aplikacja mobilna na iOS i Android"
@@ -213,8 +221,8 @@
           ]
         },
         "footerView": {
-          "title": "Skontaktuj się z nami<br/>W tym celu użyj nawigacji na dole strony",
-          "titleMobile": "Skontaktuj się z nami<br/>W tym celu użyj nawigacji w prawym górnym rogu",
+          "title": "Skontaktuj się z nami<br/>, w tym celu użyj nawigacji na dole strony",
+          "titleMobile": "Skontaktuj się z nami<br/>, w tym celu użyj nawigacji w prawym górnym rogu",
           "bottomLineAlt": "Linia w tle"
         }
       }
@@ -267,7 +275,7 @@
             "Nigdy nie mieliśmy niezadowolonego klienta",
             "Specjalizujemy się w języku programowania React",
             "Wprowadziliśmy na rynek nowe pojęcie “Perswazyjne budowanie strony”",
-            "Możesz próbować szukać innej firmy, ale i tak dojdziesz do wniosku, że Codeyeye to najlepszy wybór",
+            "Możesz próbować szukać innej firmy, ale i tak dojdziesz do wniosku, że nasza firma to najlepszy wybór",
             "Dbamy o każdy aspekt budowania i promowania strony (np. SEO czy branding)",
             "Wychodzimy z założenia, że nie ma nic lepszego, niż obsesyjne dbanie o klienta",
             "Tworzymy od stron-wizytówek, aż po aplikacje na iOS i Android"
@@ -306,14 +314,18 @@
           "products": [
             {
               "price": "350 zł",
-              "content": ["wizytówka", "prosta strona", "pomoc techniczna"]
+              "content": [
+                "wizytówka",
+                "prosta strona",
+                "zlecenie z dziedziny IT"
+              ]
             },
             {
               "price": "1 500 zł",
               "content": ["forum", "sklep internetowy", "projekt biznesowy"]
             },
             {
-              "price": "12 000 zł",
+              "price": "20 000 zł",
               "content": [
                 "aplikacja webowa",
                 "aplikacja mobilna na iOS i Android"
@@ -322,8 +334,8 @@
           ]
         },
         "footerView": {
-          "title": "Skontaktuj się z nami<br/>W tym celu użyj nawigacji na dole strony",
-          "titleMobile": "Skontaktuj się z nami<br/>W tym celu użyj nawigacji w prawym górnym rogu",
+          "title": "Skontaktuj się z nami<br/>, w tym celu użyj nawigacji na dole strony",
+          "titleMobile": "Skontaktuj się z nami<br/>, w tym celu użyj nawigacji w prawym górnym rogu",
           "bottomLineAlt": "Linia w tle"
         }
       }
