@@ -43,7 +43,7 @@ export default function ProductsView({
   ];
 
   return (
-    <ViewWrap className="view-inline-space">
+    <ViewWrap className="view-inline-space index-view">
       <TitleWrap>
         <BigTitle>{titleView}</BigTitle>
         <StyledTitle>{titleView}</StyledTitle>

@@ -91,7 +91,7 @@ export default function AboutView({
   ];
 
   return (
-    <ViewWrap className="view-inline-space">
+    <ViewWrap className="view-inline-space index-view">
       <AboutWrap>
         <TopWrap>
           <TopTitle>{topTitle}</TopTitle>

@@ -4,7 +4,10 @@ import styled from 'styled-components';
 import { CONSTANS, theme } from '../assets/globalStyles';
 
 const ButtonWrap = styled.div`
-  position: relative;
+  z-index: 100;
+  position: absolute;
+  right: 0;
+  top: 0;
   width: ${CONSTANS.CLOSE_BUTTON_LENGTH}rem;
   height: ${CONSTANS.CLOSE_BUTTON_LENGTH}rem;
   border-radius: 0 ${theme.space.l}rem 0 ${theme.space.l}rem;
@@ -12,10 +15,10 @@ const ButtonWrap = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${theme.colors.primary};
+  cursor: pointer;
 
   :hover {
     opacity: 0.8;
-    cursor: pointer;
   }
 
   :active,

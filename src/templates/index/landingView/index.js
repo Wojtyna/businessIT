@@ -17,7 +17,7 @@ import IconButton from '../../../components/iconButton';
 import AnimatedLogo from '../../../components/animatedLogo';
 
 import ArrowDown from '../../../assets/images/icons/arrow.webp';
-import TopLineImage from '../../../assets/images/bg-lines/top.png';
+import TopLineImage from '../../../assets/images/bg-lines/top.webp';
 import BgImage from '../../../assets/images/landing-bg.webp';
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -32,15 +32,16 @@ export default function LandingView({
       scrollTo: { y: '#landing-view-scroll-down', offsetY: -70 },
     });
   };
+
   return (
-    <ViewWrap className="view-inline-space" id="landing-view">
+    <ViewWrap id="landing-view">
       <TopLineWrap>
         <TopLine src={TopLineImage} alt={topLineAlt} />
       </TopLineWrap>
       <BgWrap>
         <Bg src={BgImage} alt={bgAlt} />
       </BgWrap>
-      <ContentWrap>
+      <ContentWrap className="view-inline-space">
         <ViewTitle>{title}</ViewTitle>
         <AnimatedLogo
           id={1}

@@ -1,5 +1,15 @@
 {
   "companyName": "Legiblify",
+  "socialMedia": {
+    "twitter": { "alt": "Twitter", "url": "https://twitter.com/" },
+    "youtube": { "alt": "Youtube", "url": "https://youtube.com/" }
+  },
+  "products": [
+    {
+      "type": "page-card",
+      "productsId": ["2", "3"]
+    }
+  ],
   "translations": {
     "pl": {
       "props": {
@@ -27,7 +37,7 @@
         "landingView": {
           "bgAlt": "Tło pierwszej strony",
           "scrollDownTitle": "Przewiń w dół",
-          "title": "Czy zrobiłeś wszystko, aby przyciągnąć klienta do biznesu?",
+          "title": "Czy zrobiłeś wszystko, aby przyciągnąć klienta do swojego biznesu?",
           "topLineAlt": "Linia w tle",
           "scrollDownAlt": "Strzałka w dół"
         },
@@ -108,114 +118,201 @@
           "titleMobile": "Przyciągaj klientów prostotą!<br />Skontaktuj się z nami używając nawigacji w prawym górnym rogu",
           "bottomLineAlt": "Linia w tle"
         }
-      }
-    },
-    "en": {
-      "props": {
-        "lang": "English"
       },
-      "landingView": {
-        "text": "Hello"
-      },
-      "navigation": {
-        "buttons": {
-          "products": "Usługi",
-          "contact": "Kontakt",
-          "translateImageAlt": "Obrazek"
+      "contactPage": {
+        "pageTitle": "Kontakt",
+        "inputs": {
+          "name": "Imię",
+          "phone": "Numer telefonu",
+          "msg": "Wiadomość"
         },
-        "contactButtons": {
-          "chatTitle": "Otwórz czat",
-          "formTitle": "Formularz kontaktowy",
-          "imageAlt": "Obrazek"
-        },
-        "mobile": {
-          "backIconAlt": "Strzałka"
+        "approvalMsg": "Wyrażam zgodę na przetwarzanie moich danych osobowych, zawartych w formularzu kontaktowym.",
+        "warning": "Wypełnij wymagane pola",
+        "sendButton": "Wyślij",
+        "manualContactPanel": {
+          "text": "Zawsze możesz się z nami skontaktować. Postaramy się odpowiedzieć na każde pytanie!",
+          "phone": "+48 123 456 789",
+          "mail": "biznes@firma.com",
+          "iconAlt": "Ikona"
         }
       },
-      "indexPage": {
-        "landingView": {
-          "bgAlt": "Tło pierwszej strony",
-          "scrollDownTitle": "Przewiń w dół",
-          "title": "Czy zrobiłeś wszystko, aby Twój klient znalazł Twój biznes?",
-          "topLineAlt": "Linia w tle",
-          "scrollDownAlt": "Strzałka w dół"
-        },
-        "browserView": {
-          "firstTitle": "Z doświadczenia wiemy, że najlepsze strony internetowe to strony przejrzyste, konkretne i łatwe w obsłudze...",
-          "secondTitle": "...i w ten sposób je tworzymy!"
-        },
-        "quoteView": {
-          "quote": "\"Sukces to nie końcowy punkt, a proces nieustannego doskonalenia.\"",
-          "author": "Tony Robbins"
-        },
-        "aboutView": {
-          "topTitle": "W tym miejscu tak jak próbuje konkurencja, tak i my możemy Cię przekonać, że:",
-          "bottomTitle": "Ale po co, skoro tego i tak nikomu nie chce się czytać...",
-          "arrowAlt": "Strzałka",
-          "panelImageAlt": "Obrazek",
-          "panels": [
-            "Znamy psychologiczne triki, jak ciekawie budować treść na stronie",
-            "Nigdy nie mieliśmy niezadowolonego klienta",
-            "Specjalizujemy się w języku programowania React",
-            "Wprowadziliśmy na rynek nowe pojęcie “Perswazyjne budowanie strony”",
-            "Możesz próbować szukać innej firmy, ale i tak dojdziesz do wniosku, że nasza firma to najlepszy wybór",
-            "Dbamy o każdy aspekt budowania i promowania strony (np. SEO czy branding)",
-            "Wychodzimy z założenia, że nie ma nic lepszego, niż obsesyjne dbanie o klienta",
-            "Tworzymy od stron-wizytówek, aż po aplikacje na iOS i Android"
-          ]
-        },
-        "teamView": {
-          "smallText": "Nie od dziś wiadomo,<br/> że najważniejszy jest “MÓJ INTERES”.",
-          "bigText": "i DOBRZE!",
-          "teamText": "Nasz zespół jest gotowy do działania!",
-          "teamImgAlt": "Nasz zespół",
-          "midLineAlt": "Lina w tle"
-        },
-        "stepsView": {
-          "title": "Tak to wygląda w praktyce",
-          "steps": [
-            "Nawiązanie współpracy",
-            "Wspólne ustalenie celu",
-            "Szkic oczekiwanych rezultatów",
-            "Wybór najlepszych narzędzi",
-            "Dokładna wycena usługi",
-            "Chwila dla nas - produkcja",
-            "Konsultacja rezultatów"
-          ],
-          "tip": {
-            "tipTitle": "Ciekawostka",
-            "text": "ww. kroków jest 7, tak jak <i>“7 Nawyków Skutecznego Działania”</i> Stephena R. Covey - czyli książka, którą całym zespołem polecamy ❤️"
+      "productsPage": {
+        "pageTitle": "Stwórzmy przejrzystą stronę",
+        "pageSubtitle": "Witaj raz jeszcze! W tym miejscu możesz wysłać formularz ...",
+        "intro": [
+          {
+            "title": "Wycena",
+            "subtitle": "Wypełnij formularz i sprawdź, ile Twój pomysł będzie kosztował.",
+            "imageAlt": "Obrazek"
           },
-          "panelImageAlt": "Obrazek"
-        },
-        "productsView": {
-          "titleView": "coś na czym się najlepiej znamy",
-          "showMore": "Pokaż więcej",
-          "imageAlt": "Obrazek",
-          "arrowAlt": "Strzałka",
-          "priceSubtitle": "Już od",
-          "products": [
+          {
+            "title": "Usługi",
+            "subtitle": "Wybierz gotową propozycję lub sam skomponuj co powinno być na Twojej stronie.",
+            "imageAlt": "Obrazek"
+          },
+          {
+            "title": "Doractwo",
+            "subtitle": "Po wysłaniu formularzu, będziemy się kontaktować i konsultować co warto dodać, zmienić czy może usunąć.",
+            "imageAlt": "Obrazek"
+          }
+        ],
+        "firstStep": {
+          "stepTitle": "Krok 1",
+          "panels": [
             {
-              "price": "$100",
-              "content": ["wizytówka", "prosta strona"]
+              "panelTitle": "Szybki wybór",
+              "panelSubtitle": "Automatycznie zaznaczy opcje w zależności od typu",
+              "options": [
+                {
+                  "type": "page-card",
+                  "title": "Wizytówka"
+                },
+                {
+                  "type": "website",
+                  "title": "Strona internetowa"
+                },
+                {
+                  "type": "webshop",
+                  "title": "Sklep internetowy"
+                },
+                {
+                  "type": "blog",
+                  "title": "Blog"
+                },
+                {
+                  "type": "mobile-app",
+                  "title": "Aplikacja iOS Android"
+                },
+                {
+                  "type": "web-portal",
+                  "title": "Portal internetowy"
+                },
+                {
+                  "type": "own",
+                  "title": "Własne"
+                }
+              ]
             },
             {
-              "price": "$500",
-              "content": ["forum", "sklep internetowy", "projekt biznesowy"]
+              "panelTitle": "Wszystkie usługi",
+              "panelSubtitle": "Zaznacz opcje, które mają pojawić się na stronie",
+              "options": [
+                { "id": "2", "titile": "newsletter" },
+                { "id": "3", "titile": "system logowania użytkowników" },
+                { "id": "4", "titile": "płatności online" },
+                {
+                  "id": "5",
+                  "titile": "input - specjalne funkcje na stronie - opis funkcji "
+                },
+                { "id": "6", "titile": "input - szacunkowa liczba podstron" },
+                { "id": "7", "titile": "indywidualny projekt strony" },
+                { "id": "8", "titile": "input - dodatkowe informacje" },
+                { "id": "9", "titile": "okno czatu (np. pomoc techniczna)" },
+                {
+                  "id": "10",
+                  "titile": "stworzenie lub podłączenie istniejącej bazy danych (np. baza produktów)"
+                },
+                { "id": "11", "titile": "certyfikat ssl" },
+                { "id": "12", "titile": "domena" },
+                { "id": "13", "titile": "hosting" },
+                {
+                  "id": "14",
+                  "titile": "abonament - opieka techniczna - serwis i wsparcie"
+                },
+                { "id": "15", "titile": "CMS lub headless CMS" },
+                { "id": "16", "titile": "pozycjonowanie" },
+                { "id": "17", "titile": "aktualizacja strony" },
+                { "id": "18", "titile": "wpis do wikipedii/wikidata" },
+                { "id": "19", "titile": "google maps" },
+                {
+                  "id": "20",
+                  "titile": "widget yz social mediów (np. posty z twittera)"
+                },
+                { "id": "21", "titile": "formularz kontaktowy" },
+                { "id": "22", "titile": "galeria" },
+                { "id": "23", "titile": "input - specjalne komonenty" },
+                {
+                  "id": "24",
+                  "titile": "opiniowanie w internecie - outsourcing"
+                },
+                {
+                  "id": "25",
+                  "titile": "copywriting (m.in. hasła reklamowe, teksty na strone, opisy produktów, teksty SEO, teksty na social media) - outsourcing"
+                },
+                {
+                  "id": "26",
+                  "titile": "stworzenie branding (m.in. logo, naming) - outsourcing"
+                },
+                {
+                  "id": "27",
+                  "titile": "obsługa graficzna (m.in. zdjęcia, wizualizacje 2D i 3D) - outsourcing"
+                },
+                {
+                  "id": "28",
+                  "titile": "ogarnianie social mediów - outsourcing"
+                },
+                { "id": "29", "titile": "pozycjonowanie - outsourcing" },
+                {
+                  "id": "30",
+                  "titile": "marketing (m.in.  content marketing, marketing rekomendacji, strategia marketingowa, google ads) - outsourcing"
+                },
+                { "id": "31", "titile": "kampania marketingowa - outsourcing" }
+              ]
             },
             {
-              "price": "$9 000",
-              "content": [
-                "aplikacja webowa",
-                "aplikacja mobilna na iOS i Android"
+              "panelTitle": "Usługi darmowe",
+              "panelSubtitle": "Są to opcje, które są gwarantowane - gratis :)",
+              "options": [
+                {
+                  "id": "01",
+                  "title": "Możliwość wnoszenia nielimitowanej liczby poprawek"
+                },
+                {
+                  "id": "02",
+                  "title": "Wsparcie od A do Z"
+                },
+                {
+                  "id": "03",
+                  "title": "Stosowanie się do zasad RODO"
+                },
+                {
+                  "id": "04",
+                  "title": "Czysty i przejrzysty kod źródłowy"
+                },
+                {
+                  "id": "05",
+                  "title": "RWD (dostosowanie się strony do rozmiarów ekranu)"
+                }
               ]
             }
           ]
         },
-        "footerView": {
-          "title": "Przyciągaj klientów prostotą!<br />Skontaktuj się z nami używając nawigacji na dole strony",
-          "titleMobile": "Przyciągaj klientów prostotą!<br />Skontaktuj się z nami używając nawigacji w prawym górnym rogu",
-          "bottomLineAlt": "Linia w tle"
+        "secondStep": {
+          "stepTitle": "Krok 2",
+          "panels": [
+            {
+              "panelTitle": "Dane kontaktowe",
+              "inputs": {
+                "name": "Imię",
+                "phone": "Numer telefonu"
+              }
+            },
+            {
+              "panelTitle": "Krótki opis Twojej działalności, abyśmy mogli zrozumieć jak ma działać strona",
+              "inputs": {
+                "msg": "Wiadomość"
+              },
+              "approvalMsg": "Wyrażam zgodę na przetwarzanie moich danych osobowych, zawartych w formularzu kontaktowym.",
+              "warning": "Wypełnij wymagane pola",
+              "sendButton": "Wyślij"
+            }
+          ]
+        },
+        "sendedPanel": {
+          "title": "Sukces!",
+          "subtitle": "Cieszymy się, że chcesz należać do grona przedsiębiorców, którzy mają przejrzysty dla klienta biznes.<br />Wkrótce odezwiemy się w wyznaczonym przez Ciebie terminie.",
+          "smallInfo": "Kopia formularza została również wysłana na podany email.",
+          "imageAlt": "Obrazek"
         }
       }
     }

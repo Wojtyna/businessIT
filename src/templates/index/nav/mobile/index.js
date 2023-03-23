@@ -19,9 +19,9 @@ import IconButton from '../../../../components/iconButton';
 import { CONSTANS, theme } from '../../../../assets/globalStyles';
 
 import ContentData from '../../../../assets/data.json';
-import TranslateImage from '../../../../assets/images/nav/translate.png';
+import TranslateImage from '../../../../assets/images/nav/translate.webp';
 import ArrowImage from '../../../../assets/images/icons/arrow.webp';
-import LogoImage from '../../../../assets/images/logo-huge.png';
+import LogoImage from '../../../../assets/images/logo-huge.webp';
 
 const LangWindow = ({
   backIconAlt,
@@ -120,9 +120,10 @@ export default function NavigationMobile({
     });
   };
 
-  const toggleNav = () => {
-    // setNavMobileVisible(!NavMobileVisible);
-    dispatch({ type: 'TOGGLE_BODY_SCROLL' });
+  const toggleNav = (toggleBodyScroll = true) => {
+    if (toggleBodyScroll) {
+      dispatch({ type: 'TOGGLE_BODY_SCROLL' });
+    }
     gsap.to('#nav-mobile', {
       duration: 0.2,
       transform: state.disabledBodyScrolling
@@ -168,7 +169,7 @@ export default function NavigationMobile({
         <Main id="nav-mobile-buttons-wrap">
           <Button
             onClick={() => {
-              toggleNav();
+              toggleNav(false);
               showProductsModal();
             }}
           >
@@ -176,7 +177,7 @@ export default function NavigationMobile({
           </Button>
           <Button
             onClick={() => {
-              toggleNav();
+              toggleNav(false);
               showFormModal();
             }}
           >

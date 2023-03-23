@@ -62,7 +62,7 @@ export default function StepsView({
   ];
 
   return (
-    <ViewWrap className="view-inline-space">
+    <ViewWrap className="view-inline-space index-view">
       <ViewTitle className="textBorder">{title}</ViewTitle>
 
       <PanelsWrap>

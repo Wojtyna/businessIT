@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 
 import State, { GlobalState } from '../assets/state/State';
 import GlobalStyle, { CONSTANS, theme } from '../assets/globalStyles';
-import IndexView from '../templates/index';
 import LoadingView from '../templates/loadingView';
 
 export const WrapperStyle = styled.div`
@@ -96,7 +95,6 @@ const Layout = ({ children }) => {
           {LoadingViewProps.localStroageLoaded && (
             <Wrapper>
               {LoadingViewProps.showLoadingView && <LoadingView />}
-              <IndexView />
               {children}
             </Wrapper>
           )}

@@ -2,13 +2,13 @@ import React from 'react';
 
 import { ViewWrap, Title, BottomBgLineWrap, BottomBgLine } from './style';
 
-import BottomLineBgImage from '../../../assets/images/bg-lines/bottom.png';
+import BottomLineBgImage from '../../../assets/images/bg-lines/bottom.webp';
 
 export default function FooterView({
   content: { title, bottomLineAlt, titleMobile },
 }) {
   return typeof window !== 'undefined' ? (
-    <ViewWrap className="view-inline-space">
+    <ViewWrap className="view-inline-space index-view">
       <BottomBgLineWrap>
         <BottomBgLine src={BottomLineBgImage} alt={bottomLineAlt} />
       </BottomBgLineWrap>

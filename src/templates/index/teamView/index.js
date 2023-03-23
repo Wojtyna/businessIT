@@ -11,13 +11,13 @@ import {
 } from './style';
 
 import TeamImage from '../../../assets/images/children.webp';
-import MidBgImage from '../../../assets/images/bg-lines/mid.png';
+import MidBgImage from '../../../assets/images/bg-lines/mid.webp';
 
 export default function TeamView({
   content: { smallText, bigText, teamText, teamImgAlt, midLineAlt },
 }) {
   return (
-    <ViewWrap className="view-inline-space">
+    <ViewWrap className="view-inline-space index-view">
       <MidBgLineWrap>
         <MidBgLine src={MidBgImage} alt={midLineAlt} />
       </MidBgLineWrap>

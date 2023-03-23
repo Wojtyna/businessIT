@@ -24,7 +24,7 @@ import { GlobalState } from '../../../assets/state/State';
 
 // import ChatImage from '../../../assets/images/nav/messages.webp';
 // import FormImage from '../../../assets/images/nav/sign-up.webp';
-import TranslateImage from '../../../assets/images/nav/translate.png';
+import TranslateImage from '../../../assets/images/nav/translate.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
