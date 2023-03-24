@@ -18,6 +18,7 @@ import Navigation from '../templates/index/nav';
 import NavigationMobile from '../templates/index/nav/mobile';
 
 import ContactPage from '../templates/contact';
+import ProductsPage from '../templates/products';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -92,6 +93,10 @@ export default function IndexPage() {
         <ContactPage
           visible={PagesVisible.contact}
           closePage={toggleContactPage}
+        />
+        <ProductsPage
+          visible={PagesVisible.products}
+          closePage={toggleProductsPage}
         />
         {WindowWidth > 767 ? (
           <Navigation

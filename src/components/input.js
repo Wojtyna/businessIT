@@ -6,16 +6,18 @@ import { CONSTANS, theme } from '../assets/globalStyles';
 const InputWrap = styled.div`
   position: relative;
   display: flex;
-  justify-content: center;
+  flex: 0;
 
   ${({ fullWidth }) =>
-    fullWidth
-      ? css`
-          flex: 1;
-        `
-      : css`
-          width: max-content;
-        `}
+    fullWidth &&
+    css`
+      flex: 1;
+
+      input,
+      textarea {
+        width: 100%;
+      }
+    `}
 
   input,
   input::placeholder,
@@ -38,7 +40,6 @@ const InputWrap = styled.div`
   textarea {
     min-width: ${CONSTANS.BUTTON_MIN_WIDTH}rem;
     min-height: ${CONSTANS.BUTTON_MIN_HEIGHT_MOBILE}rem;
-    width: 100%;
     padding: 1rem 2rem;
     border: ${({ warning }) =>
       warning
@@ -46,7 +47,8 @@ const InputWrap = styled.div`
         : `solid 0.1rem ${theme.colors.light3}`};
     border-radius: 0.5rem;
     transition: all 0.1s ease-out;
-    resize: vertical;
+    resize: ${({ disableResizeTextarea }) =>
+      disableResizeTextarea ? 'none' : 'vertical'};
 
     :focus {
       border: solid 0.1rem ${theme.colors.primary};
@@ -61,6 +63,12 @@ const InputWrap = styled.div`
     :focus::placeholder {
       opacity: 1;
     }
+
+    ${({ disableResizeTextarea }) =>
+      disableResizeTextarea &&
+      css`
+        height: 12rem;
+      `}
 
     @media ${theme.windowSize.big} {
       min-height: ${CONSTANS.BUTTON_MIN_HEIGHT}rem;
@@ -121,14 +129,16 @@ const Input = ({
   warning = false,
   type = 'text',
   minLength = 1,
-  specBg = theme.colors.bg,
+  maxLength = 9999999,
+  specBg = 'white',
   fullWidth = false,
+  disableResizeTextarea = false,
   style = {},
 }) => {
   const [InputValue, setInputValue] = useState('');
 
   const onInputChange = (e) => {
-    const newValue = e.target.value;
+    let newValue = e.target.value;
     setNewValue(newValue);
     setInputValue(newValue);
   };
@@ -138,6 +148,7 @@ const Input = ({
       warning={warning}
       fullWidth={fullWidth}
       specBg={specBg}
+      disableResizeTextarea={disableResizeTextarea}
       style={style}
     >
       {type === 'textarea' ? (
@@ -146,7 +157,6 @@ const Input = ({
           placeholder={placeholder}
           value={InputValue}
           onChange={onInputChange}
-          minLength={minLength}
           autoComplete="off"
         />
       ) : (
@@ -157,6 +167,7 @@ const Input = ({
           value={InputValue}
           onChange={onInputChange}
           minLength={minLength}
+          maxLength={maxLength}
           autoComplete="off"
         />
       )}

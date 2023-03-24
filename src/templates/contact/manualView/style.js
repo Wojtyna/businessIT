@@ -5,26 +5,41 @@ import BgImage from '../../../assets/images/pexels-hakeem-james-hausley.webp';
 
 // MAIN WRAP
 export const ViewWrap = styled.div`
+  z-index: 1;
   position: relative;
   margin-inline: ${theme.space.s}rem;
+  margin-bottom: ${theme.space.s}rem;
   padding: ${theme.space.l}rem;
   border-radius: ${theme.space.m}rem;
-  background-image: url(${BgImage});
-  background-color: transparent;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   color: white;
   font-weight: ${theme.font.weight.m};
   max-width: 35rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
+
+  ::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: url(${BgImage});
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.75;
+  }
 
   @media ${theme.windowSize.mid} {
     border-radius: ${theme.space.l}rem;
     padding: ${theme.space.xl}rem;
     margin-inline: 0;
+    margin-bottom: 0;
   }
 `;
 

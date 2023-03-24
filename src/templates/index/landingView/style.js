@@ -1,11 +1,9 @@
 import styled, { keyframes } from 'styled-components';
-import { theme } from '../../../assets/globalStyles';
-
-const LANDING_VIEW_MIN_HEIGHT = 55;
+import { CONSTANS, theme } from '../../../assets/globalStyles';
 
 // MAIN WRAP
 export const ViewWrap = styled.header`
-  min-height: max(${LANDING_VIEW_MIN_HEIGHT}rem, 100vh);
+  min-height: max(${CONSTANS.MIN_PAGE_HEIGHT}rem, 100vh);
   padding-block: 2rem;
   display: flex;
   justify-content: space-evenly;
@@ -95,7 +93,7 @@ export const BgWrap = styled.div`
   left: 0;
   top: 0;
   width: 100%;
-  height: max(${LANDING_VIEW_MIN_HEIGHT * 1.5}rem, 150vh);
+  height: max(${CONSTANS.MIN_PAGE_HEIGHT * 1.5}rem, 150vh);
 `;
 export const Bg = styled.img`
   height: 100%;

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import Helmet from 'react-helmet';
 
 import State, { GlobalState } from '../assets/state/State';
-import GlobalStyle, { CONSTANS, theme } from '../assets/globalStyles';
+import GlobalStyle, { CONSTANS } from '../assets/globalStyles';
 import LoadingView from '../templates/loadingView';
 
 export const WrapperStyle = styled.div`
@@ -13,19 +13,6 @@ export const WrapperStyle = styled.div`
   right: 0;
   bottom: 0;
   min-width: ${CONSTANS.MIN_PAGE_WIDTH}rem;
-  overflow-x: hidden;
-  overflow-y: auto;
-
-  ::-webkit-scrollbar {
-    width: ${CONSTANS.SCROLL_BAR_WIDTH}rem;
-  }
-  ::-webkit-scrollbar-track {
-    background-color: ${theme.colors.light1};
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: ${theme.colors.light2};
-    border-radius: ${CONSTANS.SCROLL_BAR_WIDTH}rem;
-  }
 
   ${({ disabledBodyScrolling }) =>
     disabledBodyScrolling &&
@@ -40,6 +27,7 @@ const Wrapper = ({ children }) => {
   return (
     <WrapperStyle
       id="wrapper"
+      className="scrollView"
       disabledBodyScrolling={state.disabledBodyScrolling}
     >
       {children}

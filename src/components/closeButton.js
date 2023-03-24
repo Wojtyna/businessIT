@@ -10,7 +10,10 @@ const ButtonWrap = styled.div`
   top: 0;
   width: ${CONSTANS.CLOSE_BUTTON_LENGTH}rem;
   height: ${CONSTANS.CLOSE_BUTTON_LENGTH}rem;
-  border-radius: 0 ${theme.space.l}rem 0 ${theme.space.l}rem;
+  border-radius: ${({ borderRadius }) =>
+    borderRadius
+      ? `0 ${theme.space.l}rem 0 ${theme.space.l}rem`
+      : `0 0 0 ${theme.space.l}rem`};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,8 +60,8 @@ const ButtonWrap = styled.div`
   }
 `;
 
-const CloseButton = ({ onClick, style = {} }) => (
-  <ButtonWrap style={style} onClick={onClick} />
+const CloseButton = ({ onClick, style = {}, borderRadius = false }) => (
+  <ButtonWrap style={style} onClick={onClick} borderRadius={borderRadius} />
 );
 
 export default CloseButton;

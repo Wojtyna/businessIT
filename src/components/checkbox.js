@@ -3,10 +3,11 @@ import styled, { css } from 'styled-components';
 
 import { CONSTANS, theme } from '../assets/globalStyles';
 
+const CHECKBOX_LENGTH = 1.8;
+const CHECKBOX_INSIDE_LENGTH = 0.6;
+
 const CheckboxWrap = styled.div`
-  width: max-content;
   display: flex;
-  align-items: center;
   min-height: ${CONSTANS.BUTTON_MIN_HEIGHT_MOBILE}rem;
   border-radius: ${theme.space.xs};
   cursor: pointer;
@@ -17,19 +18,23 @@ const CheckboxWrap = styled.div`
 `;
 
 const CheckView = styled.span`
+  display: inline-block;
   position: relative;
   content: '';
-  width: ${CONSTANS.ICON_LENGTH}rem;
-  height: ${CONSTANS.ICON_LENGTH}rem;
+  width: ${CHECKBOX_LENGTH}rem;
+  height: ${CHECKBOX_LENGTH}rem;
+  min-width: ${CHECKBOX_LENGTH}rem;
+  min-height: ${CHECKBOX_LENGTH}rem;
   border: solid 0.1rem ${theme.colors.dark2};
-  margin-right: 1.5rem;
-  transition: all 0.2s ease-out;
+  margin-right: ${theme.space.s}rem;
+  margin-top: 0.1rem;
+  transition: all 0.1s ease-out;
 
   ::before {
     position: absolute;
     content: '';
-    width: 33%;
-    height: 33%;
+    width: ${CHECKBOX_INSIDE_LENGTH}rem;
+    height: ${CHECKBOX_INSIDE_LENGTH}rem;
     background-color: ${theme.colors.primary};
     left: 50%;
     top: 50%;
@@ -50,11 +55,17 @@ const CheckView = styled.span`
   ${({ radio }) =>
     radio &&
     css`
-      border-radius: ${CONSTANS.ICON_LENGTH}rem;
+      border-radius: ${CHECKBOX_LENGTH}rem;
 
       ::before {
-        border-radius: ${CONSTANS.ICON_LENGTH}rem;
+        border-radius: ${CHECKBOX_LENGTH}rem;
       }
+    `}
+
+    ${({ warning }) =>
+    warning &&
+    css`
+      border: solid 0.1rem ${theme.colors.red};
     `}
 `;
 
@@ -64,6 +75,7 @@ const Checkbox = ({
   radioType = false,
   CurrentRadio = '',
   setCurrentRadio = (e) => {},
+  warning = false,
   style = {},
   titleStyle = {},
 }) => {
@@ -85,7 +97,11 @@ const Checkbox = ({
 
   return (
     <CheckboxWrap onClick={onItemClick} style={style}>
-      <CheckView active={IsActive} radio={radioType} />
+      <CheckView
+        active={IsActive}
+        radio={radioType}
+        warning={warning && !IsActive}
+      />
 
       <span style={titleStyle}>{title}</span>
     </CheckboxWrap>

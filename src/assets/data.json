@@ -122,9 +122,15 @@
       "contactPage": {
         "pageTitle": "Kontakt",
         "inputs": {
-          "name": "Imię",
-          "phone": "Numer telefonu",
-          "msg": "Wiadomość"
+          "name": {
+            "title": "Imię",
+            "placeholder": "John"
+          },
+          "phone": {
+            "title": "Numer telefonu",
+            "placeholder": "+48 123 456 789"
+          },
+          "msg": { "title": "Wiadomość", "placeholder": "Jest sprawa..." }
         },
         "approvalMsg": "Wyrażam zgodę na przetwarzanie moich danych osobowych, zawartych w formularzu kontaktowym.",
         "warning": "Wypełnij wymagane pola",
@@ -307,13 +313,12 @@
               "sendButton": "Wyślij"
             }
           ]
-        },
-        "sendedPanel": {
-          "title": "Sukces!",
-          "subtitle": "Cieszymy się, że chcesz należać do grona przedsiębiorców, którzy mają przejrzysty dla klienta biznes.<br />Wkrótce odezwiemy się w wyznaczonym przez Ciebie terminie.",
-          "smallInfo": "Kopia formularza została również wysłana na podany email.",
-          "imageAlt": "Obrazek"
         }
+      },
+      "sendedPanel": {
+        "title": "Sukces!",
+        "subtitle": "Cieszymy się, że chcesz należać do grona przedsiębiorców, którzy mają przejrzysty dla klienta biznes.<br />Wkrótce odezwiemy się w wyznaczonym przez Ciebie terminie.",
+        "imageAlt": "Obrazek"
       }
     }
   }

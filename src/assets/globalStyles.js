@@ -50,17 +50,19 @@ export const theme = {
 
 export const CONSTANS = {
   MIN_PAGE_WIDTH: 32,
+  MIN_PAGE_HEIGHT: 55,
   BUTTON_MIN_HEIGHT_MOBILE: 4.2,
   BUTTON_MIN_HEIGHT: 4.6,
-  BUTTON_MIN_WIDTH: 12,
+  BUTTON_MIN_WIDTH: 15,
   CLOSE_BUTTON_LENGTH: 5,
   ICON_LENGTH: 2.2,
   MAX_CONTENT_WIDTH: 140,
   SPACE_BETWEEN_SECTIONS: 18,
-  SCROLL_BAR_WIDTH: 1,
+  SCROLL_BAR_WIDTH: 0.8,
   IMAGE_LENGTH_XS: 4,
   IMAGE_LENGTH_S: 5.5,
   IMAGE_LENGTH_M: 8,
+  IMAGE_LENGTH_L: 15,
 };
 
 const GlobalStyle = createGlobalStyle`  
@@ -200,6 +202,22 @@ const GlobalStyle = createGlobalStyle`
         user-select: none;
         user-drag: none;
         -webkit-user-drag: none;
+    }
+
+    .scrollView{
+        overflow-y: auto;
+        overflow-x: hidden;
+                
+        ::-webkit-scrollbar {
+            width: ${CONSTANS.SCROLL_BAR_WIDTH}rem;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: ${theme.colors.light1};
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: ${theme.colors.light2};
+            border-radius: ${CONSTANS.SCROLL_BAR_WIDTH}rem;
+        }
     }
 `;
 
