@@ -4,12 +4,14 @@
     "twitter": { "alt": "Twitter", "url": "https://twitter.com/" },
     "youtube": { "alt": "Youtube", "url": "https://youtube.com/" }
   },
-  "products": [
-    {
-      "type": "page-card",
-      "productsId": ["2", "3"]
-    }
-  ],
+  "products": {
+    "page-card": ["2", "3"],
+    "website": ["7", "3", "12", "20"],
+    "webshop": ["10"],
+    "blog": ["17", "13", "12"],
+    "mobile-app": ["2", "3", "4", "5", "6"],
+    "web-portal": ["8", "9", "10", "16", "17", "19", "25"]
+  },
   "translations": {
     "pl": {
       "props": {
@@ -144,7 +146,6 @@
       },
       "productsPage": {
         "pageTitle": "Stwórzmy przejrzystą stronę",
-        "pageSubtitle": "Witaj raz jeszcze! W tym miejscu możesz wysłać formularz ...",
         "intro": [
           {
             "title": "Wycena",
@@ -203,66 +204,66 @@
               "panelTitle": "Wszystkie usługi",
               "panelSubtitle": "Zaznacz opcje, które mają pojawić się na stronie",
               "options": [
-                { "id": "2", "titile": "newsletter" },
-                { "id": "3", "titile": "system logowania użytkowników" },
-                { "id": "4", "titile": "płatności online" },
+                { "id": "2", "title": "newsletter" },
+                { "id": "3", "title": "system logowania użytkowników" },
+                { "id": "4", "title": "płatności online" },
                 {
                   "id": "5",
-                  "titile": "input - specjalne funkcje na stronie - opis funkcji "
+                  "title": "input - specjalne funkcje na stronie - opis funkcji "
                 },
-                { "id": "6", "titile": "input - szacunkowa liczba podstron" },
-                { "id": "7", "titile": "indywidualny projekt strony" },
-                { "id": "8", "titile": "input - dodatkowe informacje" },
-                { "id": "9", "titile": "okno czatu (np. pomoc techniczna)" },
+                { "id": "6", "title": "input - szacunkowa liczba podstron" },
+                { "id": "7", "title": "indywidualny projekt strony" },
+                { "id": "8", "title": "input - dodatkowe informacje" },
+                { "id": "9", "title": "okno czatu (np. pomoc techniczna)" },
                 {
                   "id": "10",
-                  "titile": "stworzenie lub podłączenie istniejącej bazy danych (np. baza produktów)"
+                  "title": "stworzenie lub podłączenie istniejącej bazy danych (np. baza produktów)"
                 },
-                { "id": "11", "titile": "certyfikat ssl" },
-                { "id": "12", "titile": "domena" },
-                { "id": "13", "titile": "hosting" },
+                { "id": "11", "title": "certyfikat ssl" },
+                { "id": "12", "title": "domena" },
+                { "id": "13", "title": "hosting" },
                 {
                   "id": "14",
-                  "titile": "abonament - opieka techniczna - serwis i wsparcie"
+                  "title": "abonament - opieka techniczna - serwis i wsparcie"
                 },
-                { "id": "15", "titile": "CMS lub headless CMS" },
-                { "id": "16", "titile": "pozycjonowanie" },
-                { "id": "17", "titile": "aktualizacja strony" },
-                { "id": "18", "titile": "wpis do wikipedii/wikidata" },
-                { "id": "19", "titile": "google maps" },
+                { "id": "15", "title": "CMS lub headless CMS" },
+                { "id": "16", "title": "pozycjonowanie" },
+                { "id": "17", "title": "aktualizacja strony" },
+                { "id": "18", "title": "wpis do wikipedii/wikidata" },
+                { "id": "19", "title": "google maps" },
                 {
                   "id": "20",
-                  "titile": "widget yz social mediów (np. posty z twittera)"
+                  "title": "widget yz social mediów (np. posty z twittera)"
                 },
-                { "id": "21", "titile": "formularz kontaktowy" },
-                { "id": "22", "titile": "galeria" },
-                { "id": "23", "titile": "input - specjalne komonenty" },
+                { "id": "21", "title": "formularz kontaktowy" },
+                { "id": "22", "title": "galeria" },
+                { "id": "23", "title": "input - specjalne komonenty" },
                 {
                   "id": "24",
-                  "titile": "opiniowanie w internecie - outsourcing"
+                  "title": "opiniowanie w internecie - outsourcing"
                 },
                 {
                   "id": "25",
-                  "titile": "copywriting (m.in. hasła reklamowe, teksty na strone, opisy produktów, teksty SEO, teksty na social media) - outsourcing"
+                  "title": "copywriting (m.in. hasła reklamowe, teksty na strone, opisy produktów, teksty SEO, teksty na social media) - outsourcing"
                 },
                 {
                   "id": "26",
-                  "titile": "stworzenie branding (m.in. logo, naming) - outsourcing"
+                  "title": "stworzenie branding (m.in. logo, naming) - outsourcing"
                 },
                 {
                   "id": "27",
-                  "titile": "obsługa graficzna (m.in. zdjęcia, wizualizacje 2D i 3D) - outsourcing"
+                  "title": "obsługa graficzna (m.in. zdjęcia, wizualizacje 2D i 3D) - outsourcing"
                 },
                 {
                   "id": "28",
-                  "titile": "ogarnianie social mediów - outsourcing"
+                  "title": "ogarnianie social mediów - outsourcing"
                 },
-                { "id": "29", "titile": "pozycjonowanie - outsourcing" },
+                { "id": "29", "title": "pozycjonowanie - outsourcing" },
                 {
                   "id": "30",
-                  "titile": "marketing (m.in.  content marketing, marketing rekomendacji, strategia marketingowa, google ads) - outsourcing"
+                  "title": "marketing (m.in.  content marketing, marketing rekomendacji, strategia marketingowa, google ads) - outsourcing"
                 },
-                { "id": "31", "titile": "kampania marketingowa - outsourcing" }
+                { "id": "31", "title": "kampania marketingowa - outsourcing" }
               ]
             },
             {
@@ -295,24 +296,9 @@
         },
         "secondStep": {
           "stepTitle": "Krok 2",
-          "panels": [
-            {
-              "panelTitle": "Dane kontaktowe",
-              "inputs": {
-                "name": "Imię",
-                "phone": "Numer telefonu"
-              }
-            },
-            {
-              "panelTitle": "Krótki opis Twojej działalności, abyśmy mogli zrozumieć jak ma działać strona",
-              "inputs": {
-                "msg": "Wiadomość"
-              },
-              "approvalMsg": "Wyrażam zgodę na przetwarzanie moich danych osobowych, zawartych w formularzu kontaktowym.",
-              "warning": "Wypełnij wymagane pola",
-              "sendButton": "Wyślij"
-            }
-          ]
+          "inputsTitle": "Dane kontaktowe",
+          "textAreaTitle": "Krótki opis działalności",
+          "textAreaPlaceholder": "Krótki opis Twojej działalności, abyśmy mogli zrozumieć jak ma działać strona"
         }
       },
       "sendedPanel": {

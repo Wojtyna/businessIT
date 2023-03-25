@@ -13,6 +13,7 @@ const ModalWrap = styled.aside`
   transform: translateX(100%);
   width: 100%;
   height: 100%;
+  min-width: ${CONSTANS.MIN_PAGE_WIDTH}rem;
   display: flex;
   align-items: center;
   justify-content: center;

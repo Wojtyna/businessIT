@@ -14,9 +14,14 @@ const SuccesWrap = styled.div`
   margin-top: ${theme.space.xl}rem;
   transform: translateY(-33%) scale(0.8);
   opacity: 0;
+  max-width: 30rem;
+  margin-inline: auto;
+  text-align: center;
 
   @media ${theme.windowSize.mid} {
     flex-direction: row;
+    text-align: left;
+    max-width: none;
   }
 `;
 

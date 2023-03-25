@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 
 import { theme } from '../../assets/globalStyles';
@@ -22,29 +22,13 @@ const ContactWrap = styled.div`
 
 export default function ContactPage({ visible, closePage }) {
   const { state } = useContext(GlobalState);
-  const defaultFormData = {
-    name: '',
-    phone: '',
-    msg: '',
-    approval: false,
-  };
-  const ContactFormData = useRef(defaultFormData);
-  const [InvalidForm, setInvalidForm] = useState({
-    phone: false,
-    approval: false,
-  });
   const [SendDataSuccess, setSendDataSuccess] = useState(false);
 
-  const tempClosePage = () => {
-    closePage();
+  const onModalClose = () => {
     if (SendDataSuccess) {
       setSendDataSuccess(false);
     }
-    ContactFormData.current = defaultFormData;
-  };
-
-  const setContactFormData = (type, value) => {
-    ContactFormData.current[type] = value;
+    closePage();
   };
 
   const sendFormData = () => {
@@ -52,31 +36,8 @@ export default function ContactPage({ visible, closePage }) {
     setSendDataSuccess(true);
   };
 
-  const onSubmit = () => {
-    if (!SendDataSuccess) {
-      if (ContactFormData.current.phone === '' && !InvalidForm.phone) {
-        setInvalidForm((prev) => ({ ...prev, phone: true }));
-      } else if (ContactFormData.current.phone !== '' && InvalidForm.phone) {
-        setInvalidForm((prev) => ({ ...prev, phone: false }));
-      }
-
-      if (!ContactFormData.current.approval && !InvalidForm.approval) {
-        setInvalidForm((prev) => ({ ...prev, approval: true }));
-      } else if (ContactFormData.current.approval && InvalidForm.approval) {
-        setInvalidForm((prev) => ({ ...prev, approval: false }));
-      }
-
-      if (
-        ContactFormData.current.phone !== '' &&
-        ContactFormData.current.approval
-      ) {
-        sendFormData();
-      }
-    }
-  };
-
   return (
-    <Modal closePage={tempClosePage} visible={visible}>
+    <Modal closePage={onModalClose} visible={visible}>
       <ContactWrap>
         <ManualView
           content={
@@ -84,11 +45,8 @@ export default function ContactPage({ visible, closePage }) {
           }
         />
         <ContactFormView
-          content={ContentData.translations[state.lang].contactPage}
-          setContactFormData={setContactFormData}
-          onSubmit={onSubmit}
-          isError={InvalidForm}
-          showSuccessInfo={SendDataSuccess}
+          SendDataSuccess={SendDataSuccess}
+          sendFormData={sendFormData}
         />
       </ContactWrap>
     </Modal>

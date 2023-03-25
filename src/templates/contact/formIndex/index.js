@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext, useRef, useState } from 'react';
 
 import {
   ButtonWrap,
   InputsWrap,
+  ProductTitle,
   ViewTitle,
   ViewWrap,
   WarningStyle,
@@ -12,18 +13,71 @@ import Checkbox from '../../../components/checkbox';
 import Button from '../../../components/button';
 import { theme } from '../../../assets/globalStyles';
 import SuccessInfo from '../../../components/successInfo';
+import { GlobalState } from '../../../assets/state/State';
+import ContentData from '../../../assets/data.json';
 
 export default function ContactFormView({
-  content: { pageTitle, inputs, approvalMsg, sendButton, warning },
-  setContactFormData,
-  isError,
-  onSubmit,
-  showSuccessInfo,
+  SendDataSuccess,
+  sendFormData,
+  productsView = {
+    inputsTitle: '',
+    textAreaTitle: '',
+    textAreaPlaceholder: '',
+  },
 }) {
+  const { state } = useContext(GlobalState);
+  const { pageTitle, inputs, approvalMsg, sendButton, warning } =
+    ContentData.translations[state.lang].contactPage;
+
+  const isProductView =
+    productsView.inputsTitle !== '' &&
+    productsView.textAreaTitle !== '' &&
+    productsView.textAreaPlaceholder !== '';
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 767;
-  const INPUT_CONFIG = {
+  const MARGIN_TOP_CONFIG = {
     marginTop: `${theme.space.m}rem`,
+  };
+  const WIDTH_CONFIG = {
     width: '100%',
+  };
+  const defaultFormData = {
+    name: '',
+    phone: '',
+    msg: '',
+    approval: false,
+  };
+
+  const ContactFormData = useRef(defaultFormData);
+  const [InvalidForm, setInvalidForm] = useState({
+    phone: false,
+    approval: false,
+  });
+
+  const setContactFormData = (type, value) => {
+    ContactFormData.current[type] = value;
+  };
+
+  const onSubmit = () => {
+    if (!SendDataSuccess) {
+      if (ContactFormData.current.phone === '' && !InvalidForm.phone) {
+        setInvalidForm((prev) => ({ ...prev, phone: true }));
+      } else if (ContactFormData.current.phone !== '' && InvalidForm.phone) {
+        setInvalidForm((prev) => ({ ...prev, phone: false }));
+      }
+
+      if (!ContactFormData.current.approval && !InvalidForm.approval) {
+        setInvalidForm((prev) => ({ ...prev, approval: true }));
+      } else if (ContactFormData.current.approval && InvalidForm.approval) {
+        setInvalidForm((prev) => ({ ...prev, approval: false }));
+      }
+
+      if (
+        ContactFormData.current.phone !== '' &&
+        ContactFormData.current.approval
+      ) {
+        sendFormData();
+      }
+    }
   };
 
   const setName = (_ev) => {
@@ -40,54 +94,70 @@ export default function ContactFormView({
   };
 
   return (
-    <ViewWrap>
-      <ViewTitle>{pageTitle}</ViewTitle>
+    <ViewWrap productsView={isProductView}>
+      {isProductView ? (
+        <ProductTitle>{productsView.inputsTitle}</ProductTitle>
+      ) : (
+        <ViewTitle>{pageTitle}</ViewTitle>
+      )}
       <InputsWrap>
         <Input
           placeholder={inputs.name.placeholder}
           title={inputs.name.title}
           setNewValue={setName}
-          fullWidth
-          style={{ ...INPUT_CONFIG, marginRight: `${theme.space.m}rem` }}
+          fullWidth={isMobile || !isProductView}
+          style={{
+            ...MARGIN_TOP_CONFIG,
+            ...WIDTH_CONFIG,
+            marginRight: `${theme.space.m}rem`,
+          }}
         />
         <Input
           placeholder={inputs.phone.placeholder}
           title={inputs.phone.title}
           type="tel"
           setNewValue={setPhone}
-          fullWidth
+          fullWidth={isMobile || !isProductView}
           maxLength={15}
-          warning={isError.phone}
-          style={INPUT_CONFIG}
+          warning={InvalidForm.phone}
+          style={{ ...MARGIN_TOP_CONFIG, ...WIDTH_CONFIG }}
         />
       </InputsWrap>
       <Input
         type="textarea"
-        placeholder={inputs.msg.placeholder}
-        title={inputs.msg.title}
+        placeholder={
+          isProductView
+            ? productsView.textAreaPlaceholder
+            : inputs.msg.placeholder
+        }
+        title={isProductView ? productsView.textAreaTitle : inputs.msg.title}
         setNewValue={setMsg}
         fullWidth
         disableResizeTextarea={!isMobile}
-        style={INPUT_CONFIG}
+        style={{ ...MARGIN_TOP_CONFIG, ...WIDTH_CONFIG }}
       />
       <Checkbox
         setNewValue={setApproval}
         title={approvalMsg}
-        warning={isError.approval}
-        style={INPUT_CONFIG}
+        warning={InvalidForm.approval}
+        style={MARGIN_TOP_CONFIG}
       />
-      <ButtonWrap>
-        {(isError.phone || isError.approval) && (
+      <ButtonWrap productsView={isProductView}>
+        {(InvalidForm.phone || InvalidForm.approval) && (
           <WarningStyle>{warning}</WarningStyle>
         )}
         <Button
           title={sendButton}
           onClick={onSubmit}
           filled
-          style={{ textTransform: 'uppercase', width: '100%' }}
+          style={
+            isProductView && !isMobile
+              ? { display: 'inline-flex' }
+              : { width: '100%' }
+          }
         />
       </ButtonWrap>
-      {showSuccessInfo && <SuccessInfo />}
+      {SendDataSuccess && <SuccessInfo />}
     </ViewWrap>
   );
 }

@@ -6,18 +6,20 @@ import { CONSTANS, theme } from '../assets/globalStyles';
 const InputWrap = styled.div`
   position: relative;
   display: flex;
-  flex: 0;
 
   ${({ fullWidth }) =>
-    fullWidth &&
-    css`
-      flex: 1;
+    fullWidth
+      ? css`
+          flex: 1;
 
-      input,
-      textarea {
-        width: 100%;
-      }
-    `}
+          input,
+          textarea {
+            width: 100%;
+          }
+        `
+      : css`
+          flex: 0;
+        `}
 
   input,
   input::placeholder,
@@ -38,7 +40,6 @@ const InputWrap = styled.div`
 
   input,
   textarea {
-    min-width: ${CONSTANS.BUTTON_MIN_WIDTH}rem;
     min-height: ${CONSTANS.BUTTON_MIN_HEIGHT_MOBILE}rem;
     padding: 1rem 2rem;
     border: ${({ warning }) =>

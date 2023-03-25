@@ -5,24 +5,21 @@ import { CONSTANS, theme } from '../assets/globalStyles';
 
 const ButtonWrap = styled.div`
   flex: 1;
-  width: max-content;
-  min-width: ${CONSTANS.BUTTON_MIN_WIDTH}rem;
   min-height: ${CONSTANS.BUTTON_MIN_HEIGHT_MOBILE}rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.4rem;
   border-radius: ${theme.space.xs}rem;
+  transition: border-color 0.2s ease-in-out;
 
   :hover {
-    opacity: 0.8;
     cursor: pointer;
   }
 
   :active,
   :target,
   :focus {
-    opacity: 0.33;
   }
 
   -webkit-user-select: none;
@@ -40,17 +37,24 @@ const ButtonWrap = styled.div`
           border: solid 0.1rem ${theme.colors.primary};
           font-weight: ${theme.font.weight.l};
           color: white;
+          text-transform: uppercase;
         `
       : active
       ? css`
-          border: solid 0.1rem ${theme.colors.primary};
-          font-weight: ${theme.font.weight.l};
-          color: ${theme.colors.primary};
+          border: solid 0.3rem ${theme.colors.primary};
+          color: black;
         `
       : css`
           border: solid 0.1rem ${theme.colors.light3};
+          padding: 1rem 1.6rem;
+          @media ${theme.windowSize.mid} {
+            padding: 1.2rem 2.2rem;
+          }
         `}
 
+  @media ${theme.windowSize.mid} {
+    padding: 1rem 2rem;
+  }
   @media ${theme.windowSize.big} {
     min-height: ${CONSTANS.BUTTON_MIN_HEIGHT}rem;
   }

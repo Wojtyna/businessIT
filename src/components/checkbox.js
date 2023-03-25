@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 
 import { CONSTANS, theme } from '../assets/globalStyles';
@@ -11,6 +11,16 @@ const CheckboxWrap = styled.div`
   min-height: ${CONSTANS.BUTTON_MIN_HEIGHT_MOBILE}rem;
   border-radius: ${theme.space.xs};
   cursor: pointer;
+  align-items: center;
+  align-self: flex-start;
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  user-drag: none;
+  -webkit-user-drag: none;
 
   @media ${theme.windowSize.big} {
     min-height: ${CONSTANS.BUTTON_MIN_HEIGHT}rem;
@@ -73,8 +83,7 @@ const Checkbox = ({
   title,
   setNewValue,
   radioType = false,
-  CurrentRadio = '',
-  setCurrentRadio = (e) => {},
+  CurrentRadio = false,
   warning = false,
   style = {},
   titleStyle = {},
@@ -82,23 +91,18 @@ const Checkbox = ({
   const [IsActive, setIsActive] = useState(false);
 
   const onItemClick = () => {
-    setNewValue(!IsActive);
-    setIsActive(!IsActive);
-    if (radioType) {
-      setCurrentRadio(title);
+    if (!radioType) {
+      setIsActive(!IsActive);
+    }
+    if (!CurrentRadio) {
+      setNewValue(!IsActive);
     }
   };
-
-  useEffect(() => {
-    if (radioType && CurrentRadio !== title && IsActive) {
-      setIsActive(false);
-    }
-  }, [CurrentRadio]);
 
   return (
     <CheckboxWrap onClick={onItemClick} style={style}>
       <CheckView
-        active={IsActive}
+        active={radioType ? CurrentRadio : IsActive}
         radio={radioType}
         warning={warning && !IsActive}
       />
