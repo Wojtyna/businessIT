@@ -13,6 +13,8 @@ const ButtonWrap = styled.div`
   border-radius: ${theme.space.xs}rem;
   transition: border-color 0.2s ease-in-out;
 
+  /* width: 12rem; */
+
   :hover {
     cursor: pointer;
   }
@@ -47,6 +49,7 @@ const ButtonWrap = styled.div`
       : css`
           border: solid 0.1rem ${theme.colors.light3};
           padding: 1rem 1.6rem;
+
           @media ${theme.windowSize.mid} {
             padding: 1.2rem 2.2rem;
           }

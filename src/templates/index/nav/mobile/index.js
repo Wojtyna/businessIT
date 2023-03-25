@@ -125,7 +125,7 @@ export default function NavigationMobile({
       dispatch({ type: 'TOGGLE_BODY_SCROLL' });
     }
     gsap.to('#nav-mobile', {
-      duration: 0.2,
+      duration: 0.3,
       transform: state.disabledBodyScrolling
         ? `translateX(-100%)`
         : 'translateX(0)',

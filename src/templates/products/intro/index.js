@@ -15,6 +15,7 @@ const ViewWrap = styled.div`
   margin-top: ${theme.space.xxl}rem;
 
   @media ${theme.windowSize.mid} {
+    margin-top: ${theme.space.xxl * 2}rem;
     flex-direction: row;
   }
 `;
@@ -38,7 +39,6 @@ const ItemImage = styled.img`
 `;
 
 const ItemTitle = styled.h2`
-  font-weight: ${theme.font.weight.m};
   padding-block: ${theme.space.m}rem ${theme.space.xs}rem;
   text-transform: uppercase;
 `;

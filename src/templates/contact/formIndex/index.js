@@ -133,7 +133,7 @@ export default function ContactFormView({
         title={isProductView ? productsView.textAreaTitle : inputs.msg.title}
         setNewValue={setMsg}
         fullWidth
-        disableResizeTextarea={!isMobile}
+        disableResizeTextarea={!isProductView && !isMobile}
         style={{ ...MARGIN_TOP_CONFIG, ...WIDTH_CONFIG }}
       />
       <Checkbox

@@ -26,7 +26,7 @@ const RadioOptions = ({ options, setProductsOptions, CurrentRadioType }) => (
         radioType
         style={{
           display: 'inline-flex',
-          paddingInline: `${theme.space.m}rem`,
+          padding: `${theme.space.xs}rem ${theme.space.s}rem`,
         }}
       />
     ))}
@@ -45,6 +45,7 @@ const ButtonOptions = ({ options, toggleProduct, ProductsData }) => (
         style={{
           display: 'inline-flex',
           margin: `${theme.space.xs}rem`,
+          flex: '0',
         }}
       />
     ))}

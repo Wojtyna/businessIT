@@ -8,7 +8,6 @@ const CHECKBOX_INSIDE_LENGTH = 0.6;
 
 const CheckboxWrap = styled.div`
   display: flex;
-  min-height: ${CONSTANS.BUTTON_MIN_HEIGHT_MOBILE}rem;
   border-radius: ${theme.space.xs};
   cursor: pointer;
   align-items: center;
@@ -21,10 +20,6 @@ const CheckboxWrap = styled.div`
   user-select: none;
   user-drag: none;
   -webkit-user-drag: none;
-
-  @media ${theme.windowSize.big} {
-    min-height: ${CONSTANS.BUTTON_MIN_HEIGHT}rem;
-  }
 `;
 
 const CheckView = styled.span`
@@ -39,6 +34,7 @@ const CheckView = styled.span`
   margin-right: ${theme.space.s}rem;
   margin-top: 0.1rem;
   transition: all 0.1s ease-out;
+  align-self: flex-start;
 
   ::before {
     position: absolute;

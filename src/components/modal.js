@@ -56,7 +56,6 @@ const ChildrenWrap = styled.div`
 
 const StyledChildren = styled.div`
   background-color: white;
-  /* box-shadow: 0 0 8rem -8rem black; */
   border-radius: ${theme.space.l}rem;
   min-height: 100%;
   overflow: hidden;
@@ -84,7 +83,7 @@ export default function Modal({ children, closePage, visible }) {
           : 'translateX(100%)'
         : 'none',
       opacity: !IS_MOBILE ? (ModalIsVisible.current ? '1' : '0') : '1',
-      duration: 0.2,
+      duration: 0.3,
       onComplete: onComplete,
     });
   };
