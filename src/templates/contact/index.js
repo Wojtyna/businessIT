@@ -31,7 +31,7 @@ export default function ContactPage({ visible, closePage }) {
     closePage();
   };
 
-  const sendFormData = () => {
+  const sendFormData = (formData) => {
     // TODO
     setSendDataSuccess(true);
   };

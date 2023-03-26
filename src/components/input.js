@@ -84,8 +84,16 @@ const InputWrap = styled.div`
     transition: all 0.1s ease-out;
     color: ${theme.colors.mid};
 
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    user-drag: none;
+    -webkit-user-drag: none;
+
     @media ${theme.windowSize.big} {
-      top: ${CONSTANS.BUTTON_MIN_HEIGHT / 2}rem;
+      top: ${(CONSTANS.BUTTON_MIN_HEIGHT - 0.1) / 2}rem;
     }
   }
 

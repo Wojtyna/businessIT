@@ -21,18 +21,15 @@ export default function ContactFormView({
   sendFormData,
   productsView = {
     inputsTitle: '',
-    textAreaTitle: '',
-    textAreaPlaceholder: '',
+    msg: {},
+    additionalOptions: {},
   },
 }) {
   const { state } = useContext(GlobalState);
   const { pageTitle, inputs, approvalMsg, sendButton, warning } =
     ContentData.translations[state.lang].contactPage;
 
-  const isProductView =
-    productsView.inputsTitle !== '' &&
-    productsView.textAreaTitle !== '' &&
-    productsView.textAreaPlaceholder !== '';
+  const isProductView = productsView.inputsTitle !== '';
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 767;
   const MARGIN_TOP_CONFIG = {
     marginTop: `${theme.space.m}rem`,
@@ -40,12 +37,15 @@ export default function ContactFormView({
   const WIDTH_CONFIG = {
     width: '100%',
   };
-  const defaultFormData = {
+  let defaultFormData = {
     name: '',
     phone: '',
     msg: '',
     approval: false,
   };
+  if (isProductView) {
+    defaultFormData['additionalMsg'] = '';
+  }
 
   const ContactFormData = useRef(defaultFormData);
   const [InvalidForm, setInvalidForm] = useState({
@@ -75,7 +75,7 @@ export default function ContactFormView({
         ContactFormData.current.phone !== '' &&
         ContactFormData.current.approval
       ) {
-        sendFormData();
+        sendFormData(ContactFormData.current);
       }
     }
   };
@@ -88,6 +88,9 @@ export default function ContactFormView({
   };
   const setMsg = (_ev) => {
     setContactFormData('msg', _ev);
+  };
+  const setAdditionalMsg = (_ev) => {
+    setContactFormData('additionalMsg', _ev);
   };
   const setApproval = (_ev) => {
     setContactFormData('approval', _ev);
@@ -126,38 +129,50 @@ export default function ContactFormView({
       <Input
         type="textarea"
         placeholder={
-          isProductView
-            ? productsView.textAreaPlaceholder
-            : inputs.msg.placeholder
+          isProductView ? productsView.msg.placeholder : inputs.msg.placeholder
         }
-        title={isProductView ? productsView.textAreaTitle : inputs.msg.title}
+        title={isProductView ? productsView.msg.title : inputs.msg.title}
         setNewValue={setMsg}
         fullWidth
         disableResizeTextarea={!isProductView && !isMobile}
         style={{ ...MARGIN_TOP_CONFIG, ...WIDTH_CONFIG }}
       />
+      {isProductView && (
+        <Input
+          type="textarea"
+          placeholder={productsView.additionalOptions.placeholder}
+          title={productsView.additionalOptions.title}
+          setNewValue={setAdditionalMsg}
+          fullWidth
+          disableResizeTextarea={!isProductView && !isMobile}
+          style={{ ...MARGIN_TOP_CONFIG, ...WIDTH_CONFIG }}
+        />
+      )}
       <Checkbox
         setNewValue={setApproval}
         title={approvalMsg}
         warning={InvalidForm.approval}
         style={MARGIN_TOP_CONFIG}
       />
-      <ButtonWrap productsView={isProductView}>
-        {(InvalidForm.phone || InvalidForm.approval) && (
-          <WarningStyle>{warning}</WarningStyle>
-        )}
-        <Button
-          title={sendButton}
-          onClick={onSubmit}
-          filled
-          style={
-            isProductView && !isMobile
-              ? { display: 'inline-flex' }
-              : { width: '100%' }
-          }
-        />
-      </ButtonWrap>
-      {SendDataSuccess && <SuccessInfo />}
+      {SendDataSuccess ? (
+        <SuccessInfo />
+      ) : (
+        <ButtonWrap productsView={isProductView}>
+          {(InvalidForm.phone || InvalidForm.approval) && (
+            <WarningStyle>{warning}</WarningStyle>
+          )}
+          <Button
+            title={sendButton}
+            onClick={onSubmit}
+            filled
+            style={
+              isProductView && !isMobile
+                ? { display: 'inline-flex' }
+                : { width: '100%' }
+            }
+          />
+        </ButtonWrap>
+      )}
     </ViewWrap>
   );
 }

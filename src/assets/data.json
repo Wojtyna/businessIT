@@ -297,13 +297,19 @@
         "secondStep": {
           "stepTitle": "Krok 2",
           "inputsTitle": "Dane kontaktowe",
-          "textAreaTitle": "Krótki opis działalności",
-          "textAreaPlaceholder": "Krótki opis Twojej działalności, abyśmy mogli zrozumieć jak ma działać strona"
+          "msg": {
+            "title": "Krótki opis działalności",
+            "placeholder": "Krótki opis Twojej działalności, abyśmy mogli zrozumieć jak ma działać strona"
+          },
+          "additionalOptions": {
+            "title": "Dodatkowe opcje",
+            "placeholder": "Aa..."
+          }
         }
       },
       "sendedPanel": {
         "title": "Sukces!",
-        "subtitle": "Cieszymy się, że chcesz należać do grona przedsiębiorców, którzy mają przejrzysty dla klienta biznes.<br />Wkrótce odezwiemy się w wyznaczonym przez Ciebie terminie.",
+        "subtitle": "Cieszymy się, że chcesz należeć do grona przedsiębiorców, którzy mają przejrzysty dla klienta biznes.<br />Wkrótce będziemy dzwonić na wskazany w formularzu numer telefonu.",
         "imageAlt": "Obrazek"
       }
     }

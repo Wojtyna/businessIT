@@ -4,7 +4,6 @@ import styled, { css } from 'styled-components';
 import { CONSTANS, theme } from '../assets/globalStyles';
 
 const ButtonWrap = styled.div`
-  flex: 1;
   min-height: ${CONSTANS.BUTTON_MIN_HEIGHT_MOBILE}rem;
   display: flex;
   justify-content: center;
@@ -12,8 +11,6 @@ const ButtonWrap = styled.div`
   padding: 0.8rem 1.4rem;
   border-radius: ${theme.space.xs}rem;
   transition: border-color 0.2s ease-in-out;
-
-  /* width: 12rem; */
 
   :hover {
     cursor: pointer;
@@ -45,19 +42,20 @@ const ButtonWrap = styled.div`
       ? css`
           border: solid 0.3rem ${theme.colors.primary};
           color: black;
+          padding: 0.6rem 1.4rem;
+
+          @media ${theme.windowSize.mid} {
+            padding: 0.8rem 1.8rem;
+          }
         `
       : css`
           border: solid 0.1rem ${theme.colors.light3};
-          padding: 1rem 1.6rem;
 
           @media ${theme.windowSize.mid} {
-            padding: 1.2rem 2.2rem;
+            padding: 1rem 2rem;
           }
         `}
 
-  @media ${theme.windowSize.mid} {
-    padding: 1rem 2rem;
-  }
   @media ${theme.windowSize.big} {
     min-height: ${CONSTANS.BUTTON_MIN_HEIGHT}rem;
   }

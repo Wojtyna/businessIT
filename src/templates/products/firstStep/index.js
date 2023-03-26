@@ -42,11 +42,6 @@ const ButtonOptions = ({ options, toggleProduct, ProductsData }) => (
         }}
         title={title}
         active={ProductsData.find((_ev) => _ev.id === id)}
-        style={{
-          display: 'inline-flex',
-          margin: `${theme.space.xs}rem`,
-          flex: '0',
-        }}
       />
     ))}
   </ButtonOptionsWrap>

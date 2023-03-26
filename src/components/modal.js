@@ -55,6 +55,7 @@ const ChildrenWrap = styled.div`
 `;
 
 const StyledChildren = styled.div`
+  position: relative;
   background-color: white;
   border-radius: ${theme.space.l}rem;
   min-height: 100%;

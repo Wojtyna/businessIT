@@ -19,17 +19,13 @@ export const PanelSubtitle = styled.span`
 
 // OPTIONS
 export const RadioOptionsWrap = styled.div`
-  margin-inline: -${theme.space.m}rem;
+  margin-inline: -${theme.space.s}rem;
   margin-top: ${theme.space.xs}rem;
 `;
 export const ButtonOptionsWrap = styled.div`
-  /* width: 120rem; */
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: ${theme.space.xs}rem;
   padding-block: ${theme.space.xs}rem;
-  margin-inline: -${theme.space.xs}rem;
-  /* display: grid; */
-  /* grid-gap: ${theme.space.xs}rem; */
-  /* grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); */
-  /* grid-auto-columns: auto; */
-  /* grid-auto-rows: auto; */
-  /* grid-auto-flow: dense; */
 `;

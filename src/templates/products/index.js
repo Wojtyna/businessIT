@@ -84,8 +84,9 @@ export default function ProductsPage({ visible, closePage }) {
     }
   };
 
-  const sendFormData = () => {
+  const sendFormData = (formData) => {
     // TODO
+    // console.log({ ...formData, options: ProductsData });
     setSendDataSuccess(true);
   };
 
