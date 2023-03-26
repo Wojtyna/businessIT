@@ -13,7 +13,7 @@ export const theme = {
     bg: '#F5FAFF',
     bgDarker: '#EBF0F5',
     transparentLight: '#ffffff33',
-    transparentDark: '#00000033',
+    transparentDark: '#00000008',
     hoverBg: '#00000007',
   },
   font: {

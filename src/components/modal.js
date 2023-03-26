@@ -26,6 +26,7 @@ const ModalWrap = styled.aside`
     align-items: center;
     backdrop-filter: blur(1.4rem);
     -webkit-backdrop-filter: blur(1.4rem);
+    background-color: ${theme.colors.transparentDark};
   }
 `;
 

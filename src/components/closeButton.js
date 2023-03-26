@@ -20,16 +20,6 @@ const ButtonWrap = styled.div`
   background-color: ${theme.colors.primary};
   cursor: pointer;
 
-  :hover {
-    opacity: 0.8;
-  }
-
-  :active,
-  :target,
-  :focus {
-    opacity: 0.33;
-  }
-
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
