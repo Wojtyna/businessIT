@@ -13,6 +13,7 @@ export const WrapperStyle = styled.div`
   right: 0;
   bottom: 0;
   min-width: ${CONSTANS.MIN_PAGE_WIDTH}rem;
+  min-height: 100%;
 
   ${({ disabledBodyScrolling }) =>
     disabledBodyScrolling &&
@@ -46,19 +47,26 @@ const Layout = ({ children }) => {
       typeof window !== 'undefined' &&
       localStorage.getItem('@LOADING_PAGE_TIMESTAMP');
 
-    const tempLocalDate = new Date(tempShowLoadingView);
-    const tempCurrentDate = new Date();
-    if (
-      !(
-        tempLocalDate.getFullYear() === tempCurrentDate.getFullYear() &&
-        tempLocalDate.getMonth() === tempCurrentDate.getMonth() &&
-        tempLocalDate.getDate() === tempCurrentDate.getDate()
-      )
-    ) {
-      setLoadingViewProps({
-        localStroageLoaded: true,
-        showLoadingView: true,
-      });
+    if (tempShowLoadingView) {
+      const tempLocalDate = new Date(tempShowLoadingView);
+      const tempCurrentDate = new Date();
+      if (
+        !(
+          tempLocalDate.getFullYear() === tempCurrentDate.getFullYear() &&
+          tempLocalDate.getMonth() === tempCurrentDate.getMonth() &&
+          tempLocalDate.getDate() === tempCurrentDate.getDate()
+        )
+      ) {
+        setLoadingViewProps({
+          localStroageLoaded: true,
+          showLoadingView: true,
+        });
+      } else {
+        setLoadingViewProps({
+          localStroageLoaded: true,
+          showLoadingView: false,
+        });
+      }
     } else {
       setLoadingViewProps({
         localStroageLoaded: true,

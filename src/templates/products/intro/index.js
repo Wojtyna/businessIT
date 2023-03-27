@@ -55,7 +55,7 @@ const ItemTitle = styled.h2`
 
 const ItemSubtitle = styled.span`
   display: inline-block;
-  max-width: 25rem;
+  max-width: 26rem;
 `;
 
 export default function IntroView({

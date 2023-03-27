@@ -38,5 +38,5 @@ export const InputOptionWrap = styled.div`
 // BUTTONS
 export const NextButton = {
   alignSelf: 'center',
-  marginTop: `${theme.space.xxl}rem`,
+  marginTop: `${theme.space.xl}rem`,
 };
