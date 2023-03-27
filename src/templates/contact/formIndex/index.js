@@ -22,7 +22,6 @@ export default function ContactFormView({
   productsView = {
     inputsTitle: '',
     msg: {},
-    additionalOptions: {},
   },
 }) {
   const { state } = useContext(GlobalState);
@@ -43,9 +42,6 @@ export default function ContactFormView({
     msg: '',
     approval: false,
   };
-  if (isProductView) {
-    defaultFormData['additionalMsg'] = '';
-  }
 
   const ContactFormData = useRef(defaultFormData);
   const [InvalidForm, setInvalidForm] = useState({
@@ -88,9 +84,6 @@ export default function ContactFormView({
   };
   const setMsg = (_ev) => {
     setContactFormData('msg', _ev);
-  };
-  const setAdditionalMsg = (_ev) => {
-    setContactFormData('additionalMsg', _ev);
   };
   const setApproval = (_ev) => {
     setContactFormData('approval', _ev);
@@ -137,17 +130,6 @@ export default function ContactFormView({
         disableResizeTextarea={!isProductView && !isMobile}
         style={{ ...MARGIN_TOP_CONFIG, ...WIDTH_CONFIG }}
       />
-      {isProductView && (
-        <Input
-          type="textarea"
-          placeholder={productsView.additionalOptions.placeholder}
-          title={productsView.additionalOptions.title}
-          setNewValue={setAdditionalMsg}
-          fullWidth
-          disableResizeTextarea={!isProductView && !isMobile}
-          style={{ ...MARGIN_TOP_CONFIG, ...WIDTH_CONFIG }}
-        />
-      )}
       <Checkbox
         setNewValue={setApproval}
         title={approvalMsg}
@@ -167,7 +149,7 @@ export default function ContactFormView({
             filled
             style={
               isProductView && !isMobile
-                ? { display: 'inline-flex' }
+                ? { display: 'inline-flex', alignSelf: 'center' }
                 : { width: '100%' }
             }
           />

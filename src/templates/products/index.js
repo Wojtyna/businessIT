@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import { GlobalState } from '../../assets/state/State';
 import { ProductsWrap } from './style';
@@ -11,64 +11,30 @@ import SecondStepView from './secondStep';
 
 export default function ProductsPage({ visible, closePage }) {
   const { state } = useContext(GlobalState);
-  const [CurrentRadioType, setCurrentRadioType] = useState('');
-  const [ProductsData, setProductsData] = useState([]);
-  const [SendDataSuccess, setSendDataSuccess] = useState(false);
+  const ProductsFormData = useRef({
+    products: [],
+    additionalMsg: '',
+  });
+  const [StateData, setStateData] = useState({
+    SendDataSuccess: false,
+    CurrentStep: 0,
+  });
+  const { SendDataSuccess, CurrentStep } = StateData;
 
-  const toggleProduct = (id) => {
-    const newProductsData = ProductsData.slice();
-    const itemIndex = newProductsData.findIndex((_ev) => _ev.id === id);
-
-    if (itemIndex >= 0) {
-      newProductsData.splice(itemIndex, 1);
-    } else {
-      if (id[0] === '0') {
-        newProductsData.push(
-          ContentData.translations[
-            state.lang
-          ].productsPage.firstStep.panels[2].options.find(
-            (_ev) => _ev.id === id
-          )
-        );
-      } else {
-        newProductsData.push(
-          ContentData.translations[
-            state.lang
-          ].productsPage.firstStep.panels[1].options.find(
-            (_ev) => _ev.id === id
-          )
-        );
-      }
-    }
-
-    if (CurrentRadioType !== 'own') {
-      setCurrentRadioType('own');
-    }
-    setProductsData(newProductsData);
+  const setSendDataSuccess = (_ev) => {
+    setStateData((prev) => ({ ...prev, SendDataSuccess: _ev }));
   };
 
-  const setProductsOptions = (type) => {
-    if (type !== 'own') {
-      const newProductsData = [];
+  const setCurrentStep = (_ev) => {
+    setStateData((prev) => ({ ...prev, CurrentStep: _ev }));
+  };
 
-      ContentData.products[type].forEach((_id) => {
-        newProductsData.push(
-          ContentData.translations[
-            state.lang
-          ].productsPage.firstStep.panels[1].options.find(
-            (_ev) => _ev.id === _id
-          )
-        );
-      });
+  const setPrevStep = () => {
+    setCurrentStep(CurrentStep - 1);
+  };
 
-      newProductsData.push(
-        ...ContentData.translations[state.lang].productsPage.firstStep.panels[2]
-          .options
-      );
-
-      setProductsData(newProductsData);
-    }
-    setCurrentRadioType(type);
+  const setProductsData = (_ev) => {
+    ProductsFormData.current.products = _ev;
   };
 
   const onModalClose = () => {
@@ -76,40 +42,58 @@ export default function ProductsPage({ visible, closePage }) {
     if (SendDataSuccess) {
       setSendDataSuccess(false);
     }
-    if (CurrentRadioType !== '') {
-      setCurrentRadioType('');
-    }
-    if (ProductsData.length > 0) {
-      setProductsData([]);
+    if (CurrentStep !== 0) {
+      setCurrentStep(0);
     }
   };
 
-  const sendFormData = (formData) => {
+  const sendFormData = (contactFormData) => {
     // TODO
-    // console.log({ ...formData, options: ProductsData });
+    // console.log({ ...contactFormData, options: ProductsFormData.current });
     setSendDataSuccess(true);
   };
 
+  useEffect(() => {
+    if (visible) {
+      const scrollView = document.getElementById('MODAL_SCROLL_VIEW');
+      scrollView.scrollTo(0, 0);
+    }
+  }, [StateData.CurrentStep]);
+
   return (
-    <Modal closePage={onModalClose} visible={visible}>
+    <Modal
+      closePage={onModalClose}
+      visible={visible}
+      backIcon={{
+        onClick: setPrevStep,
+        visible: !SendDataSuccess && CurrentStep > 0,
+      }}
+    >
       <ProductsWrap>
         <HeaderView
           content={ContentData.translations[state.lang].productsPage}
         />
         <IntroView
           content={ContentData.translations[state.lang].productsPage.intro}
+          setCurrentStep={setCurrentStep}
+          CurrentStep={CurrentStep}
         />
         <FirstStepView
           content={ContentData.translations[state.lang].productsPage.firstStep}
-          toggleProduct={toggleProduct}
-          ProductsData={ProductsData}
-          setProductsOptions={setProductsOptions}
-          CurrentRadioType={CurrentRadioType}
+          setProducts={setProductsData}
+          setCurrentStep={setCurrentStep}
+          CurrentStep={CurrentStep}
+          nextStep={
+            ContentData.translations[state.lang].productsPage.secondStep
+              .stepTitle
+          }
+          ProductsFormData={ProductsFormData}
         />
         <SecondStepView
           content={ContentData.translations[state.lang].productsPage.secondStep}
           SendDataSuccess={SendDataSuccess}
           sendFormData={sendFormData}
+          CurrentStep={CurrentStep}
         />
       </ProductsWrap>
     </Modal>

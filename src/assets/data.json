@@ -146,23 +146,26 @@
       },
       "productsPage": {
         "pageTitle": "Stwórzmy przejrzystą stronę",
-        "intro": [
-          {
-            "title": "Wycena",
-            "subtitle": "Wypełnij formularz i sprawdź, ile Twój pomysł będzie kosztował.",
-            "imageAlt": "Obrazek"
-          },
-          {
-            "title": "Usługi",
-            "subtitle": "Wybierz gotową propozycję lub sam skomponuj co powinno być na Twojej stronie.",
-            "imageAlt": "Obrazek"
-          },
-          {
-            "title": "Doractwo",
-            "subtitle": "Po wysłaniu formularzu, będziemy się kontaktować i konsultować co warto dodać, zmienić czy może usunąć.",
-            "imageAlt": "Obrazek"
-          }
-        ],
+        "intro": {
+          "content": [
+            {
+              "title": "Wycena",
+              "subtitle": "W dwóch krokach wypełnij formularz i sprawdź, ile usługa będzie kosztowała.",
+              "imageAlt": "Obrazek"
+            },
+            {
+              "title": "Usługi",
+              "subtitle": "W kroku 1 wybierz gotową propozycję lub sam wytypuj to, czego potrzebujesz.",
+              "imageAlt": "Obrazek"
+            },
+            {
+              "title": "Doractwo",
+              "subtitle": "Po wysłaniu darmowego formularzu, przeanalizujemy go i będziemy się z Tobą kontaktować.",
+              "imageAlt": "Obrazek"
+            }
+          ],
+          "buttonTitle": "Zaczynajmy"
+        },
         "firstStep": {
           "stepTitle": "Krok 1",
           "panels": [
@@ -291,6 +294,14 @@
                   "title": "RWD (dostosowanie się strony do rozmiarów ekranu)"
                 }
               ]
+            },
+            {
+              "panelTitle": "Dodatkowo",
+              "panelSubtitle": "Wpisz elementy, które powinny się znaleźć na stronie",
+              "input": {
+                "title": "Dodatkowe opcje",
+                "placeholder": "Aa..."
+              }
             }
           ]
         },
@@ -300,10 +311,6 @@
           "msg": {
             "title": "Krótki opis działalności",
             "placeholder": "Krótki opis Twojej działalności, abyśmy mogli zrozumieć jak ma działać strona"
-          },
-          "additionalOptions": {
-            "title": "Dodatkowe opcje",
-            "placeholder": "Aa..."
           }
         }
       },

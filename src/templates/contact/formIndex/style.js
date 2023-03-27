@@ -31,6 +31,8 @@ export const InputsWrap = styled.div`
 
 export const ButtonWrap = styled.div`
   padding-top: ${theme.space.l}rem;
+  display: flex;
+  flex-direction: column;
 
   ${({ productsView }) =>
     !productsView &&

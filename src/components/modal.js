@@ -68,7 +68,12 @@ const StyledChildren = styled.div`
   }
 `;
 
-export default function Modal({ children, closePage, visible }) {
+export default function Modal({
+  children,
+  closePage,
+  visible,
+  backIcon = { visible: false, onClick: () => {} },
+}) {
   const ModalIsVisible = useRef(false);
   const IS_MOBILE = typeof window !== 'undefined' && window.innerWidth < 767;
 
@@ -100,8 +105,15 @@ export default function Modal({ children, closePage, visible }) {
   return visible ? (
     <ModalWrap id="modal-wrap">
       <ContentWrap>
+        {backIcon.visible && (
+          <CloseButton
+            onClick={backIcon.onClick}
+            borderRadius={!IS_MOBILE}
+            backIcon
+          />
+        )}
         <CloseButton onClick={onClose} borderRadius={!IS_MOBILE} />
-        <ChildrenWrap className="scrollView">
+        <ChildrenWrap id="MODAL_SCROLL_VIEW" className="scrollView">
           <StyledChildren>{children}</StyledChildren>
         </ChildrenWrap>
       </ContentWrap>

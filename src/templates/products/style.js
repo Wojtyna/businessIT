@@ -13,6 +13,8 @@ export const ProductsWrap = styled.div`
 
 // STEP
 export const StepView = styled.div`
+  display: flex;
+  flex-direction: column;
   padding-top: ${theme.space.xxl * 2}rem;
 `;
 

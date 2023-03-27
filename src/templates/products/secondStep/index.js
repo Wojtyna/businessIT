@@ -4,10 +4,12 @@ import { StepView, TitleBg, TitleStyle, TitleWrap } from '../style';
 import ContactFormView from '../../contact/formIndex';
 
 export default function SecondStepView({
-  content: { stepTitle, inputsTitle, msg, additionalOptions },
+  content: { stepTitle, inputsTitle, msg },
   SendDataSuccess,
   sendFormData,
+  CurrentStep,
 }) {
+  if (CurrentStep !== 2) return <></>;
   return (
     <StepView>
       <TitleWrap>
@@ -17,7 +19,7 @@ export default function SecondStepView({
       <ContactFormView
         SendDataSuccess={SendDataSuccess}
         sendFormData={sendFormData}
-        productsView={{ inputsTitle, msg, additionalOptions }}
+        productsView={{ inputsTitle, msg }}
       />
     </StepView>
   );
