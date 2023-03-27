@@ -86,7 +86,7 @@
           ],
           "tip": {
             "tipTitle": "Ciekawostka",
-            "text": "ww. kroków jest 7, tak jak <i>“7 Nawyków Skutecznego Działania”</i> Stephena R. Covey - czyli książka, którą całym zespołem polecamy ❤️"
+            "text": "wspomnianych kroków jest 7, tak jak <i>“7 Nawyków Skutecznego Działania”</i> Stephena R. Covey - czyli książka, którą całym zespołem polecamy ❤️"
           },
           "panelImageAlt": "Obrazek"
         },
@@ -307,6 +307,300 @@
         "title": "Sukces!",
         "subtitle": "Cieszymy się, że chcesz należeć do grona przedsiębiorców, którzy mają przejrzysty dla klienta biznes.<br />Wkrótce będziemy dzwonić na wskazany w formularzu numer telefonu.",
         "imageAlt": "Obrazek"
+      }
+    },
+    "en": {
+      "props": {
+        "lang": "English"
+      },
+      "landingView": {
+        "text": "quick question"
+      },
+      "navigation": {
+        "buttons": {
+          "products": "Services",
+          "contact": "Contact",
+          "translateImageAlt": "Image"
+        },
+        "contactButtons": {
+          "chatTitle": "Open chat",
+          "formTitle": "Contact form",
+          "imageAlt": "Image"
+        },
+        "mobile": {
+          "backIconAlt": "Arrow"
+        }
+      },
+      "indexPage": {
+        "landingView": {
+          "bgAlt": "First page background",
+          "scrollDownTitle": "Scroll down",
+          "title": "Have you done everything to attract a customer to your business?",
+          "topLineAlt": "Bg line",
+          "scrollDownAlt": "Down arrow"
+        },
+        "browserView": {
+          "firstTitle": "We know from experience that the best websites are those that are clear, specific and easy to use...",
+          "secondTitle": "...and that's how we create them!"
+        },
+        "quoteView": {
+          "quote": "\"The only impossible journey is the one you never begin.\"",
+          "author": "Tony Robbins"
+        },
+        "aboutView": {
+          "topTitle": "At this point, just as the competition is trying, we can convince you that:",
+          "bottomTitle": "But what's the point if no one wants to read this anyway...",
+          "arrowAlt": "Arrow",
+          "panelImageAlt": "Image",
+          "panels": [
+            "We know psychological tricks on how to build content on the site in an interesting way.",
+            "We have never had an unhappy customer",
+            "We specialize in the React programming language",
+            "We have launched a new concept called 'Persuasive Page Builder'",
+            "You can try to look for another company, but you will still come to the conclusion that our company is the best choice.",
+            "We take care of every aspect of building and promoting the site (such as SEO or branding)",
+            "We go on the assumption that there is nothing better than obsessive customer care.",
+            "We create from business-card websites to iOS & Android apps."
+          ]
+        },
+        "teamView": {
+          "smallText": "It has been known for a long time<br/>that the most important thing is “MY INTEREST”.",
+          "bigText": "that's GOOD!",
+          "teamText": "Our team is ready to go!",
+          "teamImgAlt": "Our team",
+          "midLineAlt": "Bg line"
+        },
+        "stepsView": {
+          "title": "This is what it looks like in practice",
+          "steps": [
+            "Establishing cooperation",
+            "Joint goal setting",
+            "Outline of expected results",
+            "Selection of the best tools",
+            "Accurate pricing of the service",
+            "Momentum for us - production",
+            "Consultation of results"
+          ],
+          "tip": {
+            "tipTitle": "Curiosity",
+            "text": "The aforementioned steps are 7 just like <i>\"7 Habits of Effective Action\"</i> by Stephen R. Covey - which is a book we whole team recommends ❤️"
+          },
+          "panelImageAlt": "Image"
+        },
+        "productsView": {
+          "titleView": "something we know best about",
+          "showMore": "Learn more",
+          "imageAlt": "Image",
+          "arrowAlt": "Arrow",
+          "priceSubtitle": "From",
+          "products": [
+            {
+              "price": "$150",
+              "content": ["business card", "simple page"]
+            },
+            {
+              "price": "$800",
+              "content": ["forum", "shop online", "business project"]
+            },
+            {
+              "price": "$25 000",
+              "content": ["web app", "mobile app for iOS & Android"]
+            }
+          ]
+        },
+        "footerView": {
+          "title": "Attract customers with simplicity!<br />Contact us using the navigation at the bottom of the page.",
+          "titleMobile": "Attract customers with simplicity!<br />Contact us using the navigation at the top right.",
+          "bottomLineAlt": "Bg line"
+        }
+      },
+      "contactPage": {
+        "pageTitle": "Contact",
+        "inputs": {
+          "name": {
+            "title": "Name",
+            "placeholder": "John"
+          },
+          "phone": {
+            "title": "Phone number",
+            "placeholder": "+1 123 456 7890"
+          },
+          "msg": { "title": "Message", "placeholder": "So, there is a case..." }
+        },
+        "approvalMsg": "I consent to the processing of my personal data contained in the contact form.",
+        "warning": "Fill in the required fields",
+        "sendButton": "Send",
+        "manualContactPanel": {
+          "text": "You can always contact us. We will try to answer any question!",
+          "phone": "+1 123 456 7890",
+          "mail": "business@company.com",
+          "iconAlt": "Icon"
+        }
+      },
+      "productsPage": {
+        "pageTitle": "Let's create a transparent website",
+        "intro": {
+          "content": [
+            {
+              "title": "Pricing",
+              "subtitle": "In two steps, fill out the form and see how much the service will cost.",
+              "imageAlt": "Image"
+            },
+            {
+              "title": "Services",
+              "subtitle": "In step 1, choose a ready-made proposal or pick out what you need yourself.",
+              "imageAlt": "Image"
+            },
+            {
+              "title": "Advisory",
+              "subtitle": "After you submit your free form, we will review it and contact you.",
+              "imageAlt": "Image"
+            }
+          ],
+          "buttonTitle": "Let's start"
+        },
+        "firstStep": {
+          "stepTitle": "Step 1",
+          "panels": [
+            {
+              "panelTitle": "Quick pick",
+              "panelSubtitle": "Automatically selects options based on type",
+              "options": [
+                {
+                  "type": "page-card",
+                  "title": "Business card"
+                },
+                {
+                  "type": "website",
+                  "title": "Website"
+                },
+                {
+                  "type": "webshop",
+                  "title": "Shop online"
+                },
+                {
+                  "type": "blog",
+                  "title": "Blog"
+                },
+                {
+                  "type": "web-portal",
+                  "title": "Web portal"
+                },
+                {
+                  "type": "own",
+                  "title": "Custom"
+                }
+              ]
+            },
+            {
+              "panelTitle": "All services",
+              "panelSubtitle": "Select the options you want to appear on the page",
+              "options": [
+                { "id": "1", "title": "newsletter" },
+                { "id": "2", "title": "google maps" },
+                { "id": "3", "title": "user login system" },
+                { "id": "4", "title": "online payments" },
+                { "id": "5", "title": "lots of subpages" },
+                { "id": "7", "title": "customized website design" },
+                { "id": "9", "title": "chat window (e.g., support)" },
+                {
+                  "id": "10",
+                  "title": "creation or connection of an existing database"
+                },
+                { "id": "11", "title": "SSL certificate" },
+                { "id": "12", "title": "domain" },
+                { "id": "13", "title": "hosting" },
+                {
+                  "id": "14",
+                  "title": "service and technical care for an indefinite period of time"
+                },
+                { "id": "15", "title": "CMS or headless CMS" },
+                { "id": "16", "title": "positioning" },
+                { "id": "17", "title": "update an existing site" },
+                { "id": "18", "title": "wikipedia entry" },
+                {
+                  "id": "20",
+                  "title": "social media widget (e.g., posts from Twitter)"
+                },
+                { "id": "21", "title": "contact form" },
+                { "id": "22", "title": "gallery" },
+                {
+                  "id": "24",
+                  "title": "online reviews"
+                },
+                {
+                  "id": "25",
+                  "title": "copywriting (advertising slogans, website texts, product descriptions, SEO texts)"
+                },
+                {
+                  "id": "26",
+                  "title": "creation of branding (logo, naming)"
+                },
+                {
+                  "id": "27",
+                  "title": "graphic support (photos, 2D and 3D visualizations)"
+                },
+                {
+                  "id": "28",
+                  "title": "social media management"
+                },
+                {
+                  "id": "30",
+                  "title": "marketing (content marketing, referral marketing, marketing strategy, google ads)"
+                },
+                { "id": "31", "title": "marketing campaign" },
+                { "id": "32", "title": "app for iOS & Android" }
+              ]
+            },
+            {
+              "panelTitle": "Free services",
+              "panelSubtitle": "These are options that are guaranteed - gratis :)",
+              "options": [
+                {
+                  "id": "01",
+                  "title": "the possibility to file an unlimited number of amendments"
+                },
+                {
+                  "id": "02",
+                  "title": "support from A to Z"
+                },
+                {
+                  "id": "03",
+                  "title": "compliance with the principles of RODO"
+                },
+                {
+                  "id": "04",
+                  "title": "clean and transparent source code"
+                },
+                {
+                  "id": "05",
+                  "title": "adaptation of the page to the size of the screen"
+                }
+              ]
+            },
+            {
+              "panelTitle": "Additionally",
+              "panelSubtitle": "List the elements that should also be on the site",
+              "input": {
+                "title": "Additional options",
+                "placeholder": "Aa..."
+              }
+            }
+          ]
+        },
+        "secondStep": {
+          "stepTitle": "Step 2",
+          "inputsTitle": "Contact informations",
+          "msg": {
+            "title": "Brief description of business",
+            "placeholder": "A brief description of your business so we can understand how the site is supposed to work"
+          }
+        }
+      },
+      "sendedPanel": {
+        "title": "Success!",
+        "subtitle": "We are glad that you want to be among the entrepreneurs who have a transparent business for the customer.<br />We will soon call you at the phone number indicated in the form.",
+        "imageAlt": "Image"
       }
     }
   }
