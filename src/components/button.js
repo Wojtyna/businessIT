@@ -12,15 +12,7 @@ const ButtonWrap = styled.div`
   transition: border-color 0.2s ease-in-out;
   border: solid 0.1rem ${theme.colors.light3};
   padding: 0.8rem 1.6rem;
-
-  :hover {
-    cursor: pointer;
-  }
-
-  :active,
-  :target,
-  :focus {
-  }
+  cursor: pointer;
 
   -webkit-user-select: none;
   -khtml-user-select: none;

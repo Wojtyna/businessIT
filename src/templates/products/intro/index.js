@@ -64,6 +64,7 @@ export default function IntroView({
   CurrentStep,
 }) {
   const Images = [MagnifyingImage, SwitchImage, StairsImage];
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 767;
 
   const onNextStepButton = () => {
     setCurrentStep(1);
@@ -81,7 +82,12 @@ export default function IntroView({
           </ItemWrap>
         ))}
       </ContentWrap>
-      <Button onClick={onNextStepButton} title={buttonTitle} filled />
+      <Button
+        onClick={onNextStepButton}
+        title={buttonTitle}
+        filled
+        style={isMobile ? { width: '100%' } : {}}
+      />
     </ViewWrap>
   );
 }

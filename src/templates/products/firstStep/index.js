@@ -77,6 +77,7 @@ export default function FirstStepView({
     CurrentRadioType: '',
   });
   const { ProductsData, CurrentRadioType } = StateData;
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 767;
 
   const toggleProduct = (id) => {
     const newProductsData = ProductsData.slice();
@@ -188,7 +189,7 @@ export default function FirstStepView({
         onClick={onNextStepButton}
         title={nextStep}
         filled
-        style={NextButton}
+        style={isMobile ? { ...NextButton, width: '100%' } : NextButton}
       />
     </StepView>
   );

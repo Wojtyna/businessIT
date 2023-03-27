@@ -1,16 +1,15 @@
 {
-  "companyName": "Legiblify",
+  "companyName": "CodeYeYe",
   "socialMedia": {
     "twitter": { "alt": "Twitter", "url": "https://twitter.com/" },
     "youtube": { "alt": "Youtube", "url": "https://youtube.com/" }
   },
   "products": {
-    "page-card": ["2", "3"],
-    "website": ["7", "3", "12", "20"],
-    "webshop": ["10"],
-    "blog": ["17", "13", "12"],
-    "mobile-app": ["2", "3", "4", "5", "6"],
-    "web-portal": ["8", "9", "10", "16", "17", "19", "25"]
+    "page-card": ["2", "11", "12", "16", "21", "22"],
+    "website": ["1", "5", "11", "12", "16", "22"],
+    "webshop": ["1", "3", "4", "5", "11", "12", "13", "15", "16", "22"],
+    "blog": ["1", "5", "11", "12", "13", "15", "16", "21", "22"],
+    "web-portal": ["3", "5", "7", "11", "12", "13", "14", "22"]
   },
   "translations": {
     "pl": {
@@ -190,10 +189,6 @@
                   "title": "Blog"
                 },
                 {
-                  "type": "mobile-app",
-                  "title": "Aplikacja iOS Android"
-                },
-                {
                   "type": "web-portal",
                   "title": "Portal internetowy"
                 },
@@ -207,66 +202,60 @@
               "panelTitle": "Wszystkie usługi",
               "panelSubtitle": "Zaznacz opcje, które mają pojawić się na stronie",
               "options": [
-                { "id": "2", "title": "newsletter" },
+                { "id": "1", "title": "newsletter" },
+                { "id": "2", "title": "google maps" },
                 { "id": "3", "title": "system logowania użytkowników" },
                 { "id": "4", "title": "płatności online" },
-                {
-                  "id": "5",
-                  "title": "input - specjalne funkcje na stronie - opis funkcji "
-                },
-                { "id": "6", "title": "input - szacunkowa liczba podstron" },
+                { "id": "5", "title": "dużo podstron" },
                 { "id": "7", "title": "indywidualny projekt strony" },
-                { "id": "8", "title": "input - dodatkowe informacje" },
                 { "id": "9", "title": "okno czatu (np. pomoc techniczna)" },
                 {
                   "id": "10",
-                  "title": "stworzenie lub podłączenie istniejącej bazy danych (np. baza produktów)"
+                  "title": "stworzenie lub podłączenie istniejącej bazy danych"
                 },
-                { "id": "11", "title": "certyfikat ssl" },
+                { "id": "11", "title": "certyfikat SSL" },
                 { "id": "12", "title": "domena" },
                 { "id": "13", "title": "hosting" },
                 {
                   "id": "14",
-                  "title": "abonament - opieka techniczna - serwis i wsparcie"
+                  "title": "serwis i opieka techniczna na czas nieokreślony"
                 },
                 { "id": "15", "title": "CMS lub headless CMS" },
                 { "id": "16", "title": "pozycjonowanie" },
-                { "id": "17", "title": "aktualizacja strony" },
-                { "id": "18", "title": "wpis do wikipedii/wikidata" },
-                { "id": "19", "title": "google maps" },
+                { "id": "17", "title": "aktualizacja istniejącej strony" },
+                { "id": "18", "title": "wpis do wikipedii" },
                 {
                   "id": "20",
-                  "title": "widget yz social mediów (np. posty z twittera)"
+                  "title": "widget z social mediów (np. posty z twittera)"
                 },
                 { "id": "21", "title": "formularz kontaktowy" },
                 { "id": "22", "title": "galeria" },
-                { "id": "23", "title": "input - specjalne komonenty" },
                 {
                   "id": "24",
-                  "title": "opiniowanie w internecie - outsourcing"
+                  "title": "opiniowanie w internecie"
                 },
                 {
                   "id": "25",
-                  "title": "copywriting (m.in. hasła reklamowe, teksty na strone, opisy produktów, teksty SEO, teksty na social media) - outsourcing"
+                  "title": "copywriting (hasła reklamowe, teksty na strone, opisy produktów, teksty SEO)"
                 },
                 {
                   "id": "26",
-                  "title": "stworzenie branding (m.in. logo, naming) - outsourcing"
+                  "title": "stworzenie branding (logo, naming)"
                 },
                 {
                   "id": "27",
-                  "title": "obsługa graficzna (m.in. zdjęcia, wizualizacje 2D i 3D) - outsourcing"
+                  "title": "obsługa graficzna (zdjęcia, wizualizacje 2D i 3D)"
                 },
                 {
                   "id": "28",
-                  "title": "ogarnianie social mediów - outsourcing"
+                  "title": "zarządzanie mediami społecznościowymi"
                 },
-                { "id": "29", "title": "pozycjonowanie - outsourcing" },
                 {
                   "id": "30",
-                  "title": "marketing (m.in.  content marketing, marketing rekomendacji, strategia marketingowa, google ads) - outsourcing"
+                  "title": "marketing (content marketing, marketing rekomendacji, strategia marketingowa, google ads)"
                 },
-                { "id": "31", "title": "kampania marketingowa - outsourcing" }
+                { "id": "31", "title": "kampania marketingowa" },
+                { "id": "32", "title": "aplikacja na iOS i Android" }
               ]
             },
             {
@@ -275,29 +264,29 @@
               "options": [
                 {
                   "id": "01",
-                  "title": "Możliwość wnoszenia nielimitowanej liczby poprawek"
+                  "title": "możliwość wnoszenia nielimitowanej liczby poprawek"
                 },
                 {
                   "id": "02",
-                  "title": "Wsparcie od A do Z"
+                  "title": "wsparcie od A do Z"
                 },
                 {
                   "id": "03",
-                  "title": "Stosowanie się do zasad RODO"
+                  "title": "stosowanie się do zasad RODO"
                 },
                 {
                   "id": "04",
-                  "title": "Czysty i przejrzysty kod źródłowy"
+                  "title": "czysty i przejrzysty kod źródłowy"
                 },
                 {
                   "id": "05",
-                  "title": "RWD (dostosowanie się strony do rozmiarów ekranu)"
+                  "title": "dostosowanie się strony do rozmiarów ekranu"
                 }
               ]
             },
             {
               "panelTitle": "Dodatkowo",
-              "panelSubtitle": "Wpisz elementy, które powinny się znaleźć na stronie",
+              "panelSubtitle": "Wypisz elementy, które również powinny znaleźć się na stronie",
               "input": {
                 "title": "Dodatkowe opcje",
                 "placeholder": "Aa..."
