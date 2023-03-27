@@ -70,7 +70,7 @@ const Layout = ({ children }) => {
     } else {
       setLoadingViewProps({
         localStroageLoaded: true,
-        showLoadingView: false,
+        showLoadingView: true,
       });
     }
   }, []);
