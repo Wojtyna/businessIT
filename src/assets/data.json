@@ -98,15 +98,15 @@
           "priceSubtitle": "Już od",
           "products": [
             {
-              "price": "350 zł",
+              "price": "600 zł",
               "content": ["wizytówka", "prosta strona"]
             },
             {
-              "price": "1 500 zł",
+              "price": "3 500 zł",
               "content": ["forum", "sklep internetowy", "projekt biznesowy"]
             },
             {
-              "price": "33 000 zł",
+              "price": "90 000 zł",
               "content": [
                 "aplikacja webowa",
                 "aplikacja mobilna na iOS i Android"
@@ -395,15 +395,15 @@
           "priceSubtitle": "From",
           "products": [
             {
-              "price": "$150",
+              "price": "$200",
               "content": ["business card", "simple page"]
             },
             {
-              "price": "$800",
+              "price": "$1500",
               "content": ["forum", "shop online", "business project"]
             },
             {
-              "price": "$25 000",
+              "price": "$50 000",
               "content": ["web app", "mobile app for iOS & Android"]
             }
           ]

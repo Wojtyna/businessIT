@@ -107,8 +107,6 @@ const Layout = ({ children }) => {
     });
   }, []);
 
-  if (!BrowserLangProps.BrowserLoaded) return <></>;
-
   return (
     <State
       loadedLang={BrowserLangProps.BrowserLang}
@@ -123,12 +121,13 @@ const Layout = ({ children }) => {
           </Helmet>
 
           <GlobalStyle />
-          {LoadingViewProps.localStroageLoaded && (
-            <Wrapper>
-              {LoadingViewProps.showLoadingView && <LoadingView />}
-              {children}
-            </Wrapper>
-          )}
+          {LoadingViewProps.localStroageLoaded &&
+            BrowserLangProps.BrowserLoaded && (
+              <Wrapper>
+                {LoadingViewProps.showLoadingView && <LoadingView />}
+                {children}
+              </Wrapper>
+            )}
         </>
       }
     />
