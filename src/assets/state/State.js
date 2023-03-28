@@ -4,18 +4,9 @@ import { reducer } from './reducer';
 
 export const GlobalState = createContext();
 
-export default function State({ children }) {
-  const userBrowserLang =
-    typeof navigator !== 'undefined' && navigator.language.substring(0, 2);
-  const storageBrowserLang =
-    typeof window !== 'undefined' && localStorage.getItem('@BROWSER_LANG');
-
+export default function State({ loadedLang, children }) {
   const initialState = {
-    lang: storageBrowserLang
-      ? storageBrowserLang
-      : userBrowserLang
-      ? userBrowserLang
-      : 'en',
+    lang: loadedLang,
     disabledBodyScrolling: false,
   };
 

@@ -37,10 +37,26 @@ const Wrapper = ({ children }) => {
 };
 
 const Layout = ({ children }) => {
-  const [LoadingViewProps, setLoadingViewProps] = useState({
-    localStroageLoaded: false,
-    showLoadingView: false,
+  const [LayoutState, setLayoutState] = useState({
+    LoadingViewProps: { localStroageLoaded: false, showLoadingView: false },
+    BrowserLangProps: {
+      BrowserLang: 'en',
+      BrowserLoaded: false,
+    },
   });
+  const { LoadingViewProps, BrowserLangProps } = LayoutState;
+  const setLoadingViewProps = (_ev) => {
+    setLayoutState((prev) => ({
+      ...prev,
+      LoadingViewProps: _ev,
+    }));
+  };
+  const setBrowserLangProps = (_ev) => {
+    setLayoutState((prev) => ({
+      ...prev,
+      BrowserLangProps: _ev,
+    }));
+  };
 
   useEffect(() => {
     const tempShowLoadingView =
@@ -75,8 +91,27 @@ const Layout = ({ children }) => {
     }
   }, []);
 
+  useEffect(() => {
+    const userBrowserLang =
+      typeof navigator !== 'undefined' && navigator.language.substring(0, 2);
+    const storageBrowserLang =
+      typeof window !== 'undefined' && localStorage.getItem('@BROWSER_LANG');
+
+    setBrowserLangProps({
+      BrowserLang: storageBrowserLang
+        ? storageBrowserLang
+        : userBrowserLang
+        ? userBrowserLang
+        : 'en',
+      BrowserLoaded: true,
+    });
+  }, []);
+
+  if (!BrowserLangProps.BrowserLoaded) <></>;
+
   return (
     <State
+      loadedLang={BrowserLangProps.BrowserLang}
       children={
         <>
           <Helmet>
