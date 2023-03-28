@@ -107,7 +107,7 @@ const Layout = ({ children }) => {
     });
   }, []);
 
-  if (!BrowserLangProps.BrowserLoaded) <></>;
+  if (!BrowserLangProps.BrowserLoaded) return <></>;
 
   return (
     <State
