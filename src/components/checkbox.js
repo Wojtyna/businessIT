@@ -30,7 +30,7 @@ const CheckView = styled.span`
   height: ${CHECKBOX_LENGTH}rem;
   min-width: ${CHECKBOX_LENGTH}rem;
   min-height: ${CHECKBOX_LENGTH}rem;
-  border: solid 0.1rem ${theme.colors.dark2};
+  border: solid 0.1rem ${theme.colors.dark};
   margin-right: ${theme.space.s}rem;
   margin-top: 0.1rem;
   transition: all 0.1s ease-out;

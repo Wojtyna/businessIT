@@ -8,23 +8,22 @@ const MAX_BOTTOM_TITLE_WIDTH = 50;
 
 // MAIN WRAP
 export const ViewWrap = styled.section`
+  max-width: ${CONSTANS.MAX_CONTENT_WIDTH_XL}rem;
   margin-top: ${CONSTANS.SPACE_BETWEEN_SECTIONS}rem;
 `;
 
 // ABOUT
 export const AboutWrap = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
-  background-color: ${theme.colors.bgDarker};
+  background-color: ${theme.colors.transparentDark};
   width: 100%;
   border-radius: ${theme.space.l}rem;
   padding: 2rem;
 
   @media ${theme.windowSize.big} {
-    width: calc(100% + 6vw);
-    margin-left: -3vw;
-    padding: 4rem 3vw;
+    padding: 4rem
+      ${(CONSTANS.MAX_CONTENT_WIDTH_XL - CONSTANS.MAX_CONTENT_WIDTH) / 2}rem;
     border-radius: ${theme.space.xl}rem;
   }
 `;

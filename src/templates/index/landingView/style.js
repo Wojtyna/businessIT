@@ -13,6 +13,8 @@ export const ViewWrap = styled.header`
 
 // CONTENT
 export const ContentWrap = styled.div`
+  max-width: ${CONSTANS.MAX_CONTENT_WIDTH_XL}rem;
+
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -30,6 +32,14 @@ export const ViewTitle = styled.h1`
   margin-top: ${theme.space.xxl}rem;
   word-wrap: break-word;
   text-align: center;
+  font-family: 'Yeseva One', cursive;
+  color: ${theme.colors.secondary};
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+
+  .primaryColor {
+    color: ${theme.colors.primary};
+  }
 
   @media ${theme.windowSize.big} {
     margin-top: 0;
@@ -78,7 +88,7 @@ export const TopLineWrap = styled.div`
   position: absolute;
   width: 100%;
   left: 0;
-  top: 66%;
+  top: 33%;
   display: flex;
   justify-content: center;
 `;
@@ -100,5 +110,5 @@ export const Bg = styled.img`
   width: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: 0.1;
+  opacity: 0.05;
 `;

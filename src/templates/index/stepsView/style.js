@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import { CONSTANS, theme } from '../../../assets/globalStyles';
 
 const PANEL_NUMBER_LENGTH = 4;
+const PANEL_NUMBER_OFFSET = 1.3;
 const TIP_DOT_LENGTH = 0.3;
 
 // MAIN WRAP
 export const ViewWrap = styled.section`
-  position: relative;
   margin-top: ${CONSTANS.SPACE_BETWEEN_SECTIONS}rem;
+  position: relative;
 `;
 
 export const ViewTitle = styled.h2`
@@ -42,10 +43,10 @@ export const PanelsWrap = styled.div`
 
   @media ${theme.windowSize.big} {
     margin-top: ${PANEL_NUMBER_LENGTH / 3 + theme.space.xl}rem;
-    grid-gap: ${theme.space.xxl}rem ${theme.space.xxl}rem;
+    grid-gap: ${theme.space.xxl}rem ${theme.space.xl}rem;
     grid-template-columns: repeat(
       auto-fit,
-      minmax(max(20%, 22rem), max-content)
+      minmax(max(20%, 21rem), max-content)
     );
   }
 `;
@@ -57,7 +58,7 @@ export const PanelStyle = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-color: ${theme.colors.bgDarker};
+  background-color: ${theme.colors.transparentDark};
   border-radius: ${theme.space.xl}rem;
   padding: ${theme.space.l}rem;
 
@@ -76,12 +77,24 @@ export const NumberWrap = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: ${PANEL_NUMBER_LENGTH}rem;
-  transform: translate(-50%, -33%);
-  background-color: ${theme.colors.bgDarker};
+  transform: translate(-50%, -${PANEL_NUMBER_OFFSET}rem);
+  overflow: hidden;
+
+  ::before {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: ${PANEL_NUMBER_OFFSET}rem;
+    background-color: ${theme.colors.transparentDark};
+  }
 `;
 
 export const Number = styled.span`
-  color: ${theme.colors.bgDarker};
+  font-weight: ${theme.font.weight.m};
+  text-transform: uppercase;
 
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -107,7 +120,7 @@ export const PanelTitle = styled.span`
 
 // TIP
 export const TipWrap = styled.div`
-  padding-top: ${theme.space.l}rem;
+  padding-top: ${theme.space.xl}rem;
 `;
 
 export const TipTitle = styled.span`
@@ -129,7 +142,23 @@ export const TipText = styled.span`
     height: ${TIP_DOT_LENGTH}rem;
     left: 0;
     top: 0.8rem;
-    background-color: ${theme.colors.dark2};
+    background-color: ${theme.colors.dark};
     border-radius: ${TIP_DOT_LENGTH}rem;
   }
+`;
+
+// TOP LINE
+export const MidBgLineWrap = styled.div`
+  z-index: -99;
+  position: absolute;
+  width: calc(100vw - ${CONSTANS.SCROLL_BAR_WIDTH}rem);
+  min-width: 100%;
+  bottom: ${theme.space.xxl}rem;
+  left: 50%;
+  transform: translate(-50%, 33%);
+  display: flex;
+  justify-content: center;
+`;
+export const MidBgLine = styled.img`
+  width: 100%;
 `;

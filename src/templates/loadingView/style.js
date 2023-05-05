@@ -32,7 +32,7 @@ export const Bg = styled.div`
       : second
       ? css`
           z-index: -2;
-          background-color: ${theme.colors.bgDarker};
+          background-color: ${theme.colors.secondary};
         `
       : css`
           z-index: -1;
@@ -41,7 +41,7 @@ export const Bg = styled.div`
 `;
 
 export const Text = styled.h1`
-  color: ${theme.colors.dark2};
+  color: ${theme.colors.dark};
   text-transform: lowercase;
   display: inline;
 `;
@@ -53,7 +53,7 @@ export const Typewrite = styled.h1`
   ::after {
     content: '';
     width: 0.4rem;
-    border-right: solid 0.4rem ${theme.colors.dark2};
+    border-right: solid 0.4rem ${theme.colors.dark};
     height: 100%;
     margin-left: ${theme.space.xs}rem;
     animation: blink 1s infinite;

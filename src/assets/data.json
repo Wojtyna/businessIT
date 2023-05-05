@@ -1,5 +1,5 @@
 {
-  "companyName": "Codeyeye",
+  "companyName": "CCLARITO",
   "socialMedia": {
     "twitter": { "alt": "Twitter", "url": "https://twitter.com/" },
     "youtube": { "alt": "Youtube", "url": "https://youtube.com/" }
@@ -38,7 +38,10 @@
         "landingView": {
           "bgAlt": "Tło pierwszej strony",
           "scrollDownTitle": "Przewiń w dół",
-          "title": "Czy zrobiłeś wszystko, aby przyciągnąć klienta do swojego biznesu?",
+          "title": [
+            "Czy zrobiłeś wszystko, aby Twój klient",
+            "znalazł Twój biznes?"
+          ],
           "topLineAlt": "Linia w tle",
           "scrollDownAlt": "Strzałka w dół"
         },
@@ -46,9 +49,10 @@
           "firstTitle": "Z doświadczenia wiemy, że najlepsze strony internetowe to strony przejrzyste, konkretne i łatwe w obsłudze...",
           "secondTitle": "...i w ten sposób je tworzymy!"
         },
-        "quoteView": {
-          "quote": "\"Sukces to nie końcowy punkt, a proces nieustannego doskonalenia.\"",
-          "author": "Tony Robbins"
+        "teamView": {
+          "title": "Nasz Zespół jest Gotowy do Działania!",
+          "teamImgAlt": "Nasz zespół",
+          "midLineAlt": "Lina w tle"
         },
         "aboutView": {
           "topTitle": "W tym miejscu tak jak próbuje konkurencja, tak i my możemy Cię przekonać, że:",
@@ -59,19 +63,12 @@
             "Znamy psychologiczne triki, jak ciekawie budować treść na stronie",
             "Nigdy nie mieliśmy niezadowolonego klienta",
             "Specjalizujemy się w języku programowania React",
-            "Wprowadziliśmy na rynek nowe pojęcie “Perswazyjne budowanie strony”",
+            "Wprowadzamy na rynek nowe pojęcie “Perswazyjne budowanie strony”",
             "Możesz próbować szukać innej firmy, ale i tak dojdziesz do wniosku, że nasza firma to najlepszy wybór",
             "Dbamy o każdy aspekt budowania i promowania strony (np. SEO czy branding)",
             "Wychodzimy z założenia, że nie ma nic lepszego, niż obsesyjne dbanie o klienta",
             "Tworzymy od stron-wizytówek, aż po aplikacje na iOS i Android"
           ]
-        },
-        "teamView": {
-          "smallText": "Nie od dziś wiadomo,<br/> że najważniejszy jest “MÓJ INTERES”.",
-          "bigText": "i DOBRZE!",
-          "teamText": "Nasz zespół jest gotowy do działania!",
-          "teamImgAlt": "Nasz zespół",
-          "midLineAlt": "Lina w tle"
         },
         "stepsView": {
           "title": "Tak to wygląda w praktyce",
@@ -88,7 +85,8 @@
             "tipTitle": "Ciekawostka",
             "text": "wspomnianych kroków jest 7, tak jak <i>“7 Nawyków Skutecznego Działania”</i> Stephena R. Covey - czyli książka, którą całym zespołem polecamy ❤️"
           },
-          "panelImageAlt": "Obrazek"
+          "panelImageAlt": "Obrazek",
+          "midLineAlt": "Lina w tle"
         },
         "productsView": {
           "titleView": "coś na czym się najlepiej znamy",
@@ -113,6 +111,24 @@
               ]
             }
           ]
+        },
+        "cardView": {
+          "title": "wizytówka",
+          "subtitle": "Czyli nasza specjalność",
+          "promoText": [
+            "przejrzysta strona",
+            "wybitne pozycjonowanie",
+            "perswazyjne treści",
+            "lekki i szybki kod",
+            "pomoc techniczna"
+          ],
+          "priceTitle": "Już od",
+          "priceAmount": "800 zł",
+          "buttonTitle": "Pokaż więcej"
+        },
+        "quoteView": {
+          "quote": "\"Sukces to nie końcowy punkt, a proces nieustannego doskonalenia.\"",
+          "author": "Tony Robbins"
         },
         "footerView": {
           "title": "Przyciągaj klientów prostotą!<br />Skontaktuj się z nami używając nawigacji na dole strony",
@@ -158,8 +174,8 @@
               "imageAlt": "Obrazek"
             },
             {
-              "title": "Doractwo",
-              "subtitle": "Po wysłaniu darmowego formularzu, przeanalizujemy go i będziemy się z Tobą kontaktować.",
+              "title": "Doradztwo",
+              "subtitle": "Po wysłaniu darmowego formularza, przeanalizujemy go i będziemy się z Tobą kontaktować.",
               "imageAlt": "Obrazek"
             }
           ],
@@ -356,7 +372,7 @@
             "We know psychological tricks on how to build content on the site in an interesting way.",
             "We have never had an unhappy customer",
             "We specialize in the React programming language",
-            "We have launched a new concept called 'Persuasive Page Builder'",
+            "We are launching a new concept called 'Persuasive Page Builder'",
             "You can try to look for another company, but you will still come to the conclusion that our company is the best choice.",
             "We take care of every aspect of building and promoting the site (such as SEO or branding)",
             "We go on the assumption that there is nothing better than obsessive customer care.",

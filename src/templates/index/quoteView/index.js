@@ -29,7 +29,7 @@ const QuoteSign = styled.span`
   display: block;
   left: -5rem;
   top: -${TOP_SLIDEOUT}rem;
-  color: ${theme.colors.bgDarker};
+  color: ${theme.colors.transparentDark};
   font-size: 35rem;
   line-height: 24rem;
   font-weight: ${theme.font.weight.l};

@@ -82,7 +82,7 @@ const ButtonWrap = styled.div`
         width: 50%;
         height: 0.2rem;
         border-radius: 0.2rem;
-        background-color: ${theme.colors.dark2};
+        background-color: ${theme.colors.dark};
         display: block;
         top: 50%;
         left: 50%;

@@ -7,17 +7,9 @@ export const ViewWrap = styled.section`
   position: relative;
 `;
 
-export const SmallText = styled.span`
+export const Title = styled.h2`
   text-transform: uppercase;
-`;
-
-export const BigText = styled.h1`
-  color: ${theme.colors.primary};
-`;
-
-export const TeamText = styled.h2`
-  font-weight: ${theme.font.weight.m};
-  text-transform: uppercase;
+  text-align: center;
 `;
 
 export const TeamImg = styled.img`
@@ -27,11 +19,6 @@ export const TeamImg = styled.img`
   max-height: 70rem;
   object-fit: cover;
   object-position: top;
-
-  @media ${theme.windowSize.big} {
-    width: calc(100% + 6vw);
-    margin-left: -3vw;
-  }
 `;
 
 // TOP LINE

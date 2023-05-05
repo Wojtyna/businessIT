@@ -55,6 +55,6 @@ export const ProductTitle = styled.span`
   display: inline-block;
   font-weight: ${theme.font.weight.m};
   text-transform: uppercase;
-  color: ${theme.colors.dark2};
+  color: ${theme.colors.dark};
   padding-top: ${theme.space.xl}rem;
 `;

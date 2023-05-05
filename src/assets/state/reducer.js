@@ -1,5 +1,12 @@
 export const reducer = (state, action) => {
   switch (action.type) {
+    case 'SET_LANG': {
+      return {
+        ...state,
+        lang: action.key,
+      };
+    }
+
     case 'CHANGE_LANG': {
       if (typeof window !== 'undefined') {
         localStorage.setItem('@BROWSER_LANG', action.key);

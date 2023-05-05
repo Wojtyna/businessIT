@@ -1,29 +1,22 @@
 import React from 'react';
 
-import {
-  ViewWrap,
-  BigText,
-  MidBgLine,
-  SmallText,
-  TeamImg,
-  TeamText,
-  MidBgLineWrap,
-} from './style';
+import { ViewWrap, MidBgLine, TeamImg, Title, MidBgLineWrap } from './style';
 
 import TeamImage from '../../../assets/images/children.webp';
 import MidBgImage from '../../../assets/images/bg-lines/mid.webp';
 
 export default function TeamView({
-  content: { smallText, bigText, teamText, teamImgAlt, midLineAlt },
+  content: { title, teamImgAlt, midLineAlt },
 }) {
   return (
     <ViewWrap className="view-inline-space index-view">
       <MidBgLineWrap>
         <MidBgLine src={MidBgImage} alt={midLineAlt} />
       </MidBgLineWrap>
-      <SmallText dangerouslySetInnerHTML={{ __html: smallText }} />
-      <BigText dangerouslySetInnerHTML={{ __html: bigText }} />
-      <TeamText dangerouslySetInnerHTML={{ __html: teamText }} />
+      <Title
+        className="textBorder"
+        dangerouslySetInnerHTML={{ __html: title }}
+      />
       <TeamImg alt={teamImgAlt} src={TeamImage} />
     </ViewWrap>
   );

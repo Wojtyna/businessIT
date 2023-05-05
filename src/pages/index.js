@@ -12,7 +12,7 @@ import QuoteView from '../templates/index/quoteView';
 import AboutView from '../templates/index/aboutView';
 import TeamView from '../templates/index/teamView';
 import StepsView from '../templates/index/stepsView';
-import ProductsView from '../templates/index/productsView';
+import CardView from '../templates/index/cardView';
 import FooterView from '../templates/index/footerView';
 import Navigation from '../templates/index/nav';
 import NavigationMobile from '../templates/index/nav/mobile';
@@ -63,26 +63,19 @@ export default function IndexPage() {
   }, [WindowWidth]);
 
   useEffect(() => {
-    const _sections = document.querySelectorAll('.index-view');
-    _sections.forEach((section) => {
-      gsap.fromTo(
-        section,
-        {
-          y: '+=30',
-          opacity: 0,
+    const _sections = gsap.utils.toArray('.index-view');
+    _sections.forEach((_section) => {
+      gsap.to(_section, {
+        opacity: 1,
+        duration: 0.5,
+        ease: 'easeInOut',
+        scrollTrigger: {
+          scroller: '#wrapper',
+          trigger: _section,
+          start: 'top 75%',
+          end: 'top 75%',
         },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.5,
-          ease: 'easeInOut',
-          scrollTrigger: {
-            scroller: '#wrapper',
-            trigger: section,
-            start: 'top 75%',
-          },
-        }
-      );
+      });
     });
   }, []);
 
@@ -121,25 +114,29 @@ export default function IndexPage() {
         <BrowserView
           content={ContentData.translations[state.lang].indexPage.browserView}
         />
-        <QuoteView
-          content={ContentData.translations[state.lang].indexPage.quoteView}
+        <TeamView
+          content={ContentData.translations[state.lang].indexPage.teamView}
         />
         <AboutView
           content={ContentData.translations[state.lang].indexPage.aboutView}
         />
-        <TeamView
-          content={ContentData.translations[state.lang].indexPage.teamView}
-        />
         <StepsView
           content={ContentData.translations[state.lang].indexPage.stepsView}
         />
-        <ProductsView
+        {/* <ProductsView
           content={ContentData.translations[state.lang].indexPage.productsView}
           onProductsClick={toggleProductsPage}
+        /> */}
+        <CardView
+          content={ContentData.translations[state.lang].indexPage.cardView}
+          onProductsClick={toggleProductsPage}
         />
-        <FooterView
+        <QuoteView
+          content={ContentData.translations[state.lang].indexPage.quoteView}
+        />
+        {/* <FooterView
           content={ContentData.translations[state.lang].indexPage.footerView}
-        />
+        /> */}
       </main>
     </>
   );

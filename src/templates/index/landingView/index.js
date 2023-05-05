@@ -42,7 +42,9 @@ export default function LandingView({
         <Bg src={BgImage} alt={bgAlt} />
       </BgWrap>
       <ContentWrap className="view-inline-space">
-        <ViewTitle>{title}</ViewTitle>
+        <ViewTitle>
+          {title[0]} <span className="primaryColor">{title[1]}</span>
+        </ViewTitle>
         <AnimatedLogo
           id={1}
           logoWidth={

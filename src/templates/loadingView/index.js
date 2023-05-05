@@ -50,8 +50,11 @@ export default function LoadingView() {
     const word = ContentData.translations[state.lang].landingView.text;
     const badWord = word + badEndText;
 
-    const writingTime = 300;
-    const startDelay = 2500;
+    const letterWritingDuration = 150;
+    const startDelay = 1000;
+    const startDeletingDelay = 1000;
+    const startCorrectDelay = 500;
+    const endDelay = 1000;
 
     let letterCount = 0;
     let currentText = '';
@@ -89,10 +92,12 @@ export default function LoadingView() {
       if (isDelete || endLetterCount !== endText.length) {
         setTimeout(
           _correctWord,
-          currentText.length === word.length ? writingTime * 2 : writingTime
+          currentText.length === word.length
+            ? startCorrectDelay
+            : letterWritingDuration
         );
       } else {
-        setTimeout(endAnimation, writingTime * 5);
+        setTimeout(endAnimation, endDelay);
       }
     };
 
@@ -102,9 +107,9 @@ export default function LoadingView() {
       _changeText();
 
       if (currentText.length === badWord.length) {
-        setTimeout(_correctWord, writingTime * 3);
+        setTimeout(_correctWord, startDeletingDelay);
       } else {
-        setTimeout(_typeWord, writingTime);
+        setTimeout(_typeWord, letterWritingDuration);
       }
     };
 

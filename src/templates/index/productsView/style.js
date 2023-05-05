@@ -27,7 +27,7 @@ export const BigTitle = styled.h1`
   transform: translateX(-50%);
   text-transform: uppercase;
   text-align: center;
-  color: ${theme.colors.bgDarker};
+  color: ${theme.colors.transparentDark};
 
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -138,7 +138,7 @@ export const ProductText = styled.span`
     height: ${TIP_DOT_LENGTH}rem;
     left: 0;
     top: 0.9rem;
-    background-color: ${theme.colors.dark2};
+    background-color: ${theme.colors.dark};
     border-radius: ${TIP_DOT_LENGTH}rem;
   }
 `;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
@@ -32,6 +32,8 @@ gsap.registerPlugin(ScrollToPlugin);
 export default function AboutView({
   content: { topTitle, bottomTitle, arrowAlt, panelImageAlt, panels },
 }) {
+  const ScrollItemIndex = useRef(0);
+
   const scroll = (prev = false) => {
     const panelsWrap = document.getElementById('ABOUT_PANELS_WRAP');
     const panelsWrapWidth = panelsWrap?.clientWidth;
@@ -45,14 +47,25 @@ export default function AboutView({
       panelsWrap?.children[0].clientWidth + paddingBetweenItems;
     const countOfVisibleItems = Math.floor(panelsWrapWidth / singlePanelWidth);
 
-    gsap.to('#ABOUT_PANELS_WRAP', {
-      duration: 1,
-      scrollTo: {
-        x: prev
-          ? `-=${countOfVisibleItems * singlePanelWidth}`
-          : `+=${countOfVisibleItems * singlePanelWidth}`,
-      },
-    });
+    const panelChildens =
+      document.getElementById('ABOUT_PANELS_WRAP')?.children;
+    const goPrev = prev && ScrollItemIndex.current > 0;
+    const goNext =
+      !prev &&
+      ScrollItemIndex.current < panelChildens.length - countOfVisibleItems;
+    if (goPrev) {
+      ScrollItemIndex.current--;
+    }
+    if (goNext) {
+      ScrollItemIndex.current++;
+    }
+    if (goPrev || goNext)
+      gsap.to('#ABOUT_PANELS_WRAP', {
+        duration: 0.5,
+        scrollTo: {
+          x: panelChildens[ScrollItemIndex.current],
+        },
+      });
   };
 
   const PanelsData = [

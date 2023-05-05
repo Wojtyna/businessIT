@@ -10,7 +10,7 @@ export const PanelTitle = styled.span`
   text-transform: uppercase;
   display: block;
   font-weight: ${theme.font.weight.m};
-  color: ${theme.colors.dark2};
+  color: ${theme.colors.dark};
 `;
 export const PanelSubtitle = styled.span`
   display: block;

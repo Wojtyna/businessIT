@@ -12,6 +12,8 @@ import {
   TipTitle,
   TipWrap,
   ViewTitle,
+  MidBgLine,
+  MidBgLineWrap,
 } from './style';
 
 import PrintImage from '../../../assets/images/steps/blueprint.webp';
@@ -21,6 +23,7 @@ import ManufacturingImage from '../../../assets/images/steps/manufacturing.webp'
 import ProductionImage from '../../../assets/images/steps/production.webp';
 import ProjectionImage from '../../../assets/images/steps/projection.webp';
 import ScalesImage from '../../../assets/images/steps/scales.webp';
+import MidBgImage from '../../../assets/images/bg-lines/secondMid.webp';
 
 export default function StepsView({
   content: {
@@ -28,6 +31,7 @@ export default function StepsView({
     steps,
     tip: { tipTitle, text },
     panelImageAlt,
+    midLineAlt,
   },
 }) {
   const PanelsData = [
@@ -63,13 +67,17 @@ export default function StepsView({
 
   return (
     <ViewWrap className="view-inline-space index-view">
+      <MidBgLineWrap>
+        <MidBgLine src={MidBgImage} alt={midLineAlt} />
+      </MidBgLineWrap>
+
       <ViewTitle className="textBorder">{title}</ViewTitle>
 
       <PanelsWrap>
         {PanelsData.map((item, index) => (
           <PanelStyle key={`STEPS_PANEL_${index}`}>
             <NumberWrap>
-              <Number className="textBorder">{index + 1}</Number>
+              <Number>{index + 1}</Number>
             </NumberWrap>
             <PanelImage src={item.image} alt={panelImageAlt} />
             <PanelTitle>{item.title}</PanelTitle>

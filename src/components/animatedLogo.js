@@ -51,7 +51,7 @@ const LogoEye = styled.div`
     width: ${({ LOGO_EYE_LENGTH }) => LOGO_EYE_LENGTH}rem;
     height: ${({ LOGO_EYE_LENGTH }) => LOGO_EYE_LENGTH}rem;
     border-radius: ${({ LOGO_EYE_LENGTH }) => LOGO_EYE_LENGTH}rem;
-    background-color: ${theme.colors.dark2};
+    background-color: ${theme.colors.dark};
   }
 
   ${({ second }) =>

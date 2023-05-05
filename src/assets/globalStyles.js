@@ -2,19 +2,17 @@ import { createGlobalStyle } from 'styled-components';
 
 export const theme = {
   colors: {
+    dark: '#393939',
     light1: '#F2F2F2',
     light2: '#D9D9D9',
     light3: '#C0C0C0',
-    dark1: '#111111',
-    dark2: '#393939',
     mid: '#808080',
     primary: '#4AF7D8',
-    red: '#ff4747',
-    bg: '#F5FAFF',
-    bgDarker: '#EBF0F5',
+    secondary: '#365B6D',
+    bg: '#FAFCFF',
     transparentLight: '#ffffff33',
-    transparentDark: '#00000008',
-    hoverBg: '#00000007',
+    transparentDark: '#0000000a',
+    red: '#ff4747',
   },
   font: {
     size: {
@@ -56,9 +54,10 @@ export const CONSTANS = {
   BUTTON_MIN_WIDTH: 15,
   CLOSE_BUTTON_LENGTH: 5,
   ICON_LENGTH: 2.2,
-  MAX_CONTENT_WIDTH: 140,
-  SPACE_BETWEEN_SECTIONS: 18,
-  SCROLL_BAR_WIDTH: 0.8,
+  MAX_CONTENT_WIDTH: 110,
+  MAX_CONTENT_WIDTH_XL: 140,
+  SPACE_BETWEEN_SECTIONS: 25,
+  SCROLL_BAR_WIDTH: 1.2,
   IMAGE_LENGTH_XS: 4,
   IMAGE_LENGTH_S: 5.5,
   IMAGE_LENGTH_M: 8,
@@ -80,7 +79,7 @@ const GlobalStyle = createGlobalStyle`
         display: block;
         background: ${theme.colors.bg};
         background-color: ${theme.colors.bg}; 
-        font-family: "Montserrat", Helvetica, sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: ${theme.font.size.sMobile};
         font-weight: ${theme.font.weight.s}; 
         color: black;
@@ -104,7 +103,7 @@ const GlobalStyle = createGlobalStyle`
         font-weight: ${theme.font.weight.l}; 
         padding: 0;
         margin: 0; 
-        color: ${theme.colors.dark2};
+        color: ${theme.colors.dark};
 
         @media ${theme.windowSize.big} {
             font-size: ${theme.font.size.l};  
@@ -116,27 +115,64 @@ const GlobalStyle = createGlobalStyle`
         font-weight: ${theme.font.weight.s};
         padding: 0;
         margin: 0; 
-        color: ${theme.colors.dark2};
+        color: ${theme.colors.dark};
 
         @media ${theme.windowSize.big} {
             font-size: ${theme.font.size.m};  
         }
     }  
 
-    a{
+    a, button{
         color: inherit; 
         outline: none;
         padding: 0;
         margin: 0;
         text-decoration: none; 
         border: none;  
-        
+        background-color: transparent;
+        background: transparent;
+        width: fit-content; 
     }   
+
+    button{
+        position: relative;
+        
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        user-drag: none;
+        -webkit-user-drag: none; 
+        
+        ::before {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            content: '';
+            background-color: ${theme.colors.transparentLight};
+            display: block;
+            opacity: 0;
+        }
+
+        :hover {
+            ::before {
+            opacity: 1;
+            }
+        }
+        :active {
+            ::before {
+            opacity: 0.5;
+            }
+        }
+    }
  
     b{
         font-weight: ${theme.font.weight.m};  
-        color: ${theme.colors.dark2};
-        font-family: "Montserrat", Helvetica, sans-serif;  
+        color: ${theme.colors.dark};
+        font-family: "Montserrat", sans-serif;  
     }
 
     input,
@@ -173,7 +209,7 @@ const GlobalStyle = createGlobalStyle`
         @media ${theme.windowSize.mid} {
             padding-inline: 5rem;
         }
-    }
+    } 
 
     .smallFont{
         font-size: ${theme.font.size.xsMobile}; 
@@ -184,9 +220,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .textBorder{
+        color: ${theme.colors.bg};
         font-weight: ${theme.font.weight.l};
         text-transform: uppercase; 
-        text-shadow: -1px 0 ${theme.colors.dark2}, 0 1px ${theme.colors.dark2}, 1px 0 ${theme.colors.dark2}, 0 -1px ${theme.colors.dark2};
+        text-shadow: -1px 0 ${theme.colors.dark}, 0 1px ${theme.colors.dark}, 1px 0 ${theme.colors.dark}, 0 -1px ${theme.colors.dark};
     }
 
     .companyName{  
@@ -204,6 +241,9 @@ const GlobalStyle = createGlobalStyle`
         -webkit-user-drag: none;
     }
 
+    .index-view{
+        opacity: 0;
+    }
     .scrollView{
         overflow-y: auto;
         overflow-x: hidden;
@@ -215,7 +255,7 @@ const GlobalStyle = createGlobalStyle`
             background-color: ${theme.colors.light1};
         }
         ::-webkit-scrollbar-thumb {
-            background-color: ${theme.colors.light2};
+            background-color: ${theme.colors.light3};
             border-radius: ${CONSTANS.SCROLL_BAR_WIDTH}rem;
         }
     }

@@ -4,9 +4,8 @@ import { reducer } from './reducer';
 
 export const GlobalState = createContext();
 
-export default function State({ loadedLang, children }) {
+export default function State({ children }) {
   const initialState = {
-    lang: loadedLang,
     disabledBodyScrolling: false,
   };
 
