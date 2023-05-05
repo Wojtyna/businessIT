@@ -96,7 +96,7 @@ const Text = styled.h2`
 
 export default function BrowserView({ content: { firstTitle, secondTitle } }) {
   return (
-    <ViewWrap className="view-inline-space index-view">
+    <ViewWrap className="view-inline-space animate-opacity-onEnter">
       <BrowserWrap>
         <Nav>
           <NavCorner />

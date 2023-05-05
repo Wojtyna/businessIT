@@ -11,8 +11,6 @@ export const ViewWrap = styled.section`
 export const CardStyle = styled.div`
   position: relative;
   width: 100%;
-  display: flex;
-  flex-direction: column;
   background-color: ${theme.colors.primary};
   border-radius: ${theme.space.xl}rem;
   padding: ${theme.space.xl}rem;
@@ -26,6 +24,8 @@ export const CardStyle = styled.div`
 
 export const CardContent = styled.div`
   z-index: 2;
+  display: flex;
+  flex-direction: column;
 `;
 
 // TITLE

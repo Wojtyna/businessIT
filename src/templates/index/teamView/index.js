@@ -9,12 +9,12 @@ export default function TeamView({
   content: { title, teamImgAlt, midLineAlt },
 }) {
   return (
-    <ViewWrap className="view-inline-space index-view">
+    <ViewWrap className="view-inline-space">
       <MidBgLineWrap>
         <MidBgLine src={MidBgImage} alt={midLineAlt} />
       </MidBgLineWrap>
       <Title
-        className="textBorder"
+        className="textBorder animate-opacity-onEnter"
         dangerouslySetInnerHTML={{ __html: title }}
       />
       <TeamImg alt={teamImgAlt} src={TeamImage} />

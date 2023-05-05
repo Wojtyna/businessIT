@@ -240,10 +240,7 @@ const GlobalStyle = createGlobalStyle`
         user-drag: none;
         -webkit-user-drag: none;
     }
-
-    .index-view{
-        opacity: 0;
-    }
+ 
     .scrollView{
         overflow-y: auto;
         overflow-x: hidden;

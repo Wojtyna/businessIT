@@ -3,7 +3,7 @@ import { CONSTANS, theme } from '../../../assets/globalStyles';
 
 export const ViewWrap = styled.footer`
   position: relative;
-  padding-block: ${CONSTANS.SPACE_BETWEEN_SECTIONS}rem;
+  padding-top: ${CONSTANS.SPACE_BETWEEN_SECTIONS}rem;
 
   ${({ onlyTopPadding }) =>
     onlyTopPadding &&

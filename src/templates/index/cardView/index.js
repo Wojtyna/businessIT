@@ -78,7 +78,7 @@ const ProductsView = ({
   }, []);
 
   return (
-    <ViewWrap className="view-inline-space index-view">
+    <ViewWrap className="view-inline-space animate-opacity-onEnter">
       <CardStyle id="CARD_WRAP">
         <RingsWrap>
           <Ring id="CARD_RING_1" />

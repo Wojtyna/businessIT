@@ -66,14 +66,16 @@ export default function StepsView({
   ];
 
   return (
-    <ViewWrap className="view-inline-space index-view">
+    <ViewWrap className="view-inline-space">
       <MidBgLineWrap>
         <MidBgLine src={MidBgImage} alt={midLineAlt} />
       </MidBgLineWrap>
 
-      <ViewTitle className="textBorder">{title}</ViewTitle>
+      <ViewTitle className="textBorder animate-opacity-onEnter">
+        {title}
+      </ViewTitle>
 
-      <PanelsWrap>
+      <PanelsWrap className="animate-opacity-onEnter">
         {PanelsData.map((item, index) => (
           <PanelStyle key={`STEPS_PANEL_${index}`}>
             <NumberWrap>
@@ -85,7 +87,7 @@ export default function StepsView({
         ))}
       </PanelsWrap>
 
-      <TipWrap>
+      <TipWrap className="animate-opacity-onEnter">
         <TipTitle>{tipTitle}</TipTitle>
         <TipText dangerouslySetInnerHTML={{ __html: text }} />
       </TipWrap>

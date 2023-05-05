@@ -63,20 +63,27 @@ export default function IndexPage() {
   }, [WindowWidth]);
 
   useEffect(() => {
-    const _sections = gsap.utils.toArray('.index-view');
+    const _sections = gsap.utils.toArray('.animate-opacity-onEnter');
     _sections.forEach((_section) => {
-      gsap.to(_section, {
-        opacity: 1,
-        duration: 0.5,
-        ease: 'easeInOut',
-        scrollTrigger: {
-          scroller: '#wrapper',
-          trigger: _section,
-          start: 'top 75%',
-          end: 'top 75%',
-        },
-      });
+      gsap.fromTo(
+        _section,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 0.5,
+          ease: 'easeInOut',
+          scrollTrigger: {
+            scroller: '#wrapper',
+            trigger: _section,
+            start: 'top 75%',
+          },
+        }
+      );
     });
+
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 50);
   }, []);
 
   return (
@@ -123,10 +130,6 @@ export default function IndexPage() {
         <StepsView
           content={ContentData.translations[state.lang].indexPage.stepsView}
         />
-        {/* <ProductsView
-          content={ContentData.translations[state.lang].indexPage.productsView}
-          onProductsClick={toggleProductsPage}
-        /> */}
         <CardView
           content={ContentData.translations[state.lang].indexPage.cardView}
           onProductsClick={toggleProductsPage}
@@ -134,9 +137,9 @@ export default function IndexPage() {
         <QuoteView
           content={ContentData.translations[state.lang].indexPage.quoteView}
         />
-        {/* <FooterView
+        <FooterView
           content={ContentData.translations[state.lang].indexPage.footerView}
-        /> */}
+        />
       </main>
     </>
   );

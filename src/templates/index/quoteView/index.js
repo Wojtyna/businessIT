@@ -55,7 +55,7 @@ const Text = styled.h2`
 
 export default function QuoteView({ content: { quote, author } }) {
   return (
-    <ViewWrap className="view-inline-space index-view">
+    <ViewWrap className="view-inline-space animate-opacity-onEnter">
       <QuoteWrap>
         <QuoteSign>"</QuoteSign>
         <Quote> {quote}</Quote>

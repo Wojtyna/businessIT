@@ -8,16 +8,16 @@ export default function FooterView({
   content: { title, bottomLineAlt, titleMobile },
 }) {
   return typeof window !== 'undefined' ? (
-    <ViewWrap className="view-inline-space index-view">
+    <ViewWrap className="view-inline-space">
       <BottomBgLineWrap>
         <BottomBgLine src={BottomLineBgImage} alt={bottomLineAlt} />
       </BottomBgLineWrap>
-      <Title
-        className="textBorder"
+      {/* <Title
+        className="textBorder animate-opacity-onEnter"
         dangerouslySetInnerHTML={{
           __html: window.innerWidth > 767 ? title : titleMobile,
         }}
-      />
+      /> */}
     </ViewWrap>
   ) : (
     <ViewWrap onlyTopPadding></ViewWrap>

@@ -104,7 +104,7 @@ export default function AboutView({
   ];
 
   return (
-    <ViewWrap className="view-inline-space index-view">
+    <ViewWrap className="view-inline-space animate-opacity-onEnter">
       <AboutWrap>
         <TopWrap>
           <TopTitle>{topTitle}</TopTitle>
