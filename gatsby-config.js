@@ -5,27 +5,27 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || 'development'}`,
 });
 
-const strapiConfig = {
-  apiURL: process.env.STRAPI_API_URL,
-  accessToken: process.env.STRAPI_TOKEN,
-  collectionTypes: [
-    {
-      singularName: 'products-form',
-      // queryParams: {
-      //   populate: {
-      //     cover: '*',
-      //     blocks: {
-      //       populate: '*',
-      //     },
-      //   },
-      // },
-    },
-  ],
-  singleTypes: [],
-  remoteFileHeaders: {
-    Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
-  },
-};
+// const strapiConfig = {
+//   apiURL: process.env.STRAPI_API_URL,
+//   accessToken: process.env.STRAPI_TOKEN,
+//   collectionTypes: [
+//     {
+//       singularName: 'products-form',
+//       // queryParams: {
+//       //   populate: {
+//       //     cover: '*',
+//       //     blocks: {
+//       //       populate: '*',
+//       //     },
+//       //   },
+//       // },
+//     },
+//   ],
+//   singleTypes: [],
+//   remoteFileHeaders: {
+//     Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
+//   },
+// };
 
 const gatsbyManifest = {
   name: `CCLARITO`,
@@ -70,10 +70,10 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: gatsbyManifest,
     },
-    {
-      resolve: `gatsby-source-strapi`,
-      options: strapiConfig,
-    },
+    // {
+    //   resolve: `gatsby-source-strapi`,
+    //   options: strapiConfig,
+    // },
   ],
   trailingSlash: 'never',
 };
