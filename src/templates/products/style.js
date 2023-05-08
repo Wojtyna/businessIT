@@ -35,7 +35,7 @@ export const TitleBg = styled.span`
   position: absolute;
   left: 0;
   bottom: 0;
-  color: ${theme.colors.light1};
+  color: ${theme.colors.transparentDark};
   font-size: 6rem;
 
   -webkit-user-select: none;

@@ -66,7 +66,7 @@ export default function StepsView({
   ];
 
   return (
-    <ViewWrap className="view-inline-space">
+    <ViewWrap className="spaceBetweenSections view-inline-space">
       <MidBgLineWrap>
         <MidBgLine src={MidBgImage} alt={midLineAlt} />
       </MidBgLineWrap>

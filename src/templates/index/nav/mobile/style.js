@@ -27,13 +27,14 @@ export const Header = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   height: ${ABOUT_HEADER_HEIGHT}rem;
 `;
 export const Logo = styled.img`
-  height: ${CONSTANS.IMAGE_LENGTH_S}rem;
+  height: ${CONSTANS.IMAGE_LENGTH_XS}rem;
 `;
 export const CompanyTitle = styled.span`
+  padding-top: ${theme.space.l}rem;
   font-size: ${theme.font.size.mMobile};
 `;
 

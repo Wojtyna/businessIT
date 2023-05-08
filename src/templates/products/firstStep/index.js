@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 
 import { theme } from '../../../assets/globalStyles';
-import ContentData from '../../../assets/data.json';
+import ContentData from '../../../assets/translates.json';
 import Checkbox from '../../../components/checkbox';
 import Button from '../../../components/button';
 

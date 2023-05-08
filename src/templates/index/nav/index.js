@@ -2,14 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import AnimatedLogo from '../../../components/animatedLogo';
-import ContentData from '../../../assets/data.json';
+import ContentData from '../../../assets/translates.json';
 
 import {
   ViewWrap,
   Button,
-  ButtonsWrap,
-  CompanyName,
   // ContactButtonWrap,
   // ContactImage,
   // ContactTitle,
@@ -18,13 +15,16 @@ import {
   LangWrap,
   LangButton,
   DisableNavBg,
-  TranslateImageStyle,
+  ImageStyle,
+  TextButtonsWrap,
 } from './style';
 import { GlobalState } from '../../../assets/state/State';
 
 // import ChatImage from '../../../assets/images/nav/messages.webp';
 // import FormImage from '../../../assets/images/nav/sign-up.webp';
 import TranslateImage from '../../../assets/images/nav/translate.webp';
+import LinkedinImage from '../../../assets/images/social-media/linkedin.png';
+import InstagramImage from '../../../assets/images/social-media/instagram.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -86,6 +86,7 @@ export default function Navigation({
     buttons: { products, contact, translateImageAlt },
     // contactButtons,
   },
+  socialMedia: { linkedin, instagram },
   showProductsModal,
   showFormModal,
 }) {
@@ -153,6 +154,10 @@ export default function Navigation({
       );
   };
 
+  const openUrl = (uri) => {
+    window.open(uri, '_blank', 'noreferrer');
+  };
+
   useEffect(() => {
     gsap.to('#bottom-nav', {
       ...activeWindowProps[0],
@@ -167,28 +172,47 @@ export default function Navigation({
     });
   }, []);
 
+  const handleTranslatePress = () => {
+    if (ActiveWindow === 'none' || ActiveWindow === 'lang') {
+      showPanelAnimation('lang');
+    }
+  };
+
+  const handleProductsPress = () => {
+    if (ActiveWindow === 'none') {
+      turnOnProductsModal();
+    }
+  };
+
+  const handleContactPress = () => {
+    if (ActiveWindow === 'none') {
+      turnOnFormModal();
+    }
+  };
+
   return (
     <>
       {ActiveWindow !== 'none' && (
         <DisableNavBg onClick={disableActiveWindow} />
       )}
       <ViewWrap className="view-inline-space" id="bottom-nav">
-        <AnimatedLogo id={2} logoWidth={5.5} />
-        <CompanyName className="companyName">
-          {ContentData.companyName}
-        </CompanyName>
-        <ButtonsWrap>
+        <ButtonWrap>
+          <LangWindow disableWindow={disableActiveWindow} />
+          <Button
+            disable={ActiveWindow !== 'none' && ActiveWindow !== 'lang'}
+            onClick={handleTranslatePress}
+          >
+            <ImageStyle src={TranslateImage} alt={translateImageAlt} />
+          </Button>
+        </ButtonWrap>
+
+        <TextButtonsWrap>
           <Button
             disable={ActiveWindow !== 'none'}
-            onClick={() => {
-              if (ActiveWindow === 'none') {
-                turnOnProductsModal();
-              }
-            }}
+            onClick={handleProductsPress}
           >
             {products}
           </Button>
-
           {/* <ButtonWrap>
             <ContactWindow
               onChatClick={turnOnChat}
@@ -208,32 +232,28 @@ export default function Navigation({
           </ButtonWrap> */}
           <Button
             disable={ActiveWindow !== 'none'}
-            onClick={() => {
-              if (ActiveWindow === 'none') {
-                turnOnFormModal();
-              }
-            }}
+            onClick={handleContactPress}
           >
             {contact}
           </Button>
+        </TextButtonsWrap>
 
-          <ButtonWrap>
-            <LangWindow disableWindow={disableActiveWindow} />
-            <Button
-              disable={ActiveWindow !== 'none' && ActiveWindow !== 'lang'}
-              onClick={() => {
-                if (ActiveWindow === 'none' || ActiveWindow === 'lang') {
-                  showPanelAnimation('lang');
-                }
-              }}
-            >
-              <TranslateImageStyle
-                src={TranslateImage}
-                alt={translateImageAlt}
-              />
-            </Button>
-          </ButtonWrap>
-        </ButtonsWrap>
+        <Button
+          disable={ActiveWindow !== 'none'}
+          onClick={() => {
+            openUrl(instagram.url);
+          }}
+        >
+          <ImageStyle src={InstagramImage} alt={instagram.alt} />
+        </Button>
+        <Button
+          disable={ActiveWindow !== 'none'}
+          onClick={() => {
+            openUrl(linkedin.url);
+          }}
+        >
+          <ImageStyle src={LinkedinImage} alt={linkedin.alt} />
+        </Button>
       </ViewWrap>
     </>
   );

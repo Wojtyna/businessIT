@@ -6,6 +6,7 @@ export const ViewWrap = styled.nav`
   z-index: 100;
   position: fixed;
   width: max-content;
+  height: ${CONSTANS.NAVIGATION_HEIGHT}rem;
   bottom: ${theme.space.xl}rem;
   left: 50%;
   align-self: center;
@@ -14,43 +15,47 @@ export const ViewWrap = styled.nav`
   justify-content: center;
   align-items: center;
   border-radius: ${theme.space.m}rem;
-  border: 0.1rem solid ${theme.colors.light2};
   padding: ${theme.space.xs}rem ${theme.space.m}rem;
+  background-color: white;
+  border: 0.1rem solid ${theme.colors.transparentDark};
+  box-shadow: 0 0 4rem -2.3rem #00000033;
 
   visibility: hidden;
   pointer-events: none;
   transform: translate(-50%, 33%) scale(0.5);
   opacity: 0;
-
-  ::before {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background-color: ${theme.colors.transparentLight};
-    backdrop-filter: blur(1.4rem);
-    -webkit-backdrop-filter: blur(1.4rem);
-    border-radius: ${theme.space.m}rem;
-  }
 `;
 
-// LOGO
-export const CompanyName = styled.span`
-  padding: ${theme.space.s}rem;
-  font-size: ${theme.font.size.mMobile};
-`;
-
-// BUTTONS
-export const ButtonsWrap = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
+// BUTTON
 export const ButtonWrap = styled.div`
   position: relative;
+`;
+
+export const TextButtonsWrap = styled.div`
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding-inline: ${theme.space.s}rem;
+  margin-inline: ${theme.space.s}rem;
+
+  ::before,
+  ::after {
+    position: absolute;
+    content: '';
+    width: 0.2rem;
+    height: 50%;
+    background-color: ${theme.colors.transparentDark};
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  ::before {
+    left: 0;
+  }
+  ::after {
+    right: 0;
+  }
 `;
 
 export const Button = styled.div`
@@ -94,7 +99,7 @@ export const Button = styled.div`
   }
 `;
 
-export const TranslateImageStyle = styled.img`
+export const ImageStyle = styled.img`
   width: ${CONSTANS.ICON_LENGTH}rem;
   height: ${CONSTANS.ICON_LENGTH}rem;
 `;
@@ -111,27 +116,16 @@ export const ContactWrap = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: ${theme.space.m}rem;
-  border: 0.1rem solid ${theme.colors.light2};
   padding: ${theme.space.xs}rem ${theme.space.m}rem;
+  background-color: white;
+  border: 0.1rem solid ${theme.colors.transparentDark};
+  box-shadow: 0 0 4rem -2.3rem #00000033;
   overflow: hidden;
 
   visibility: hidden;
   pointer-events: none;
   transform: translate(-50%, 33%) scale(0.5);
   opacity: 0;
-
-  ::before {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background-color: ${theme.colors.transparentLight};
-    backdrop-filter: blur(1.4rem);
-    -webkit-backdrop-filter: blur(1.4rem);
-  }
 `;
 
 export const ContactButtonWrap = styled.div`

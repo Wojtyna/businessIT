@@ -3,7 +3,7 @@ import { gsap, Power1 } from 'gsap';
 
 import { Bg, Text, Typewrite, ViewWrap } from './style';
 import { GlobalState } from '../../assets/state/State';
-import ContentData from '../../assets/data.json';
+import ContentData from '../../assets/translates.json';
 
 export default function LoadingView() {
   const { state, dispatch } = useContext(GlobalState);

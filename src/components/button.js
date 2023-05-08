@@ -10,7 +10,7 @@ const ButtonWrap = styled.div`
   align-items: center;
   border-radius: ${theme.space.xs}rem;
   transition: border-color 0.2s ease-in-out;
-  border: solid 0.1rem ${theme.colors.light3};
+  border: solid 0.1rem ${theme.colors.light2};
   padding: 0.8rem 1.6rem;
   cursor: pointer;
 

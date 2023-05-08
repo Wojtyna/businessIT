@@ -1,8 +1,8 @@
 {
   "companyName": "CCLARITO",
   "socialMedia": {
-    "twitter": { "alt": "Twitter", "url": "https://twitter.com/" },
-    "youtube": { "alt": "Youtube", "url": "https://youtube.com/" }
+    "linkedin": { "alt": "Linkedin", "url": "https://linkedin.com/" },
+    "instagram": { "alt": "Instagram", "url": "https://instagram.com/" }
   },
   "products": {
     "page-card": ["2", "11", "12", "16", "21", "22"],
@@ -39,7 +39,7 @@
           "bgAlt": "Tło pierwszej strony",
           "scrollDownTitle": "Przewiń w dół",
           "title": [
-            "Czy zrobiłeś wszystko, aby Twój klient",
+            "Czy zrobiłeś wszystko, aby klient",
             "znalazł Twój biznes?"
           ],
           "topLineAlt": "Linia w tle",
@@ -88,30 +88,6 @@
           "panelImageAlt": "Obrazek",
           "midLineAlt": "Lina w tle"
         },
-        "productsView": {
-          "titleView": "coś na czym się najlepiej znamy",
-          "showMore": "Pokaż więcej",
-          "imageAlt": "Obrazek",
-          "arrowAlt": "Strzałka",
-          "priceSubtitle": "Już od",
-          "products": [
-            {
-              "price": "600 zł",
-              "content": ["wizytówka", "prosta strona"]
-            },
-            {
-              "price": "3 500 zł",
-              "content": ["forum", "sklep internetowy", "projekt biznesowy"]
-            },
-            {
-              "price": "90 000 zł",
-              "content": [
-                "aplikacja webowa",
-                "aplikacja mobilna na iOS i Android"
-              ]
-            }
-          ]
-        },
         "cardView": {
           "title": "wizytówka",
           "subtitle": "Czyli nasza specjalność",
@@ -131,8 +107,7 @@
           "author": "Tony Robbins"
         },
         "footerView": {
-          "title": "Przyciągaj klientów prostotą!<br />Skontaktuj się z nami używając nawigacji na dole strony",
-          "titleMobile": "Przyciągaj klientów prostotą!<br />Skontaktuj się z nami używając nawigacji w prawym górnym rogu",
+          "title": "© 2023",
           "bottomLineAlt": "Linia w tle"
         }
       },
@@ -154,8 +129,8 @@
         "sendButton": "Wyślij",
         "manualContactPanel": {
           "text": "Zawsze możesz się z nami skontaktować. Postaramy się odpowiedzieć na każde pytanie!",
-          "phone": "+48 123 456 789",
-          "mail": "biznes@firma.com",
+          "phone": "+48 000 000 000",
+          "mail": "kontakt@cclarito.com",
           "iconAlt": "Ikona"
         }
       },

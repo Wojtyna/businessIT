@@ -2,11 +2,7 @@ import styled from 'styled-components';
 import { CONSTANS, theme } from '../../../assets/globalStyles';
 
 export const CARD_CIRCLE_WIDTH = CONSTANS.MAX_CONTENT_WIDTH * 2;
-
-// MAIN WRAP
-export const ViewWrap = styled.section`
-  margin-top: ${CONSTANS.SPACE_BETWEEN_SECTIONS}rem;
-`;
+export const CARD_MAX_WIDTH_MOBILE = 75;
 
 export const CardStyle = styled.div`
   position: relative;
@@ -14,11 +10,16 @@ export const CardStyle = styled.div`
   background-color: ${theme.colors.primary};
   border-radius: ${theme.space.xl}rem;
   padding: ${theme.space.xl}rem;
+  margin-inline: auto;
+  max-width: ${CARD_MAX_WIDTH_MOBILE}rem;
   overflow: hidden;
 
   @media ${theme.windowSize.mid} {
     border-radius: ${theme.space.xxl}rem;
     padding: ${theme.space.xxl}rem;
+  }
+  @media ${theme.windowSize.big} {
+    max-width: 100%;
   }
 `;
 

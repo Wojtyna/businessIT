@@ -42,15 +42,12 @@ const ItemWrap = styled.div`
 `;
 
 const ItemImage = styled.img`
-  width: ${CONSTANS.IMAGE_LENGTH_S}rem;
-  height: ${CONSTANS.IMAGE_LENGTH_S}rem;
+  width: ${CONSTANS.IMAGE_LENGTH_XS}rem;
+  height: ${CONSTANS.IMAGE_LENGTH_XS}rem;
 `;
 
-const ItemTitle = styled.h2`
+const ItemTitle = styled.h3`
   padding-block: ${theme.space.m}rem ${theme.space.xs}rem;
-  color: ${theme.colors.primary};
-  font-weight: ${theme.font.weight.l};
-  text-transform: uppercase;
 `;
 
 const ItemSubtitle = styled.span`

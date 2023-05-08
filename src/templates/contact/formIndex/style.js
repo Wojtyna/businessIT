@@ -19,10 +19,6 @@ export const ViewWrap = styled.div`
     `}
 `;
 
-export const ViewTitle = styled.h2`
-  font-weight: ${theme.font.weight.m};
-`;
-
 export const InputsWrap = styled.div`
   @media ${theme.windowSize.mid} {
     display: flex;
@@ -51,10 +47,8 @@ export const WarningStyle = styled.span`
 `;
 
 // PRODUCTS VIEW
-export const ProductTitle = styled.span`
+export const ProductTitle = styled.h3`
   display: inline-block;
-  font-weight: ${theme.font.weight.m};
-  text-transform: uppercase;
-  color: ${theme.colors.dark};
-  padding-top: ${theme.space.xl}rem;
+  padding-top: ${({ isProductView }) =>
+    isProductView ? theme.space.l : theme.space.m}rem;
 `;

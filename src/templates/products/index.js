@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import { GlobalState } from '../../assets/state/State';
 import { ProductsWrap } from './style';
-import ContentData from '../../assets/data.json';
+import ContentData from '../../assets/translates.json';
 import Modal from '../../components/modal';
 import HeaderView from './header';
 import IntroView from './intro';

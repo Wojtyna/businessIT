@@ -1,16 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { CONSTANS, theme } from '../../../assets/globalStyles';
+import { theme } from '../../../assets/globalStyles';
 
 const NAV_DOT_LENGTH = 1.2;
 const NAV_CORNER_LENGTH = NAV_DOT_LENGTH * 4;
 const NAV_CORNER_BORDER = NAV_CORNER_LENGTH / 4;
-
-// MAIN WRAP
-const ViewWrap = styled.section`
-  margin-top: ${CONSTANS.SPACE_BETWEEN_SECTIONS / 2}rem;
-`;
 
 // BROWSER
 const BrowserWrap = styled.div`
@@ -76,7 +71,7 @@ const Line = styled.div`
   height: 1rem;
   margin-inline: auto;
   margin-block: 1rem;
-  background-color: ${theme.colors.light1};
+  background-color: ${theme.colors.transparentDark};
   border-radius: 1rem;
 
   @media ${theme.windowSize.big} {
@@ -96,7 +91,7 @@ const Text = styled.h2`
 
 export default function BrowserView({ content: { firstTitle, secondTitle } }) {
   return (
-    <ViewWrap className="view-inline-space animate-opacity-onEnter">
+    <section className="view-inline-space spaceBetweenSections animate-opacity-onEnter">
       <BrowserWrap>
         <Nav>
           <NavCorner />
@@ -111,6 +106,6 @@ export default function BrowserView({ content: { firstTitle, secondTitle } }) {
         <Text>{secondTitle}</Text>
         <Line width={50} />
       </BrowserWrap>
-    </ViewWrap>
+    </section>
   );
 }

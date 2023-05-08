@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 
 import { CONSTANS, theme } from '../assets/globalStyles';
 import { GlobalState } from '../assets/state/State';
-import ContentData from '../assets/data.json';
+import ContentData from '../assets/translates.json';
 
 import HandImage from '../assets/images/form/hand.webp';
 

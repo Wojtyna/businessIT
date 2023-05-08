@@ -6,15 +6,12 @@ export const PanelWrap = styled.div`
   padding-top: ${({ firstItem }) =>
     firstItem ? theme.space.l : theme.space.xl}rem;
 `;
-export const PanelTitle = styled.span`
-  text-transform: uppercase;
+export const PanelTitle = styled.h3`
   display: block;
-  font-weight: ${theme.font.weight.m};
-  color: ${theme.colors.dark};
 `;
 export const PanelSubtitle = styled.span`
   display: block;
-  color: ${theme.colors.light3};
+  color: ${theme.colors.light2};
   font-weight: ${theme.font.weight.m};
 `;
 

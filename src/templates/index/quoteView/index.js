@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { CONSTANS, theme } from '../../../assets/globalStyles';
+import { theme } from '../../../assets/globalStyles';
 
 const TOP_SLIDEOUT = 6;
 
 // MAIN WRAP
 const ViewWrap = styled.section`
-  margin-top: ${CONSTANS.SPACE_BETWEEN_SECTIONS + TOP_SLIDEOUT}rem;
+  padding-top: ${TOP_SLIDEOUT}rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,12 +50,12 @@ const Quote = styled.h2`
 `;
 const Text = styled.h2`
   text-align: right;
-  color: ${theme.colors.light3};
+  color: ${theme.colors.light2};
 `;
 
 export default function QuoteView({ content: { quote, author } }) {
   return (
-    <ViewWrap className="view-inline-space animate-opacity-onEnter">
+    <ViewWrap className="view-inline-space spaceBetweenSections animate-opacity-onEnter">
       <QuoteWrap>
         <QuoteSign>"</QuoteSign>
         <Quote> {quote}</Quote>

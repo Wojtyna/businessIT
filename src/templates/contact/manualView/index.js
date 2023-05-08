@@ -11,14 +11,14 @@ import {
   SocialMediaWrap,
   ViewWrap,
 } from './style';
-import ContentData from '../../../assets/data.json';
+import ContentData from '../../../assets/translates.json';
 import IconButton from '../../../components/iconButton';
 
 import LogoImage from '../../../assets/images/logo-huge.webp';
 import EmailImage from '../../../assets/images/contact/email.webp';
 import PhoneImage from '../../../assets/images/contact/phone.webp';
-import TwitterImage from '../../../assets/images/social-media/twitter.webp';
-import YoutubeImage from '../../../assets/images/social-media/youtube.webp';
+import LinkedinImage from '../../../assets/images/social-media/linkedin_white.png';
+import InstagramImage from '../../../assets/images/social-media/instagram_white.png';
 
 export default function ManualView({
   content: { text, phone, mail, iconAlt },
@@ -53,17 +53,17 @@ export default function ManualView({
       <SocialMediaWrap>
         <IconButton
           onClick={() => {
-            openUrl(ContentData.socialMedia.twitter.url);
+            openUrl(ContentData.socialMedia.linkedin.url);
           }}
-          alt={ContentData.socialMedia.twitter.alt}
-          iconSource={TwitterImage}
+          alt={ContentData.socialMedia.linkedin.alt}
+          iconSource={LinkedinImage}
         />
         <IconButton
           onClick={() => {
-            openUrl(ContentData.socialMedia.youtube.url);
+            openUrl(ContentData.socialMedia.instagram.url);
           }}
-          alt={ContentData.socialMedia.youtube.alt}
-          iconSource={YoutubeImage}
+          alt={ContentData.socialMedia.instagram.alt}
+          iconSource={InstagramImage}
         />
       </SocialMediaWrap>
     </ViewWrap>

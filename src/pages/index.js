@@ -4,7 +4,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 import Seo from '../components/seo';
 import { GlobalState } from '../assets/state/State';
-import ContentData from '../assets/data.json';
+import ContentData from '../assets/translates.json';
 
 import LandingView from '../templates/index/landingView';
 import BrowserView from '../templates/index/browserView';
@@ -101,6 +101,7 @@ export default function IndexPage() {
         {WindowWidth > 767 ? (
           <Navigation
             content={ContentData.translations[state.lang].navigation}
+            socialMedia={ContentData.socialMedia}
             showProductsModal={toggleProductsPage}
             showFormModal={toggleContactPage}
           />
@@ -139,6 +140,7 @@ export default function IndexPage() {
         />
         <FooterView
           content={ContentData.translations[state.lang].indexPage.footerView}
+          companyName={ContentData.companyName}
         />
       </main>
     </>

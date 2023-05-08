@@ -3,7 +3,6 @@ import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 import {
-  ViewWrap,
   ButtonStyled,
   CardStyle,
   PriceAmount,
@@ -78,7 +77,7 @@ const ProductsView = ({
   }, []);
 
   return (
-    <ViewWrap className="view-inline-space animate-opacity-onEnter">
+    <section className="view-inline-space spaceBetweenSections animate-opacity-onEnter">
       <CardStyle id="CARD_WRAP">
         <RingsWrap>
           <Ring id="CARD_RING_1" />
@@ -108,7 +107,7 @@ const ProductsView = ({
           <ButtonStyled onClick={onProductsClick}>{buttonTitle}</ButtonStyled>
         </CardContent>
       </CardStyle>
-    </ViewWrap>
+    </section>
   );
 };
 

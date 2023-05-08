@@ -7,7 +7,6 @@ const TIP_DOT_LENGTH = 0.3;
 
 // MAIN WRAP
 export const ViewWrap = styled.section`
-  margin-top: ${CONSTANS.SPACE_BETWEEN_SECTIONS}rem;
   position: relative;
 `;
 
@@ -112,9 +111,7 @@ export const PanelImage = styled.img`
   margin-bottom: ${theme.space.l}rem;
 `;
 
-export const PanelTitle = styled.span`
-  font-weight: ${theme.font.weight.m};
-  text-transform: uppercase;
+export const PanelTitle = styled.h3`
   text-align: center;
 `;
 
@@ -149,15 +146,19 @@ export const TipText = styled.span`
 
 // TOP LINE
 export const MidBgLineWrap = styled.div`
-  z-index: -99;
-  position: absolute;
-  width: calc(100vw - ${CONSTANS.SCROLL_BAR_WIDTH}rem);
-  min-width: 100%;
-  bottom: ${theme.space.xxl}rem;
-  left: 50%;
-  transform: translate(-50%, 33%);
-  display: flex;
-  justify-content: center;
+  display: none;
+
+  @media ${theme.windowSize.mid} {
+    z-index: -99;
+    position: absolute;
+    width: calc(100vw - ${CONSTANS.SCROLL_BAR_WIDTH}rem);
+    min-width: 100%;
+    bottom: ${theme.space.xxl}rem;
+    left: 50%;
+    transform: translate(-50%, 33%);
+    display: flex;
+    justify-content: center;
+  }
 `;
 export const MidBgLine = styled.img`
   width: 100%;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { theme } from '../../assets/globalStyles';
 import Modal from '../../components/modal';
-import ContentData from '../../assets/data.json';
+import ContentData from '../../assets/translates.json';
 import { GlobalState } from '../../assets/state/State';
 import ManualView from './manualView';
 import ContactFormView from './formIndex';

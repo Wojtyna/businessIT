@@ -45,7 +45,7 @@ const InputWrap = styled.div`
     border: ${({ warning }) =>
       warning
         ? `solid 0.1rem ${theme.colors.red}`
-        : `solid 0.1rem ${theme.colors.light3}`};
+        : `solid 0.1rem ${theme.colors.light2}`};
     border-radius: 0.5rem;
     transition: all 0.1s ease-out;
     resize: ${({ disableResizeTextarea }) =>
@@ -56,7 +56,7 @@ const InputWrap = styled.div`
     }
 
     ::placeholder {
-      color: ${theme.colors.light2};
+      color: ${theme.colors.light1};
       opacity: 0;
       transition: all 0.1s ease-out;
     }
@@ -82,7 +82,6 @@ const InputWrap = styled.div`
     top: ${CONSTANS.BUTTON_MIN_HEIGHT_MOBILE / 2}rem;
     transform: translate(2rem, -50%);
     transition: all 0.1s ease-out;
-    color: ${theme.colors.mid};
 
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -106,7 +105,7 @@ const InputWrap = styled.div`
     top: 0;
     font-size: ${theme.font.size.xsMobile};
     font-weight: ${theme.font.weight.m};
-    color: ${({ warning }) => (warning ? theme.colors.red : theme.colors.mid)};
+    color: ${({ warning }) => (warning ? theme.colors.red : theme.colors.dark)};
 
     ::before {
       z-index: -1;

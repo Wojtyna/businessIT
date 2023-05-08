@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 import { CONSTANS, theme } from '../assets/globalStyles';
-import DataContent from '../assets/data.json';
+import DataContent from '../assets/translates.json';
 
 const ButtonWrap = styled.div`
   position: relative;
@@ -61,26 +61,18 @@ const ButtonWrap = styled.div`
       ::before {
         transform: translate(-50%, -50%) rotate(-90deg);
       }
-    `}
-
-  ${({ primaryStyle }) =>
-    primaryStyle &&
-    css`
-      border: 0.1rem solid ${theme.colors.light2};
-      background-color: ${theme.colors.transparentLight};
-      backdrop-filter: blur(1.4rem);
-      -webkit-backdrop-filter: blur(1.4rem);
-    `}
-
+    `} 
   ${({ isBurger, burgerIsOpen }) =>
     isBurger &&
     css`
+      border-radius: 0;
+
       ::after,
       ::before {
         position: absolute;
         content: '';
         width: 50%;
-        height: 0.2rem;
+        height: 0.3rem;
         border-radius: 0.2rem;
         background-color: ${theme.colors.dark};
         display: block;
@@ -137,7 +129,6 @@ const IconButton = ({
   iconSource = undefined,
   addIcon = false,
   border = false,
-  primaryStyle = false,
   burger = { visible: false, isOpen: false },
   style = {},
   iconStyle = {},
@@ -146,7 +137,6 @@ const IconButton = ({
   <ButtonWrap
     onClick={onClick}
     border={border}
-    primaryStyle={primaryStyle || burger.visible}
     isBurger={burger.visible}
     burgerIsOpen={burger.isOpen}
     addIcon={addIcon}

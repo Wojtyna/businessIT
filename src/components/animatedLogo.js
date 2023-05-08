@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
 import styled, { css } from 'styled-components';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { theme } from '../assets/globalStyles';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const LogoView = styled.div`
   width: ${({ LOGO_WIDTH }) => LOGO_WIDTH}rem;
@@ -80,9 +84,9 @@ const AnimatedLogo = ({ id, logoWidth }) => {
       const leftEye = document.getElementById(`LOGO_ANIMATED_LEFT_EYE_${id}`);
       const rightEye = document.getElementById(`LOGO_ANIMATED_RIGHT_EYE_${id}`);
 
-      window.addEventListener('mousemove', (e) => {
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
+      const setEyesPosition = (_ev) => {
+        const mouseX = _ev.clientX;
+        const mouseY = _ev.clientY;
 
         const leftEyeRect = leftEye.getBoundingClientRect();
         const rightEyeRect = rightEye.getBoundingClientRect();
@@ -106,12 +110,42 @@ const AnimatedLogo = ({ id, logoWidth }) => {
         rightEye.style.transform = `translate(50%, -50%) rotate(${
           rightDeg - 45
         }deg)`;
+      };
+
+      ScrollTrigger.create({
+        scroller: '#wrapper',
+        trigger: `#LOGO_ANIMATED_WRAP_${id}`,
+        start: 'top bottom',
+        end: 'bottom top',
+        onEnter: () => {
+          window.addEventListener('mousemove', setEyesPosition);
+        },
+        onLeave: () => {
+          window.removeEventListener('mousemove', setEyesPosition);
+        },
+        onEnterBack: () => {
+          window.addEventListener('mousemove', setEyesPosition);
+        },
+        onLeaveBack: () => {
+          window.removeEventListener('mousemove', setEyesPosition);
+        },
       });
+
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 50);
     }
+    return () => {
+      window.removeEventListener('mousemove', () => {});
+    };
   }, []);
 
   return (
-    <LogoView LOGO_WIDTH={LOGO_WIDTH} LOGO_HEIGHT={LOGO_HEIGHT}>
+    <LogoView
+      LOGO_WIDTH={LOGO_WIDTH}
+      LOGO_HEIGHT={LOGO_HEIGHT}
+      id={`LOGO_ANIMATED_WRAP_${id}`}
+    >
       <LogoCircleWrap LOGO_HEIGHT={LOGO_HEIGHT} LOGO_BORDER={LOGO_BORDER}>
         <LogoEye
           id={`LOGO_ANIMATED_LEFT_EYE_${id}`}

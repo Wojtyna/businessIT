@@ -9,7 +9,6 @@ const MAX_BOTTOM_TITLE_WIDTH = 50;
 // MAIN WRAP
 export const ViewWrap = styled.section`
   max-width: ${CONSTANS.MAX_CONTENT_WIDTH_XL}rem;
-  margin-top: ${CONSTANS.SPACE_BETWEEN_SECTIONS}rem;
 `;
 
 // ABOUT

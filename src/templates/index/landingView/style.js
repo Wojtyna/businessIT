@@ -32,7 +32,7 @@ export const ViewTitle = styled.h1`
   margin-top: ${theme.space.xxl}rem;
   word-wrap: break-word;
   text-align: center;
-  font-family: 'Yeseva One', cursive;
+  font-family: 'Yeseva One', 'Montsserat', sans-serif;
   color: ${theme.colors.secondary};
   text-transform: uppercase;
   letter-spacing: 0.3rem;
@@ -84,13 +84,17 @@ export const ScrollIconWrap = styled.div`
 
 // TOP LINE
 export const TopLineWrap = styled.div`
-  z-index: -99;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 33%;
-  display: flex;
-  justify-content: center;
+  display: none;
+
+  @media ${theme.windowSize.mid} {
+    z-index: -99;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+  }
 `;
 export const TopLine = styled.img`
   width: 100%;

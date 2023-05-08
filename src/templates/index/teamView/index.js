@@ -9,7 +9,7 @@ export default function TeamView({
   content: { title, teamImgAlt, midLineAlt },
 }) {
   return (
-    <ViewWrap className="view-inline-space">
+    <ViewWrap className="spaceBetweenSections view-inline-space">
       <MidBgLineWrap>
         <MidBgLine src={MidBgImage} alt={midLineAlt} />
       </MidBgLineWrap>

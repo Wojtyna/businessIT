@@ -18,7 +18,7 @@ import { GlobalState } from '../../../../assets/state/State';
 import IconButton from '../../../../components/iconButton';
 import { CONSTANS, theme } from '../../../../assets/globalStyles';
 
-import ContentData from '../../../../assets/data.json';
+import ContentData from '../../../../assets/translates.json';
 import TranslateImage from '../../../../assets/images/nav/translate.webp';
 import ArrowImage from '../../../../assets/images/icons/arrow.webp';
 import LogoImage from '../../../../assets/images/logo-huge.webp';
@@ -145,8 +145,8 @@ export default function NavigationMobile({
         style={{
           zIndex: 101,
           position: 'fixed',
-          right: `${theme.space.l}rem`,
-          top: `${theme.space.l}rem`,
+          right: `${theme.space.s}rem`,
+          top: `${theme.space.s}rem`,
         }}
       />
       <ViewWrap className="view-inline-space" id="nav-mobile">

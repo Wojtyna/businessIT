@@ -4,7 +4,6 @@ import {
   ButtonWrap,
   InputsWrap,
   ProductTitle,
-  ViewTitle,
   ViewWrap,
   WarningStyle,
 } from './style';
@@ -14,7 +13,7 @@ import Button from '../../../components/button';
 import { theme } from '../../../assets/globalStyles';
 import SuccessInfo from '../../../components/successInfo';
 import { GlobalState } from '../../../assets/state/State';
-import ContentData from '../../../assets/data.json';
+import ContentData from '../../../assets/translates.json';
 
 export default function ContactFormView({
   SendDataSuccess,
@@ -91,11 +90,10 @@ export default function ContactFormView({
 
   return (
     <ViewWrap productsView={isProductView}>
-      {isProductView ? (
-        <ProductTitle>{productsView.inputsTitle}</ProductTitle>
-      ) : (
-        <ViewTitle>{pageTitle}</ViewTitle>
-      )}
+      <ProductTitle isProductView={isProductView}>
+        {isProductView ? productsView.inputsTitle : pageTitle}
+      </ProductTitle>
+
       <InputsWrap>
         <Input
           placeholder={inputs.name.placeholder}

@@ -1,25 +1,25 @@
 import React from 'react';
 
-import { ViewWrap, Title, BottomBgLineWrap, BottomBgLine } from './style';
+import {
+  ViewWrap,
+  Title,
+  BottomBgLineWrap,
+  BottomBgLine,
+  CompanyName,
+} from './style';
 
 import BottomLineBgImage from '../../../assets/images/bg-lines/bottom.webp';
+import AnimatedLogo from '../../../components/animatedLogo';
 
-export default function FooterView({
-  content: { title, bottomLineAlt, titleMobile },
-}) {
-  return typeof window !== 'undefined' ? (
-    <ViewWrap className="view-inline-space">
-      <BottomBgLineWrap>
-        <BottomBgLine src={BottomLineBgImage} alt={bottomLineAlt} />
-      </BottomBgLineWrap>
-      {/* <Title
-        className="textBorder animate-opacity-onEnter"
-        dangerouslySetInnerHTML={{
-          __html: window.innerWidth > 767 ? title : titleMobile,
-        }}
-      /> */}
-    </ViewWrap>
-  ) : (
-    <ViewWrap onlyTopPadding></ViewWrap>
-  );
-}
+const FooterView = ({ content: { title, bottomLineAlt }, companyName }) => (
+  <ViewWrap className="spaceBetweenSections">
+    <BottomBgLineWrap>
+      <BottomBgLine src={BottomLineBgImage} alt={bottomLineAlt} />
+    </BottomBgLineWrap>
+    <Title className="animate-opacity-onEnter">{title}</Title>
+    <AnimatedLogo id={2} logoWidth={7} />
+    <CompanyName className="companyName">{companyName}</CompanyName>
+  </ViewWrap>
+);
+
+export default FooterView;

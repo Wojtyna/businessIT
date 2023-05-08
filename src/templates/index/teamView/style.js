@@ -3,7 +3,6 @@ import { CONSTANS, theme } from '../../../assets/globalStyles';
 
 // MAIN WRAP
 export const ViewWrap = styled.section`
-  margin-top: ${CONSTANS.SPACE_BETWEEN_SECTIONS}rem;
   position: relative;
 `;
 
@@ -23,15 +22,19 @@ export const TeamImg = styled.img`
 
 // TOP LINE
 export const MidBgLineWrap = styled.div`
-  z-index: -99;
-  position: absolute;
-  width: calc(100vw - ${CONSTANS.SCROLL_BAR_WIDTH}rem);
-  min-width: 100%;
-  bottom: ${theme.space.xxl}rem;
-  left: 50%;
-  transform: translate(-50%, 0);
-  display: flex;
-  justify-content: center;
+  display: none;
+
+  @media ${theme.windowSize.mid} {
+    z-index: -99;
+    position: absolute;
+    width: calc(100vw - ${CONSTANS.SCROLL_BAR_WIDTH}rem);
+    min-width: 100%;
+    bottom: ${theme.space.xxl}rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    justify-content: center;
+  }
 `;
 export const MidBgLine = styled.img`
   width: 100%;

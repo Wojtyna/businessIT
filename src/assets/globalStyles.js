@@ -3,9 +3,8 @@ import { createGlobalStyle } from 'styled-components';
 export const theme = {
   colors: {
     dark: '#393939',
-    light1: '#F2F2F2',
-    light2: '#D9D9D9',
-    light3: '#C0C0C0',
+    light1: '#D9D9D9',
+    light2: '#C0C0C0',
     mid: '#808080',
     primary: '#4AF7D8',
     secondary: '#365B6D',
@@ -53,15 +52,17 @@ export const CONSTANS = {
   BUTTON_MIN_HEIGHT: 4.6,
   BUTTON_MIN_WIDTH: 15,
   CLOSE_BUTTON_LENGTH: 5,
-  ICON_LENGTH: 2.2,
+  ICON_LENGTH: 1.8,
   MAX_CONTENT_WIDTH: 110,
   MAX_CONTENT_WIDTH_XL: 140,
   SPACE_BETWEEN_SECTIONS: 25,
+  SPACE_BETWEEN_SECTIONS_MOBILE: 15,
   SCROLL_BAR_WIDTH: 1.2,
   IMAGE_LENGTH_XS: 4,
   IMAGE_LENGTH_S: 5.5,
   IMAGE_LENGTH_M: 8,
   IMAGE_LENGTH_L: 15,
+  NAVIGATION_HEIGHT: 5.5,
 };
 
 const GlobalStyle = createGlobalStyle`  
@@ -122,7 +123,22 @@ const GlobalStyle = createGlobalStyle`
         }
     }  
 
+    h3{
+        font-size: ${theme.font.size.sMobile};  
+        font-weight: ${theme.font.weight.m};
+        padding: 0;
+        margin: 0;  
+        text-transform: uppercase;
+
+        @media ${theme.windowSize.big} {
+            font-size: ${theme.font.size.s};  
+        }
+    } 
+
     a, button{
+        font-family: inherit;   
+        font-weight: inherit;
+        font-size: inherit;
         color: inherit; 
         outline: none;
         padding: 0;
@@ -135,7 +151,7 @@ const GlobalStyle = createGlobalStyle`
     }   
 
     button{
-        position: relative;
+        position: relative; 
         
         -webkit-user-select: none;
         -khtml-user-select: none;
@@ -159,12 +175,12 @@ const GlobalStyle = createGlobalStyle`
 
         :hover {
             ::before {
-            opacity: 1;
+                opacity: 1;
             }
         }
         :active {
             ::before {
-            opacity: 0.5;
+                opacity: 0.5;
             }
         }
     }
@@ -196,18 +212,26 @@ const GlobalStyle = createGlobalStyle`
         user-drag: none;
         -webkit-user-drag: none; 
     }
+ 
+    .spaceBetweenSections{
+        margin-top: ${CONSTANS.SPACE_BETWEEN_SECTIONS_MOBILE}rem; 
+
+        @media ${theme.windowSize.mid} {
+            margin-top: ${CONSTANS.SPACE_BETWEEN_SECTIONS}rem;  
+        }
+    }
 
     .view-inline-space{ 
         width: 100%;
         max-width: ${CONSTANS.MAX_CONTENT_WIDTH}rem;
-        padding-inline: 1rem;
+        padding-inline: ${theme.space.s}rem;
         margin-inline: auto;
 
         @media ${theme.windowSize.small} {
-            padding-inline: 2rem;
+            padding-inline: ${theme.space.l}rem;
         }
         @media ${theme.windowSize.mid} {
-            padding-inline: 5rem;
+            padding-inline: ${theme.space.xxl}rem;
         }
     } 
 
@@ -245,15 +269,17 @@ const GlobalStyle = createGlobalStyle`
         overflow-y: auto;
         overflow-x: hidden;
                 
-        ::-webkit-scrollbar {
-            width: ${CONSTANS.SCROLL_BAR_WIDTH}rem;
-        }
-        ::-webkit-scrollbar-track {
-            background-color: ${theme.colors.light1};
-        }
-        ::-webkit-scrollbar-thumb {
-            background-color: ${theme.colors.light3};
-            border-radius: ${CONSTANS.SCROLL_BAR_WIDTH}rem;
+        @media ${theme.windowSize.mid} {
+            ::-webkit-scrollbar {   
+                width: ${CONSTANS.SCROLL_BAR_WIDTH}rem;
+            }
+            ::-webkit-scrollbar-track {
+                background-color: ${theme.colors.light1};
+            }
+            ::-webkit-scrollbar-thumb {
+                background-color: ${theme.colors.mid};
+                border-radius: ${CONSTANS.SCROLL_BAR_WIDTH}rem;
+            }
         }
     }
 `;
